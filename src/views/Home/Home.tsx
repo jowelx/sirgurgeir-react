@@ -8,6 +8,7 @@ import OurTeeSection from "./components/OurTeeSection";
 import HeadTo from "./components/HeadTo";
 import FAQGS from "./components/FAQS";
 import Contact from "./components/Contact";
+import CarouselSection from "./components/Carousel";
 const Home = () => {
   return (
     <>
@@ -32,6 +33,9 @@ const Home = () => {
         </Grid>
         <Grid item xs={11}>
 <FAQGS/>
+        </Grid>
+        <Grid item xs={12}>
+<CarouselSection/>
         </Grid>
         <Grid item xs={11}>
 <Contact/>
