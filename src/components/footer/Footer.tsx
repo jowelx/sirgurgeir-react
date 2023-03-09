@@ -40,7 +40,8 @@ const ButtonInit = styled.div({
     backgroundColor: "rgba(255, 194, 0, 1)",
     display: 'flex',
     alignItems: 'center',
-  justifyContent: 'space-around'
+  justifyContent: 'space-around',
+  marginLeft:60
 });
 const Divider = styled.div({
     height: 1,
@@ -81,7 +82,7 @@ const Footer = () => {
     <Container>
       <Grid container justifyContent={"center"}>
         <Grid item xs={11}>
-          <Grid container justifyContent={"space-around"}>
+          <Grid container justifyContent={"space-between"}>
             <Grid item xs={3}>
               <Grid container alignItems={"center"}>
                 <Grid item xs={10}>
@@ -97,7 +98,8 @@ const Footer = () => {
                 {data.map((item, index) => {
                   return (
                     <Grid item xs={3}>
-                      <TittleList>{item.tittle}</TittleList>
+                      <div style={{marginLeft:60}}>
+                    <TittleList>{item.tittle}</TittleList>
                       {item.content.map((i, e) => {
                         return (
                           <>
@@ -105,6 +107,8 @@ const Footer = () => {
                           </>
                         );
                       })}
+                      </div>
+  
                     </Grid>
                   );
                 })}
@@ -113,7 +117,7 @@ const Footer = () => {
                              
                 <Grid item xs={12}>
                   <Grid container justifyContent={"flex-start"}>
-                    <Grid item xs={2}>
+                    <Grid item xs={3}>
                                           <ButtonInit>Back to top <NorthIcon style={{fontSize:15}} /></ButtonInit>
                                       </Grid>
                                       <Grid item xs={5}>
