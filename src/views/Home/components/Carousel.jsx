@@ -47,7 +47,12 @@ const Button = styled.div({
   width: '100%',
   color: 'black',
   padding: '2vh 0vh',
-  backgroundColor: 'white'
+  backgroundColor: 'white',
+  cursor: 'pointer',
+  transition: 'ease 0.5s',
+  ':hover': {
+    opacity:0.9
+  }
 })
 const Icon = styled.img({
   width: 15,
@@ -56,9 +61,16 @@ const Icon = styled.img({
 const Arrows = styled.img({
   padding: "1vh 2vh",
   width: 28,
-  height:14
+  height: 14,
 })
-
+const ContainerArrow = styled.div({
+  width: '100%', 
+  cursor: 'pointer',
+   transition: 'ease 0.5s',
+  ':hover': {
+    opacity:0.9
+  }
+})
 const City = styled.p({
   color: 'white',
   margin: 0,
@@ -68,7 +80,25 @@ const CarouselSection = () => {
     
 
  const [index, setIndex] = useState(0);
+const handleNext = () => {
+  setIndex((prevIndex) => {
+    if (prevIndex === data.length - 1) {
+      return 0;
+    } else {
+      return prevIndex + 1;
+    }
+  });
+};
 
+const handleBack = () => {
+  setIndex((prevIndex) => {
+    if (prevIndex === 0) {
+      return data.length - 1;
+    } else {
+      return prevIndex - 1;
+    }
+  });
+};
   useEffect(() => {
     const interval = setInterval(() => {
       // Avanzar al siguiente slide
@@ -94,10 +124,10 @@ const CarouselSection = () => {
      <ContainerImage >
           
           <img src={item.img} alt={`Slide ${index}`} style={{width:'100%'}} />
-         {index ===0&& <ContainerText>
+         <ContainerText>
             <Grid container justifyContent={"center"} rowSpacing={7}>
               <Grid item xs={12}>
-            < Discount >
+            < Discount style={{opacity:index ===0?1:0}}>
               50% off
             </ Discount >
               </Grid>
@@ -112,21 +142,30 @@ const CarouselSection = () => {
                   <Grid container justifyContent={"space-around"}>
                 
                       <Grid style={{display:'flex',flexDirection:'row'}} item xs={4}>
-                      <Icon src={"./assets/location.png"} />
-                      <City>
+                      <Icon  style={{opacity:index ===0?1:0}} src={"./assets/location.png"} />
+                      <City style={{opacity:index ===0?1:0}}>
                         {item.city}
                       </City>
                     </Grid>
-                    <Grid item xs={2}> 
-                       <Arrows src={"./assets/ArrowR.png"} />
-                      <Arrows src={"./assets/ArrowL.png"} />
+                  <Grid item xs={2}> 
+                    <div style={{display:'flex'}}>
+   <ContainerArrow>
+
+                       <Arrows onClick={handleBack} src={"./assets/ArrowR.png"} />
+                    </ContainerArrow>
+                    <ContainerArrow>
+
+                      <Arrows onClick={handleNext}src={"./assets/ArrowL.png"} />
+                    </ContainerArrow>
+                    </div>
+                 
                     </Grid>
                     
                   </Grid>
               </Grid>
             </Grid>
 
-          </ContainerText>}
+          </ContainerText>
      </ContainerImage>
     
       ))}
