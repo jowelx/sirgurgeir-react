@@ -9,9 +9,17 @@ import HeadTo from "./components/HeadTo";
 import FAQGS from "./components/FAQS";
 import Contact from "./components/Contact";
 import CarouselSection from "./components/Carousel";
+import styled from "@emotion/styled";
+import NavBar from "../../components/navBar/NavBar";
+import Footer from "../../components/footer/Footer";
+const Container = styled.div({
+  marginTop:'25vh'
+})
 const Home = () => {
   return (
     <>
+      <NavBar/>
+          <Container>
       <Grid container justifyContent={"center"}>
         <Grid item xs={12}>
           <Video />
@@ -41,7 +49,10 @@ const Home = () => {
 <Contact/>
         </Grid>
       </Grid>
+      </Container>
+      <Footer/>
     </>
+
   );
 };
 export default Home;

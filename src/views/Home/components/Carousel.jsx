@@ -1,4 +1,4 @@
-import React, {useEffect, useState,useRef} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Grid} from '@mui/material';
 import styled from '@emotion/styled';
 import SwipeableViews from 'react-swipeable-views';
@@ -106,6 +106,7 @@ const handleBack = () => {
     }, 5000); // Cambiar cada 5 segundos
 
     return () => clearInterval(interval);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data.length]);
 
   function handleChangeIndex(index) {
