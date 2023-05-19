@@ -6,7 +6,7 @@ import IconPerson from '../../../assets/IconPerson.png'
 import IconShop from '../../../assets/IconShop.png'
 import IconHeart from '../../../assets/IconHeart.png'
 import { PrincipalFont } from "../../../fonts/Fonts";
-const dataNav = ["Quorem", "Quorem", "Quorem", "Quorem"];
+const dataNav = [{name:"ABOUT",url:'/about'}, {name:"MEN",url:'/product'}, {name:"WOMEN",url:'/product'}, {name:"EXPLORE",url:'/PrincipalPage'}];
 const Logo = styled.img({
   width: "60%",
   height: "auto",
@@ -26,6 +26,16 @@ const Icon = styled.img({
   width: 25,
   height: 25,
 });
+const Link = styled.a({
+  width: "100%",
+  fontSize: "2vh",
+  letterSpacing: 1,
+  fontWeight: 300,
+  margin: 0,
+  color: "rgb(10,10,10)",
+  textAlign: "left",
+  textDecoration: "none",
+});
 const NavBarAbout = () => {
   return (
     <Container>
@@ -38,7 +48,10 @@ const NavBarAbout = () => {
             {dataNav.map((item, index) => {
               return (
                 <Grid item xs={2}>
-                  <Button key={index}>{item}</Button>
+                  <Link href={item.url}>
+                    
+                  <Button key={index}>{item.name}</Button>
+                  </Link>
                 </Grid>
               );
             })}
