@@ -146,17 +146,17 @@ const NavBar = () => {
                   >
                     <Grid container justifyContent={"flex-start"}>
                       <Grid item xs={4}>
-                        <Link href="#" style={{ textAlign: "left" }}>
+                        <Link href="/SearchProduct" style={{ textAlign: "left" }}>
                           MEN
                         </Link>
                       </Grid>
                       <Grid item xs={4}>
-                        <Link href="#" style={{ textAlign: "left" }}>
+                        <Link href="/SearchProduct" style={{ textAlign: "left" }}>
                           WOMEN
                         </Link>
                       </Grid>
                       <Grid item xs={4}>
-                        <Link href="#" style={{ textAlign: "left" }}>
+                        <Link href="/PrincipalPage" style={{ textAlign: "left" }}>
                           EXPLORE
                         </Link>
                       </Grid>

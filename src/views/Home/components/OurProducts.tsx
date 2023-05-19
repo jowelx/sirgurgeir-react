@@ -1,7 +1,16 @@
 import React from "react";
 import { Grid } from "@mui/material";
 import styled from "@emotion/styled";
-
+const Link = styled.a({
+  width: "100%",
+  fontSize: "2vh",
+  letterSpacing: 1,
+  fontWeight: 400,
+  margin: 0,
+  color: "rgb(10,10,10)",
+  textAlign: "left",
+  textDecoration: "none",
+});
 const Tittle = styled.h3({
   fontSize: 35,
   textAlign: "left",
@@ -64,13 +73,15 @@ const OurProducts = () => {
             {data.map((item, index) => {
               return (
                 <Grid item xs={12} md={3} key={index}>
-                  <Card>
-                    <ContainerImage>
-                      <Image src={item.img} />
-                    </ContainerImage>
-                    <TittleCard>{item.tittle}</TittleCard>
-                    <Price>${item.price}</Price>
-                  </Card>
+                  <Link href="product">
+                    <Card>
+                      <ContainerImage>
+                        <Image src={item.img} />
+                      </ContainerImage>
+                      <TittleCard>{item.tittle}</TittleCard>
+                      <Price>${item.price}</Price>
+                    </Card>
+                  </Link>
                 </Grid>
               );
             })}

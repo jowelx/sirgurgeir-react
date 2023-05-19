@@ -4,6 +4,7 @@ import { Grid } from "@mui/material";
 import Banner from "../assets/baners.png";
 import { BLUECOLOR } from "../colors/Colors";
 import ArrowIcon from "../assets/Arrow.png";
+import EastIcon from '@mui/icons-material/East';
 const Container = styled.div({
   borderRadius: 12,
   marginBottom: "5vw",
@@ -29,6 +30,9 @@ const Button = styled.div({
   borderRadius: 6,
   backgroundColor: "white",
   padding: "0.8vw",
+  display: 'flex',
+  justifyContent:'space-around',
+  alignItems:'center'
 });
 const Text = styled.p({
   color: "white",
@@ -42,7 +46,9 @@ const LittleTitle = styled.p({
   margin: 0,
   fontWeight: 400,
 });
-const Arrow = styled.img({});
+const Arrow = styled(EastIcon)({
+  marginLeft:'1vw'
+});
 
 const BannerOffert = () => {
   return (
@@ -59,7 +65,7 @@ const BannerOffert = () => {
             <Text>35% off only this friday and get special gift</Text>
             <Button>
               Grab it now
-              <Arrow src={ArrowIcon} />
+              <Arrow />
             </Button>
           </BlueContainer>
         </Grid>

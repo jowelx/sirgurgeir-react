@@ -6,6 +6,8 @@ import Image2 from "../../../assets/16.png";
 import Image3 from "../../../assets/7.png";
 import Image4 from "../../../assets/29.png";
 import ArrowIcon from "../../../assets/Arrow.png";
+
+import EastIcon from '@mui/icons-material/East';
 const data = [
   {
     img: Image1,
@@ -45,6 +47,9 @@ const ContainerImage = styled.div({
 });
 const Button = styled.div({
   zIndex: 9999,
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent:'space-between',
   position: "absolute",
   bottom: "2vw",
   left: "4vw",
@@ -54,7 +59,7 @@ const Button = styled.div({
   padding: "0.8vw",
   cursor: "pointer",
 });
-const Arrow = styled.img({});
+const Arrow = styled(EastIcon)({});
 const Category = () => {
   return (
     <Container>
@@ -70,8 +75,8 @@ const Category = () => {
                   <Image src={item.img} />
                   <div>
                     <Button>
-                      Grab it now
-                      <Arrow src={ArrowIcon} />
+                     {item.title}
+                      <Arrow  />
                     </Button>
                   </div>
                 </ContainerImage>

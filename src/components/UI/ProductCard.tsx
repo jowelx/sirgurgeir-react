@@ -7,8 +7,8 @@ type Prop = {
   name: string;
   img: string;
   price: string;
-    sale: boolean | undefined;
-    xl?: boolean | undefined|null;
+  sale: boolean | undefined;
+  xl?: boolean | undefined | null;
 };
 const Sale = styled.p({
   position: "absolute",
@@ -56,11 +56,11 @@ const ContainerData = styled.div({
   margin: "1vw 0vw",
   padding: "0.5vw 0.5vw",
 });
-const ProductCard = ({xl, name, img, price, sale }: Prop) => {
+const ProductCard = ({ xl, name, img, price, sale }: Prop) => {
   return (
     <Paper elevation={3}>
-      <Container >
-        <ContainerImage style={{height:xl ?'40vh':"35vh"}}>
+      <Container>
+        <ContainerImage style={{ height: xl ? "40vh" : "35vh" }}>
           <Image src={img} />
           <ContainerIcon>
             <Icon src={Heart} />

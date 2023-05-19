@@ -6,6 +6,7 @@ import { BLUECOLOR, YELLOWCOLOR } from "../../../colors/Colors";
 import Person from "../../../assets/personBlue.png";
 import { Divider } from "@mui/material";
 import ComillasIcon from '../../../assets/Comillas.png'
+import EastIcon from '@mui/icons-material/East';
 const Container = styled.div({
   marginTop: "20vh",
 });
@@ -60,7 +61,34 @@ const LastData = [{
     profesion:"British philosopher",
     name:"John Stuart Mill",
     text: "Worem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos."
-},]
+  },]
+const ArrowLeft = styled(EastIcon)({
+  padding: "1.5vh",
+  borderRadius: 200,
+  border: `solid 1px ${BLUECOLOR}`,
+  backgroundColor: 'rgba(0,0,0,0)',
+  color:BLUECOLOR,
+  cursor: "pointer",
+  transform: "rotate(180deg)",
+  transition: "0.2s ease",
+  "&:hover": {
+    color: "white",
+      backgroundColor: BLUECOLOR,
+  },
+});
+const ArrowRight = styled(EastIcon)({
+  padding: "1.5vh",
+  borderRadius: 200,
+  border:`solid 1px ${BLUECOLOR}`,
+  backgroundColor: 'rgba(0,0,0,0)',
+  cursor: "pointer",
+  color:BLUECOLOR,
+  transition: "all 0.2s ease",
+  "&:hover": {
+    color: "white",
+      backgroundColor: BLUECOLOR,
+  },
+});
 const Body = () => {
   return (
     <>
@@ -160,6 +188,14 @@ Worem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero e
                               </Grid>
                       ))}
           </Grid>
+        </Grid>
+        <Grid item xs={12} />
+        <Grid item xs={2}>
+          <div style={{marginTop:'5vw',width:'100%',display:'flex',justifyContent:'space-around'}}>
+            <ArrowLeft />
+            <ArrowRight/>
+          </div>
+
         </Grid>
       </Grid>
     </>

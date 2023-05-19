@@ -85,6 +85,16 @@ const data = [
     tittle: "Wine Tees",
   },
 ];
+const Link = styled.a({
+  width: "100%",
+  fontSize: "2vh",
+  letterSpacing: 1,
+  fontWeight: 400,
+  margin: 0,
+  color: "rgb(10,10,10)",
+  textAlign: "left",
+  textDecoration: "none",
+});
 const OurTeeSection = () => {
   return (
     <Container>
@@ -96,13 +106,16 @@ const OurTeeSection = () => {
           return (
             <>
               <Grid item xs={12} md={2}>
-                <Card>
+                <Link href="product">
+                                  <Card>
                   <Image src={item.img} />
                   <CardTittle>{item.tittle}</CardTittle>
                   <ContainerText>
                     <Text>{item.text}</Text>
                   </ContainerText>
                 </Card>
+                </Link>
+
               </Grid>
             </>
           );

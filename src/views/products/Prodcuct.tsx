@@ -6,6 +6,7 @@ import DetailProduct from "./components/detailProduct";
 import Comments from "./components/Comments";
 import Description from "./components/Desciption";
 import Offert from "./components/Offert";
+import Footer from "../../components/footer/Footer";
 const Product = () => {
   return (
     <>
@@ -20,7 +21,10 @@ const Product = () => {
             <DetailProduct />
           </Grid>
           <Grid md={6}><Comments/></Grid>
-          <Grid md={4}><Description/></Grid>
+          <Grid md={4}><Description /></Grid>
+          <Grid md={12}>
+<Footer/>
+          </Grid>
         </Grid>
       </div>
     </>

@@ -5,6 +5,7 @@ import Filter from "./components/Filters";
 import { Grid } from "@mui/material";
 import Content from "./components/Content";
 import BannerOffert from "../../components/BannerOfferts";
+import Footer from "../../components/footer/Footer";
 const Container = styled.div({
   marginTop: "10vw",
 });
@@ -27,6 +28,7 @@ const SearchProducts = () => {
             <BannerOffert />
           </Grid>
         </Grid>
+        <Footer/>
       </Container>
     </>
   );

@@ -7,7 +7,7 @@ import { BLUECOLOR, YELLOWCOLOR } from "../../../colors/Colors";
 import { PrincipalFont } from "../../../fonts/Fonts";
 import RegleIcon from "../../../assets/regla.png";
 import ArrowIcon from "../../../assets/ProductArrow.png";
-import IconShop from '../../../assets/IconShop.png';
+import IconShop from "../../../assets/IconShop.png";
 import Card from "./Card";
 const Title = styled.p({
   textAlign: "left",
@@ -88,21 +88,21 @@ const ContainerMargin = styled.div({
 const ButtonBlue = styled.div({
   borderRadius: 200,
   backgroundColor: BLUECOLOR,
-  display: 'flex',
-  flexDirection: 'row',
-  justifyContent: 'center',
-  alignItems:'center',
-  cursor:'pointer'
+  display: "flex",
+  flexDirection: "row",
+  justifyContent: "center",
+  alignItems: "center",
+  cursor: "pointer",
 });
 const ButtonWhite = styled.div({
   borderRadius: 200,
   backgroundColor: "rgba(0,0,0,0)",
-  display: 'flex',
-  flexDirection: 'row',
-  justifyContent: 'center',
-  alignItems:'center',
-  cursor: 'pointer',
-  border:`solid 1px ${BLUECOLOR}`
+  display: "flex",
+  flexDirection: "row",
+  justifyContent: "center",
+  alignItems: "center",
+  cursor: "pointer",
+  border: `solid 1px ${BLUECOLOR}`,
 });
 const Sizes = ["S", "M", "L", "XL"];
 
@@ -181,51 +181,56 @@ const DetailProduct = () => {
           </Grid>
         </Grid>
       </Grid>
-      <Grid item xs={12}>
-        <div style={{margin:"2vw 0"}}>
-        <Grid container alignItems={"center"} justifyContent={"flex-start"}>
-          <Grid item xs={3}>
-            <ButtonBlue>
-              <p style={{fontWeight:600, color:  'white',margin:"1.2vw 0"}}>Check Out</p>
-              <div>
-              <Icon
-                  style={{
-                  marginLeft:'2vw',
-                  padding: '0.5vw',
-                  borderRadius:200,
-                border:'solid 1px white',  width: "1.2vw", height: "auto"
-                }}
-                src={ArrowIcon}
-              />
-              </div>
-
-            </ButtonBlue>
+      <Grid item xs={12} />
+      <Grid item xs={8}>
+        <div style={{ margin: "2vw 0" }}>
+          <Grid container alignItems={"center"} justifyContent={"space-between"}>
+            <Grid item xs={5}>
+              <ButtonBlue>
+                <p
+                  style={{ fontWeight: 600, color: "white", margin: "1.2vw 0" }}
+                >
+                  Check Out
+                </p>
+                <div>
+                  <Icon
+                    style={{
+                      marginLeft: "2vw",
+                      padding: "0.5vw",
+                      borderRadius: 200,
+                      border: "solid 1px white",
+                      width: "1.2vw",
+                      height: "auto",
+                    }}
+                    src={ArrowIcon}
+                  />
+                </div>
+              </ButtonBlue>
             </Grid>
-            <Grid item xs={1}>
 
-            </Grid>
-            <Grid item xs={4}>
+            <Grid item xs={6}>
               <ButtonWhite>
-                          <p style={{fontWeight:600,color: BLUECOLOR , }}>Check Out</p>
-              <div>
-              <Icon
-                  style={{
-                  marginLeft:'2vw',
-                  padding: '0.5vw',
-                  borderRadius:200,
-                border:'solid 1px white',  width: "2vw", height: "auto"
-                }}
-                src={IconShop}
-              />
-              </div>
-              </ButtonWhite> 
+                <p style={{ fontWeight: 600, color: BLUECOLOR }}>Check Out</p>
+                <div>
+                  <Icon
+                    style={{
+                      marginLeft: "2vw",
+                      padding: "0.5vw",
+                      borderRadius: 200,
+                      border: "solid 1px white",
+                      width: "2vw",
+                      height: "auto",
+                    }}
+                    src={IconShop}
+                  />
+                </div>
+              </ButtonWhite>
+            </Grid>
           </Grid>
-        </Grid>
         </div>
-
       </Grid>
       <Grid item xs={10}>
-<Card/>
+        <Card />
       </Grid>
     </Grid>
   );
