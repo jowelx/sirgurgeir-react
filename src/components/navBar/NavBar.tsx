@@ -15,7 +15,7 @@ const Text = styled.p({
 });
 const Link = styled.a({
   width: "100%",
-  fontSize: "2vh",
+  fontSize: "1.8vh",
   letterSpacing: 1,
   fontWeight: 300,
   margin: 0,
@@ -144,25 +144,30 @@ const NavBar = () => {
                     xs={3}
                     sx={{ display: { xs: "none", md: "flex" } }}
                   >
-                    <Grid container justifyContent={"flex-start"}>
-                                                                  <Grid item xs={3}>
+                    <Grid container justifyContent={"flex-start"} columnSpacing={8}>
+                                                                  <Grid item xs={2}>
                         <Link href="/about" style={{ textAlign: "left" }}>
                          ABOUT
                         </Link>
                       </Grid>
-                      <Grid item xs={3}>
+                      <Grid item xs={2}>
                         <Link href="/SearchProduct" style={{ textAlign: "left" }}>
                           MEN
                         </Link>
                       </Grid>
-                      <Grid item xs={3}>
+                      <Grid item xs={2}>
                         <Link href="/SearchProduct" style={{ textAlign: "left" }}>
                           WOMEN
                         </Link>
                       </Grid>
-                      <Grid item xs={3}>
+                      <Grid item xs={2}>
                         <Link href="/PrincipalPage" style={{ textAlign: "left" }}>
                           EXPLORE
+                        </Link>
+                      </Grid>
+                      <Grid item xs={2}>
+   <Link href="/contact" style={{ textAlign: "left" }}>
+                          CONTACT
                         </Link>
                       </Grid>
 

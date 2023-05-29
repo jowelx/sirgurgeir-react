@@ -6,7 +6,7 @@ import IconPerson from '../../../assets/IconPerson.png'
 import IconShop from '../../../assets/IconShop.png'
 import IconHeart from '../../../assets/IconHeart.png'
 import { PrincipalFont } from "../../../fonts/Fonts";
-const dataNav = [{name:"ABOUT",url:'/about'}, {name:"MEN",url:'/product'}, {name:"WOMEN",url:'/product'}, {name:"EXPLORE",url:'/PrincipalPage'}];
+const dataNav = [{name:"ABOUT",url:'/about'}, {name:"MEN",url:'/product'}, {name:"WOMEN",url:'/product'}, {name:"EXPLORE",url:'/PrincipalPage'},{name:"CONTACT",url:'/contact'}];
 const Logo = styled.img({
   width: "60%",
   height: "auto",
@@ -55,7 +55,7 @@ const NavBarAbout = () => {
                 </Grid>
               );
             })}
-            <Grid item xs={4}>
+            <Grid item xs={2}>
               <Grid container>
                   <Grid item xs={4}>
                          <Icon src={IconHeart}/> 

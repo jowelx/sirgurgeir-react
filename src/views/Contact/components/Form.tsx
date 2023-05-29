@@ -100,7 +100,7 @@ const FormContact = () => {
     marginRight: "1vw",
   });
   return (
-    <Grid container justifyContent={"center"} style={{marginTop:'5vw'}}>
+    <Grid container justifyContent={"center"} style={{marginTop:'8vw'}}>
       <Grid item xs={8}>
         <Grid container>
           <Grid item xs={6}>
