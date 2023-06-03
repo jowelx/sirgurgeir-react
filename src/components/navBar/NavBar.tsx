@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Grid } from "@mui/material";
 import styled from "@emotion/styled";
 import Logo from "../../assets/logo.png";
+import { motion } from "framer-motion";
 const Image = styled.img({
   width: "97%",
 });
@@ -70,7 +71,11 @@ const BlackContainer = styled.div({
 const NavBar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [lastScrollTime, setLastScrollTime] = useState(0);
+  const [isActive, setIsActive] = useState(false);
 
+  const toggleSearchBar = () => {
+    setIsActive(!isActive);
+  };
   useEffect(() => {
     function handleScroll() {
       const scrollPosition = window.scrollY;
@@ -144,33 +149,45 @@ const NavBar = () => {
                     xs={3}
                     sx={{ display: { xs: "none", md: "flex" } }}
                   >
-                    <Grid container justifyContent={"flex-start"} columnSpacing={8}>
-                                                                  <Grid item xs={2}>
+                    <Grid
+                      container
+                      justifyContent={"flex-start"}
+                      columnSpacing={8}
+                    >
+                      <Grid item xs={2}>
                         <Link href="/about" style={{ textAlign: "left" }}>
-                         ABOUT
+                          ABOUT
                         </Link>
                       </Grid>
                       <Grid item xs={2}>
-                        <Link href="/SearchProduct" style={{ textAlign: "left" }}>
+                        <Link
+                          href="/SearchProduct"
+                          style={{ textAlign: "left" }}
+                        >
                           MEN
                         </Link>
                       </Grid>
                       <Grid item xs={2}>
-                        <Link href="/SearchProduct" style={{ textAlign: "left" }}>
+                        <Link
+                          href="/SearchProduct"
+                          style={{ textAlign: "left" }}
+                        >
                           WOMEN
                         </Link>
                       </Grid>
                       <Grid item xs={2}>
-                        <Link href="/PrincipalPage" style={{ textAlign: "left" }}>
+                        <Link
+                          href="/PrincipalPage"
+                          style={{ textAlign: "left" }}
+                        >
                           EXPLORE
                         </Link>
                       </Grid>
                       <Grid item xs={2}>
-   <Link href="/contact" style={{ textAlign: "left" }}>
+                        <Link href="/contact" style={{ textAlign: "left" }}>
                           CONTACT
                         </Link>
                       </Grid>
-
                     </Grid>
                   </Grid>
                   <Grid
@@ -227,10 +244,12 @@ const NavBar = () => {
                     <Image src={Logo} />
                   </Grid>
                   <Grid item xs={4} md={3}>
-                    <Grid container justifyContent={"flex-end"}>
-                      <Grid item xs={2} style={{ justifyContent: "flex-end" }}>
+                    <Grid container justifyContent={"flex-end"} >
+                      <Grid item xs={2} style={{ justifyContent: "flex-end", position: 'relative' }}>
+                        <div style={{height:'3vw',display:'flex',alignItems:'center',position:'relative',zIndex:99999,backgroundColor:'white'}}>
                         <svg
-                          style={{ textAlign: "right" }}
+                          onClick={()=>toggleSearchBar()}
+                          style={{ textAlign: "right",backgroundColor:'white' }}
                           width="22"
                           height="22"
                           viewBox="0 0 20 20"
@@ -238,14 +257,26 @@ const NavBar = () => {
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
-                            fill-rule="evenodd"
-                            clip-rule="evenodd"
+                            fillRule="evenodd"
+                            clipRule="evenodd"
                             d="M10.1657 2.99992C6.76378 2.44425 3.55557 4.75156 2.99992 8.15343C2.44426 11.5553 4.75157 14.7635 8.15344 15.3192C11.5553 15.8748 14.7635 13.5675 15.3192 10.1657C15.8748 6.76379 13.5675 3.55558 10.1657 2.99992ZM2.09471 8.00557C2.73203 4.10377 6.41171 1.45739 10.3135 2.09471C14.2153 2.73204 16.8617 6.41172 16.2244 10.3135C16.0094 11.6298 15.4481 12.8032 14.6489 13.7559L18.2844 17.4846C18.4612 17.666 18.4575 17.9563 18.2762 18.1331C18.0948 18.3099 17.8045 18.3063 17.6277 18.1249L14.0152 14.4198C12.4522 15.8606 10.2662 16.5936 8.00558 16.2244C4.10378 15.5871 1.4574 11.9074 2.09471 8.00557Z"
                             fill="black"
                           ></path>
                         </svg>
+                        </div>
+
+
+      <motion.input
+        type="text"
+        placeholder="Buscar"
+        initial={{ opacity: 0, x: 200 }}
+        animate={{ opacity: isActive ? 1 : 0, x: isActive ? -50 : 200 }}
+        transition={{ duration: 0.5 }}
+        style={{ position: 'absolute',top:'8%', transform: 'translateY(50%)', right: 10, padding: '0.5rem',zIndex:99 }}
+      ></motion.input>
                       </Grid>
                       <Grid item xs={2}>
+                        <div style={{ backgroundColor: 'white' , height: '3vw', display: 'flex', alignItems: 'center' ,position:'relative',zIndex:99999}} >
                         <svg
                           width="22"
                           height="22"
@@ -260,11 +291,14 @@ const NavBar = () => {
                             fill="black"
                           ></path>
                         </svg>
+                        </div>
                       </Grid>
                       <Grid item xs={2} style={{ justifyContent: "flex-end" }}>
+                        <div style={{ height: '3vw', display: 'flex', alignItems: 'center',justifyContent:'flex-start' ,position:'relative',zIndex:99999,backgroundColor:'white',width:'8vw'}}>
                         <CountMarket aria-label="My cart">
                           <p style={{ margin: 0 }}>0</p>
                         </CountMarket>
+                        </div>
                       </Grid>
                     </Grid>
                   </Grid>
