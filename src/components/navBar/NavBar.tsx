@@ -4,7 +4,7 @@ import styled from "@emotion/styled";
 import Logo from "../../assets/logo.png";
 import { motion } from "framer-motion";
 const Image = styled.img({
-  width: "97%",
+  width: "50%",
 });
 const Text = styled.p({
   fontSize: "1.5vh",
@@ -146,7 +146,7 @@ const NavBar = () => {
                 >
                   <Grid
                     item
-                    xs={3}
+                    xs={4}
                     sx={{ display: { xs: "none", md: "flex" } }}
                   >
                     <Grid
@@ -240,64 +240,113 @@ const NavBar = () => {
                       ></path>
                     </svg>
                   </Grid>
-                  <Grid item xs={5} md={2}>
+                  <Grid item xs={5} md={3} style={{display:'flex',justifyContent:'flex-start'
+                  }}>
                     <Image src={Logo} />
                   </Grid>
                   <Grid item xs={4} md={3}>
-                    <Grid container justifyContent={"flex-end"} >
-                      <Grid item xs={2} style={{ justifyContent: "flex-end", position: 'relative' }}>
-                        <div style={{height:'3vw',display:'flex',alignItems:'center',position:'relative',zIndex:99999,backgroundColor:'white'}}>
-                        <svg
-                          onClick={()=>toggleSearchBar()}
-                          style={{ textAlign: "right",backgroundColor:'white' }}
-                          width="22"
-                          height="22"
-                          viewBox="0 0 20 20"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
+                    <Grid container justifyContent={"flex-end"}>
+                      <Grid
+                        item
+                        xs={2}
+                        style={{
+                          justifyContent: "flex-end",
+                          position: "relative",
+                        }}
+                      >
+                        <div
+                          style={{
+                            height: "3vw",
+                            display: "flex",
+                            alignItems: "center",
+                            position: "relative",
+                            zIndex: 99999,
+                            backgroundColor: "white",
+                          }}
                         >
-                          <path
-                            fillRule="evenodd"
-                            clipRule="evenodd"
-                            d="M10.1657 2.99992C6.76378 2.44425 3.55557 4.75156 2.99992 8.15343C2.44426 11.5553 4.75157 14.7635 8.15344 15.3192C11.5553 15.8748 14.7635 13.5675 15.3192 10.1657C15.8748 6.76379 13.5675 3.55558 10.1657 2.99992ZM2.09471 8.00557C2.73203 4.10377 6.41171 1.45739 10.3135 2.09471C14.2153 2.73204 16.8617 6.41172 16.2244 10.3135C16.0094 11.6298 15.4481 12.8032 14.6489 13.7559L18.2844 17.4846C18.4612 17.666 18.4575 17.9563 18.2762 18.1331C18.0948 18.3099 17.8045 18.3063 17.6277 18.1249L14.0152 14.4198C12.4522 15.8606 10.2662 16.5936 8.00558 16.2244C4.10378 15.5871 1.4574 11.9074 2.09471 8.00557Z"
-                            fill="black"
-                          ></path>
-                        </svg>
+                          <svg
+                            onClick={() => toggleSearchBar()}
+                            style={{
+                              textAlign: "right",
+                              backgroundColor: "white",
+                            }}
+                            width="22"
+                            height="22"
+                            viewBox="0 0 20 20"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              fillRule="evenodd"
+                              clipRule="evenodd"
+                              d="M10.1657 2.99992C6.76378 2.44425 3.55557 4.75156 2.99992 8.15343C2.44426 11.5553 4.75157 14.7635 8.15344 15.3192C11.5553 15.8748 14.7635 13.5675 15.3192 10.1657C15.8748 6.76379 13.5675 3.55558 10.1657 2.99992ZM2.09471 8.00557C2.73203 4.10377 6.41171 1.45739 10.3135 2.09471C14.2153 2.73204 16.8617 6.41172 16.2244 10.3135C16.0094 11.6298 15.4481 12.8032 14.6489 13.7559L18.2844 17.4846C18.4612 17.666 18.4575 17.9563 18.2762 18.1331C18.0948 18.3099 17.8045 18.3063 17.6277 18.1249L14.0152 14.4198C12.4522 15.8606 10.2662 16.5936 8.00558 16.2244C4.10378 15.5871 1.4574 11.9074 2.09471 8.00557Z"
+                              fill="black"
+                            ></path>
+                          </svg>
                         </div>
 
-
-      <motion.input
-        type="text"
-        placeholder="Buscar"
-        initial={{ opacity: 0, x: 200 }}
-        animate={{ opacity: isActive ? 1 : 0, x: isActive ? -50 : 200 }}
-        transition={{ duration: 0.5 }}
-        style={{ position: 'absolute',top:'8%', transform: 'translateY(50%)', right: 10, padding: '0.5rem',zIndex:99 }}
-      ></motion.input>
+                        <motion.input
+                          type="text"
+                          placeholder="Buscar"
+                          initial={{ opacity: 0, x: 200 }}
+                          animate={{
+                            opacity: isActive ? 1 : 0,
+                            x: isActive ? -50 : 200,
+                          }}
+                          transition={{ duration: 0.5 }}
+                          style={{
+                            position: "absolute",
+                            top: "8%",
+                            transform: "translateY(50%)",
+                            right: 10,
+                            padding: "0.5rem",
+                            zIndex: 99,
+                          }}
+                        ></motion.input>
                       </Grid>
                       <Grid item xs={2}>
-                        <div style={{ backgroundColor: 'white' , height: '3vw', display: 'flex', alignItems: 'center' ,position:'relative',zIndex:99999}} >
-                        <svg
-                          width="22"
-                          height="22"
-                          viewBox="0 0 20 20"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
+                        <div
+                          style={{
+                            backgroundColor: "white",
+                            height: "3vw",
+                            display: "flex",
+                            alignItems: "center",
+                            position: "relative",
+                            zIndex: 99999,
+                          }}
                         >
-                          <path
-                            fill-rule="evenodd"
-                            clip-rule="evenodd"
-                            d="M10.0122 1.95822C7.93466 1.95822 6.37084 3.48269 6.37084 5.29962C6.37084 7.00208 8.01887 8.54102 10.0122 8.54102C12.0056 8.54102 13.6536 7.00208 13.6536 5.29962C13.6536 3.48964 11.9973 1.95822 10.0122 1.95822ZM5.45364 5.29962C5.45364 2.91655 7.48981 1.04102 10.0122 1.04102C12.4271 1.04102 14.5708 2.90959 14.5708 5.29962C14.5708 7.59715 12.4189 9.45822 10.0122 9.45822C7.6056 9.45822 5.45364 7.59715 5.45364 5.29962ZM4.01324 12.6699C4.49339 11.976 5.18596 11.441 6.11224 11.441H13.8122C14.7401 11.441 15.4382 11.9841 15.9257 12.6824C16.411 13.3774 16.7287 14.2768 16.911 15.1426C17.0937 16.0104 17.1492 16.8869 17.081 17.557C17.0474 17.8866 16.9805 18.203 16.8592 18.4482C16.7462 18.6764 16.5052 18.9825 16.0957 18.9582H3.91224C3.50621 18.9582 3.2737 18.6488 3.1604 18.4183C3.03873 18.1706 2.96723 17.854 2.92857 17.5213C2.85026 16.8471 2.89236 15.9737 3.06228 15.111C3.23173 14.2507 3.53653 13.3589 4.01324 12.6699ZM3.99777 18.041C3.99352 18.0333 3.98878 18.0243 3.9836 18.0138C3.92794 17.9005 3.87287 17.7015 3.83965 17.4154C3.77421 16.8521 3.80711 16.0756 3.96219 15.2882C4.11774 14.4985 4.38794 13.7403 4.76749 13.1918C5.14359 12.6482 5.58851 12.3582 6.11224 12.3582H13.8122C14.3343 12.3582 14.7863 12.6526 15.1737 13.2075C15.5634 13.7656 15.8458 14.5349 16.0135 15.3316C16.1808 16.1263 16.2253 16.9061 16.1685 17.4641C16.1396 17.7483 16.0878 17.9389 16.0373 18.041H3.99777ZM4.02389 18.0797C4.02383 18.08 4.02202 18.0784 4.01861 18.074C4.02223 18.0772 4.02394 18.0794 4.02389 18.0797ZM16.0089 18.0896C16.0089 18.0895 16.0099 18.0882 16.0119 18.086C16.0099 18.0887 16.0089 18.0898 16.0089 18.0896Z"
-                            fill="black"
-                          ></path>
-                        </svg>
+                          <svg
+                            width="22"
+                            height="22"
+                            viewBox="0 0 20 20"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M10.0122 1.95822C7.93466 1.95822 6.37084 3.48269 6.37084 5.29962C6.37084 7.00208 8.01887 8.54102 10.0122 8.54102C12.0056 8.54102 13.6536 7.00208 13.6536 5.29962C13.6536 3.48964 11.9973 1.95822 10.0122 1.95822ZM5.45364 5.29962C5.45364 2.91655 7.48981 1.04102 10.0122 1.04102C12.4271 1.04102 14.5708 2.90959 14.5708 5.29962C14.5708 7.59715 12.4189 9.45822 10.0122 9.45822C7.6056 9.45822 5.45364 7.59715 5.45364 5.29962ZM4.01324 12.6699C4.49339 11.976 5.18596 11.441 6.11224 11.441H13.8122C14.7401 11.441 15.4382 11.9841 15.9257 12.6824C16.411 13.3774 16.7287 14.2768 16.911 15.1426C17.0937 16.0104 17.1492 16.8869 17.081 17.557C17.0474 17.8866 16.9805 18.203 16.8592 18.4482C16.7462 18.6764 16.5052 18.9825 16.0957 18.9582H3.91224C3.50621 18.9582 3.2737 18.6488 3.1604 18.4183C3.03873 18.1706 2.96723 17.854 2.92857 17.5213C2.85026 16.8471 2.89236 15.9737 3.06228 15.111C3.23173 14.2507 3.53653 13.3589 4.01324 12.6699ZM3.99777 18.041C3.99352 18.0333 3.98878 18.0243 3.9836 18.0138C3.92794 17.9005 3.87287 17.7015 3.83965 17.4154C3.77421 16.8521 3.80711 16.0756 3.96219 15.2882C4.11774 14.4985 4.38794 13.7403 4.76749 13.1918C5.14359 12.6482 5.58851 12.3582 6.11224 12.3582H13.8122C14.3343 12.3582 14.7863 12.6526 15.1737 13.2075C15.5634 13.7656 15.8458 14.5349 16.0135 15.3316C16.1808 16.1263 16.2253 16.9061 16.1685 17.4641C16.1396 17.7483 16.0878 17.9389 16.0373 18.041H3.99777ZM4.02389 18.0797C4.02383 18.08 4.02202 18.0784 4.01861 18.074C4.02223 18.0772 4.02394 18.0794 4.02389 18.0797ZM16.0089 18.0896C16.0089 18.0895 16.0099 18.0882 16.0119 18.086C16.0099 18.0887 16.0089 18.0898 16.0089 18.0896Z"
+                              fill="black"
+                            ></path>
+                          </svg>
                         </div>
                       </Grid>
                       <Grid item xs={2} style={{ justifyContent: "flex-end" }}>
-                        <div style={{ height: '3vw', display: 'flex', alignItems: 'center',justifyContent:'flex-start' ,position:'relative',zIndex:99999,backgroundColor:'white',width:'8vw'}}>
-                        <CountMarket aria-label="My cart">
-                          <p style={{ margin: 0 }}>0</p>
-                        </CountMarket>
+                        <div
+                          style={{
+                            height: "3vw",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "flex-start",
+                            position: "relative",
+                            zIndex: 99999,
+                            backgroundColor: "white",
+                            width: "8vw",
+                          }}
+                        >
+                          <CountMarket aria-label="My cart">
+                            <p style={{ margin: 0 }}>0</p>
+                          </CountMarket>
                         </div>
                       </Grid>
                     </Grid>

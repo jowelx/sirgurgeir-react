@@ -19,6 +19,10 @@ const Sale = styled.p({
   color: "white",
   padding: "0.5vw 1vw",
 });
+const Icon = styled.img({
+  height: "2vw",
+  width: "2vw",
+});
 const Container = styled.div({
   width: "100%",
   minHeight: "10vh",
@@ -32,10 +36,7 @@ const Image = styled.img({
   width: "100%",
   height: "auto",
 });
-const Icon = styled.img({
-  height: "2vw",
-  width: "2vw",
-});
+
 const ContainerIcon = styled.div({
   position: "absolute",
   top: "0.5vw",

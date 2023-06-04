@@ -7,6 +7,8 @@ import Product from "../views/products/Prodcuct";
 import SearchProducts from "../views/SearchProducts/SearchProducts";
 import PrincipalPage from "../views/ProncopalPage/PrincipalPage";
 import Contact from "../views/Contact/Contact";
+import Cart from "../views/Cart/Cart";
+import IndexLogin from "../views/Login";
 interface PublicRouteProps {
   component: React.ComponentType<any>;
   [key: string]: any;
@@ -30,6 +32,8 @@ const Routes: React.FC = () => {
       <PublicRoute path="/SearchProduct" component={SearchProducts} />
       <PublicRoute path="/PrincipalPage" component={PrincipalPage} />
       <PublicRoute path="/Contact" component={Contact} />
+      <PublicRoute path="/Cart" component={Cart} />
+      <PublicRoute path="/Login" component={IndexLogin} />
     </Switch>
   );
 };
