@@ -87,6 +87,7 @@ const ContainerMargin = styled.div({
 });
 const ButtonBlue = styled.div({
   borderRadius: 200,
+  width:'90%',
   backgroundColor: BLUECOLOR,
   display: "flex",
   flexDirection: "row",
@@ -96,6 +97,7 @@ const ButtonBlue = styled.div({
 });
 const ButtonWhite = styled.div({
   borderRadius: 200,
+  width:'90%',
   backgroundColor: "rgba(0,0,0,0)",
   display: "flex",
   flexDirection: "row",
@@ -184,7 +186,7 @@ const DetailProduct = () => {
       <Grid item xs={12} />
       <Grid item xs={8}>
         <div style={{ margin: "2vw 0" }}>
-          <Grid container alignItems={"center"} justifyContent={"space-between"}>
+          <Grid container alignItems={"center"} justifyContent={"flex-start"}>
             <Grid item xs={5}>
               <ButtonBlue>
                 <p
@@ -208,7 +210,7 @@ const DetailProduct = () => {
               </ButtonBlue>
             </Grid>
 
-            <Grid item xs={6}>
+            <Grid item xs={5}>
               <ButtonWhite>
                 <p style={{ fontWeight: 600, color: BLUECOLOR }}>Check Out</p>
                 <div>

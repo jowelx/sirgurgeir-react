@@ -59,6 +59,7 @@ const ContainerData = styled.div({
 });
 const ProductCard = ({ xl, name, img, price, sale }: Prop) => {
   return (
+    <a href="/product" style={{textDecoration: "none"}}>
     <Paper elevation={3}>
       <Container>
         <ContainerImage style={{ height: xl ? "40vh" : "35vh" }}>
@@ -81,6 +82,8 @@ const ProductCard = ({ xl, name, img, price, sale }: Prop) => {
         </ContainerData>
       </Container>
     </Paper>
+    </a>
+
   );
 };
 export default ProductCard;

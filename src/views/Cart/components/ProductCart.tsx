@@ -113,25 +113,23 @@ const Icon = styledE.img({
   width: "2vw",
 });
 const ContainerImage = styledE.div({
-
   position: "relative",
 });
 const ProductCart = ({ data, setData, index }: any) => {
   const { state, img, name, size, amount, price, color } = data[index];
   const handleChange = (index: any) => {
-
-  setData((prevData: any) => {
-    const newData = [...prevData]; // Crea una copia del array de datos anterior
+    setData((prevData: any) => {
+      const newData = [...prevData]; // Crea una copia del array de datos anterior
       const currentValue = newData[index].state;
-      console.log(currentValue)
-    // Actualiza el campo "state" del objeto en el índice especificado
-    newData[index] = {
-      ...newData[index], // Copia los valores existentes del objeto
-      state: !currentValue, // Actualiza el campo "state" con el nuevo valor
-    };
+      console.log(currentValue);
+      // Actualiza el campo "state" del objeto en el índice especificado
+      newData[index] = {
+        ...newData[index], // Copia los valores existentes del objeto
+        state: !currentValue, // Actualiza el campo "state" con el nuevo valor
+      };
 
-    return newData; // Devuelve el nuevo array de datos actualizado
-  });
+      return newData; // Devuelve el nuevo array de datos actualizado
+    });
   };
   return (
     <Grid container alignItems={"center"} style={{ marginTop: "2vw" }}>
@@ -148,20 +146,17 @@ const ProductCart = ({ data, setData, index }: any) => {
           inputProps={{ "aria-label": "Checkbox demo" }}
         />
       </Grid>
-          <Grid item xs={3}>
-              <ContainerImage>
-                  <ImageProduct src={img} />
-                  <Sale>Sale</Sale>
-                  <div style={{position:'absolute',top:0,right:"0.8vw"}}>
-                               <Icon src={Heart} />         
-                  </div>
-
-              </ContainerImage>
-
+      <Grid item xs={3}>
+        <ContainerImage>
+          <ImageProduct src={img} />
+          <Sale>Sale</Sale>
+          <div style={{ position: "absolute", top: 0, right: "0.8vw" }}>
+            <Icon src={Heart} />
+          </div>
+        </ContainerImage>
       </Grid>
-      <Grid item xs={7}>
+      <Grid item xs={7} style={{marginLeft:'1vw'}}>
         <NameProduct>{name}</NameProduct>
-
         <SubTitle>Size</SubTitle>
         <Grid container justifyContent={"space-between"} alignItems={"center"}>
           <Grid item xs={2}>
@@ -178,19 +173,21 @@ const ProductCart = ({ data, setData, index }: any) => {
               }}
             >
               <Grid item xs={4}>
-                              <Button
-                                  onClick={() => setData( (prevData: any) => {
-    const newData = [...prevData]; // Crea una copia del array de datos anterior
-      const currentValue = newData[index].state;
-      console.log(currentValue)
-    // Actualiza el campo "state" del objeto en el índice especificado
-    newData[index] = {
-      ...newData[index], // Copia los valores existentes del objeto
-      amount:amount < 2 ? 1 : amount - 1, // Actualiza el campo "state" con el nuevo valor
-    };
+                <Button
+                  onClick={() =>
+                    setData((prevData: any) => {
+                      const newData = [...prevData]; // Crea una copia del array de datos anterior
+                      const currentValue = newData[index].state;
+                      console.log(currentValue);
+                      // Actualiza el campo "state" del objeto en el índice especificado
+                      newData[index] = {
+                        ...newData[index], // Copia los valores existentes del objeto
+                        amount: amount < 2 ? 1 : amount - 1, // Actualiza el campo "state" con el nuevo valor
+                      };
 
-    return newData; // Devuelve el nuevo array de datos actualizado
-  })}
+                      return newData; // Devuelve el nuevo array de datos actualizado
+                    })
+                  }
                   style={{
                     borderRight: "solid 1px rgb(218, 218, 218, 1)",
                   }}
@@ -202,19 +199,21 @@ const ProductCart = ({ data, setData, index }: any) => {
                 <p style={{ fontWeight: 600, margin: 0 }}>{amount}</p>
               </Grid>
               <Grid item xs={4}>
-                              <Button
-                                     onClick={() => setData( (prevData: any) => {
-    const newData = [...prevData]; // Crea una copia del array de datos anterior
-      const currentValue = newData[index].state;
-      console.log(currentValue)
-    // Actualiza el campo "state" del objeto en el índice especificado
-    newData[index] = {
-      ...newData[index], // Copia los valores existentes del objeto
-      amount:amount + 1, // Actualiza el campo "state" con el nuevo valor
-    };
+                <Button
+                  onClick={() =>
+                    setData((prevData: any) => {
+                      const newData = [...prevData]; // Crea una copia del array de datos anterior
+                      const currentValue = newData[index].state;
+                      console.log(currentValue);
+                      // Actualiza el campo "state" del objeto en el índice especificado
+                      newData[index] = {
+                        ...newData[index], // Copia los valores existentes del objeto
+                        amount: amount + 1, // Actualiza el campo "state" con el nuevo valor
+                      };
 
-    return newData; // Devuelve el nuevo array de datos actualizado
-  })}
+                      return newData; // Devuelve el nuevo array de datos actualizado
+                    })
+                  }
                   style={{
                     borderLeft: "solid 1px rgb(218, 218, 218, 1)",
                   }}
@@ -225,7 +224,7 @@ const ProductCart = ({ data, setData, index }: any) => {
             </Grid>
           </Grid>
           <Grid item xs={1}>
-            <PriceProduct>${price*amount}</PriceProduct>
+            <PriceProduct>${price * amount}</PriceProduct>
           </Grid>
         </Grid>
         <SubTitle>Color</SubTitle>

@@ -8,8 +8,8 @@ import IconHeart from "../../../assets/IconHeart.png";
 import { PrincipalFont } from "../../../fonts/Fonts";
 const dataNav = [
   { name: "ABOUT", url: "/about" },
-  { name: "MEN", url: "/product" },
-  { name: "WOMEN", url: "/product" },
+  { name: "MEN", url: "/SearchProduct" },
+  { name: "WOMEN", url: "/SearchProduct" },
   { name: "EXPLORE", url: "/PrincipalPage" },
   { name: "CONTACT", url: "/contact" },
 ];
@@ -31,6 +31,7 @@ const Container = styled.div({
 const Icon = styled.img({
   width: 25,
   height: 25,
+  marginTop:'-0.3vw'
 });
 const Link = styled.a({
   width: "100%",
@@ -47,7 +48,10 @@ const NavBarAbout = () => {
     <Container>
       <Grid container justifyContent={"space-around"}>
         <Grid item xs={2}>
+          <a href="/">
           <Logo alt="Sirgurgeir" src={imgLogo} />
+          </a>
+
         </Grid>
         <Grid item xs={5}>
           <Grid container>
@@ -70,7 +74,7 @@ const NavBarAbout = () => {
                 </Grid>
                 <Grid item xs={4}>
                   <Link href={"cart"}>
-                    
+       
                   <Icon src={IconShop} />
                   </Link>
                 </Grid>

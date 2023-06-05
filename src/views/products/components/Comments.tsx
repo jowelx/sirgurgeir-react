@@ -17,6 +17,8 @@ const Title = styled.p({
   fontWeight: 600,
   textAlign: "left",
   marginTop: 0,
+  marginBottom:"-0.5vw"
+
 });
 const Text = styled.p({
   color: "rgba(94, 94, 94, 1)",

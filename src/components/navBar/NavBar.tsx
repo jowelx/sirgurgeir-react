@@ -169,7 +169,7 @@ const NavBar = () => {
                       </Grid>
                       <Grid item xs={2}>
                         <Link
-                          href="/SearchProduct"
+                          href="/product"
                           style={{ textAlign: "left" }}
                         >
                           WOMEN

@@ -120,6 +120,7 @@ const OrderData = ({ data, setData }: any) => {
                   sx={{
                     "&:hover": { bgcolor: "transparent" },
                   }}
+                  style={{marginLeft:'-0.6vw'}}
                   checked={allValue}
                   disableRipple
                   onChange={(e: any) => handleChange(i, e.target.checked)}
@@ -135,9 +136,13 @@ const OrderData = ({ data, setData }: any) => {
         </Grid>
       </Grid>
       <Grid item xs={12}>
+        <div style={{border: 'solid 1px rgb(232,232,232)', borderRadius:6,paddingBottom:'1vw'}}>
         {dataProduct.map((item, index) => (
             <ProductCart data={data} setData={setData } index={index} dataProduct={item} />
         ))}
+  
+        </div>
+
       </Grid>
     </Grid>
   );

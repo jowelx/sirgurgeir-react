@@ -12,7 +12,7 @@ const Icon = styled.img({
 });
 const ButtonBlue = styled.div({
   borderRadius: 200,
-  padding: "0.9vw",
+  padding: "0.5vw",
   backgroundColor: BLUECOLOR,
   display: "flex",
   flexDirection: "row",
@@ -37,6 +37,7 @@ const PriceTotal = styled.p({
   fontWeight: 700,
   textAlign: "right",
   fontSize: "1.4vw",
+  marginTop:'1vw'
 });
 const OrderSumary = ({ data }: any) => {
       const [count, setCount] = useState(0);
@@ -60,7 +61,11 @@ const amountPRice =data.reduce((acc:any, item:any) => {
     setCount(trueItemsCount);
   }, [data]);
   return (
-    <>
+    <><div style={{
+padding:'1vw 2vw',
+      boxShadow:" 0px 4px 17px 2px rgba(0, 0, 0, 0.08)",
+borderRadius: 11
+    }}>
       <Grid container justifyContent={"center"}>
         <Grid item xs={12}>
           <Tittle>ORDER SUMARY</Tittle>
@@ -81,7 +86,7 @@ const amountPRice =data.reduce((acc:any, item:any) => {
             </Grid>
           </Grid>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={8}>
           <ButtonBlue>
             <p
               style={{
@@ -109,6 +114,8 @@ const amountPRice =data.reduce((acc:any, item:any) => {
           </ButtonBlue>
         </Grid>
       </Grid>
+    </div>
+
     </>
   );
 };

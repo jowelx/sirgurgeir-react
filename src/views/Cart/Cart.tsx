@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { Grid } from "@mui/material";
 import styled from "@emotion/styled";
 import SearchBar from "./components/SearchBar";
@@ -11,38 +11,38 @@ import Footer from "../../components/footer/Footer";
 import imageProduct from "../../assets/18.png";
 const Cart = () => {
   const [values, setValues] = useState([
-        {
-    state: true,
-    img: imageProduct,
-    name: "Porem ipsum Porem ipsum ",
-    size: "s",
-    amount: 1,
-    price: 8,
-    color: "black",
-  },
-  {
-    state: true,
-    img: imageProduct,
-    name: "Porem ipsum Porem ipsum ",
-    size: "s",
-    amount: 1,
-    price: 12,
-    color: "black",
-  },
-  {
-    state: true,
-    img: imageProduct,
-    name: "Porem ipsum Porem ipsum ",
-    size: "s",
-    amount: 1,
-    price: 5,
-    color: "black",
-  },
-    ])
+    {
+      state: true,
+      img: imageProduct,
+      name: "Porem ipsum Porem ipsum ",
+      size: "s",
+      amount: 1,
+      price: 8,
+      color: "black",
+    },
+    {
+      state: true,
+      img: imageProduct,
+      name: "Porem ipsum Porem ipsum ",
+      size: "s",
+      amount: 1,
+      price: 12,
+      color: "black",
+    },
+    {
+      state: true,
+      img: imageProduct,
+      name: "Porem ipsum Porem ipsum ",
+      size: "s",
+      amount: 1,
+      price: 5,
+      color: "black",
+    },
+  ]);
   return (
-    <Grid container justifyContent={"center"} style={{marginTop:'10vw'}}>
+    <Grid container justifyContent={"center"} style={{ marginTop: "10vw" }}>
       <Grid item xs={12}>
-<NavBarAbout/>
+        <NavBarAbout />
       </Grid>
       <Grid item xs={10}>
         <Grid container columnSpacing={4} justifyContent={"space-around"}>
@@ -50,12 +50,12 @@ const Cart = () => {
             <SearchBar />
           </Grid>
           <Grid item xs={4}>
-            <OrderSumary data={values } />
+            <OrderSumary data={values} />
           </Grid>
         </Grid>
         <Grid container columnSpacing={4} justifyContent={"space-around"}>
           <Grid item xs={6}>
-            <OrderData data={values} setData={ setValues } />
+            <OrderData data={values} setData={setValues} />
           </Grid>
           <Grid item xs={4}>
             <PaymentMethod />
@@ -63,7 +63,7 @@ const Cart = () => {
         </Grid>
       </Grid>
       <Grid item xs={12}>
-<Footer/>
+        <Footer />
       </Grid>
     </Grid>
   );
