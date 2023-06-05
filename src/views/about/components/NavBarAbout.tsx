@@ -2,11 +2,17 @@ import React from "react";
 import styled from "@emotion/styled";
 import { Grid } from "@mui/material";
 import imgLogo from "../../../assets/logo.png";
-import IconPerson from '../../../assets/IconPerson.png'
-import IconShop from '../../../assets/IconShop.png'
-import IconHeart from '../../../assets/IconHeart.png'
+import IconPerson from "../../../assets/IconPerson.png";
+import IconShop from "../../../assets/IconShop.png";
+import IconHeart from "../../../assets/IconHeart.png";
 import { PrincipalFont } from "../../../fonts/Fonts";
-const dataNav = [{name:"ABOUT",url:'/about'}, {name:"MEN",url:'/product'}, {name:"WOMEN",url:'/product'}, {name:"EXPLORE",url:'/PrincipalPage'},{name:"CONTACT",url:'/contact'}];
+const dataNav = [
+  { name: "ABOUT", url: "/about" },
+  { name: "MEN", url: "/product" },
+  { name: "WOMEN", url: "/product" },
+  { name: "EXPLORE", url: "/PrincipalPage" },
+  { name: "CONTACT", url: "/contact" },
+];
 const Logo = styled.img({
   width: "60%",
   height: "auto",
@@ -14,7 +20,7 @@ const Logo = styled.img({
 
 const Button = styled.div({
   color: "rgba(0, 23, 48, 1)",
-  fontFamily:PrincipalFont 
+  fontFamily: PrincipalFont,
 });
 const Container = styled.div({
   position: "absolute",
@@ -49,26 +55,27 @@ const NavBarAbout = () => {
               return (
                 <Grid item xs={2}>
                   <Link href={item.url}>
-                    
-                  <Button key={index}>{item.name}</Button>
+                    <Button key={index}>{item.name}</Button>
                   </Link>
                 </Grid>
               );
             })}
             <Grid item xs={2}>
               <Grid container>
-                  <Grid item xs={4}>
-                         <Icon src={IconHeart}/> 
-                      </Grid>
-                                <Grid item xs={4}>
-                         <Icon src={IconPerson}/> 
-                      </Grid>
-                                     <Grid item xs={4}>
-                         <Icon src={IconShop}/> 
-                      </Grid>      
-</Grid>
+                <Grid item xs={4}>
+                  <Icon src={IconHeart} />
+                </Grid>
+                <Grid item xs={4}>
+                  <Icon src={IconPerson} />
+                </Grid>
+                <Grid item xs={4}>
+                  <Link href={"cart"}>
+                    
+                  <Icon src={IconShop} />
+                  </Link>
+                </Grid>
+              </Grid>
             </Grid>
-
           </Grid>
         </Grid>
       </Grid>
