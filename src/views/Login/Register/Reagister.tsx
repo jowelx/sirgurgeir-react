@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "@emotion/styled";
 import { Grid } from "@mui/material";
 import { BLUECOLOR } from "../../../colors/Colors";
@@ -8,8 +8,9 @@ import google from "../../../assets/google.png";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import facebook from "../../../assets/facebook.png";
 import bg from "../../../assets/registerbg.png";
-
+import { AppContext } from "../../../context/AppContext";
 import EastIcon from "@mui/icons-material/East";
+import { useHistory } from 'react-router-dom';
 const Logo = styled.img({
   height: "8vh",
   width: "auto",
@@ -48,6 +49,7 @@ const Button = styled.div({
   width: "100%",
   marginTop: "1vw",
   borderRadius: 8,
+  cursor:'pointer'
 });
 const validationSchema = Yup.object().shape({
   name: Yup.string().required("El nombre es obligatorio"),
@@ -73,6 +75,7 @@ const ButtonSocial = styled.div({
   justifyContent: "center",
   padding: "1.2vw",
   margin: "1vw 0",
+  cursor:'pointer'
 });
 const Icon = styled.img({
   height: "2vw",
@@ -95,18 +98,18 @@ const ContainerText = styled.div({
   right: 0,
 });
 const ArrowLeft = styled(EastIcon)({
-    padding: "1.5vh",
-    marginRight:'1vw',
+  padding: "1.5vh",
+  marginRight: "1vw",
   borderRadius: 200,
   border: `solid 1px white`,
   backgroundColor: "rgba(0,0,0,0)",
-  color: 'white',
+  color: "white",
   cursor: "pointer",
   transform: "rotate(180deg)",
   transition: "0.2s ease",
   "&:hover": {
     color: BLUECOLOR,
-    backgroundColor:'white',
+    backgroundColor: "white",
   },
 });
 const ArrowRight = styled(EastIcon)({
@@ -115,16 +118,23 @@ const ArrowRight = styled(EastIcon)({
   border: `solid 1px white`,
   backgroundColor: "rgba(0,0,0,0)",
   cursor: "pointer",
-  color: 'white',
+  color: "white",
   transition: "all 0.2s ease",
   "&:hover": {
     color: BLUECOLOR,
-    backgroundColor:'white',
+    backgroundColor: "white",
   },
 });
 const Register = () => {
   const handleSubmit = (values: any) => {
     console.log(values); // Aquí puedes realizar la lógica de envío del formulario
+  };
+  const { setLogin } = useContext(AppContext);
+  const history = useHistory();
+
+  const handleClick = () => {
+    setLogin(true);
+    history.push('/');
   };
 
   return (
@@ -176,42 +186,47 @@ const Register = () => {
                           placeholder="Password"
                         />
                       </div>
+                      <Button onClick={() => handleClick()}>
+                        Create account
+                      </Button>
 
-                      <Button>Create account</Button>
+                
+                        <ButtonSocial onClick={() => handleClick()}>
+                          <Grid
+                            container
+                            alignItems={"center"}
+                            justifyContent={"center"}
+                          >
+                            <Grid item xs={2}>
+                              <Icon src={google} />
+                            </Grid>
+                            <Grid item xs={6}>
+                              <p style={{ textAlign: "left", margin: 0 }}>
+                                Sign up with google
+                              </p>
+                            </Grid>
+                          </Grid>
+                        </ButtonSocial>
+                
+             
+                        <ButtonSocial onClick={() => handleClick()}>
+                          <Grid
+                            container
+                            alignItems={"center"}
+                            justifyContent={"center"}
+                          >
+                            <Grid item xs={2}>
+                              <Icon src={facebook} />
+                            </Grid>
+                            <Grid item xs={6}>
+                              <p style={{ textAlign: "left", margin: 0 }}>
+                                Sign up with facebook
+                              </p>
+                            </Grid>
+                          </Grid>
+                        </ButtonSocial>
+          
 
-                      <ButtonSocial>
-                        <Grid
-                          container
-                          alignItems={"center"}
-                          justifyContent={"center"}
-                        >
-                          <Grid item xs={2}>
-                            <Icon src={google} />
-                          </Grid>
-                          <Grid item xs={6}>
-                            <p style={{ textAlign: "left", margin: 0 }}>
-                              Sign up with google
-                            </p>
-                          </Grid>
-                        </Grid>
-                      </ButtonSocial>
-
-                      <ButtonSocial>
-                        <Grid
-                          container
-                          alignItems={"center"}
-                          justifyContent={"center"}
-                        >
-                          <Grid item xs={2}>
-                            <Icon src={facebook} />
-                          </Grid>
-                          <Grid item xs={6}>
-                            <p style={{ textAlign: "left", margin: 0 }}>
-                              Sign up with facebook
-                            </p>
-                          </Grid>
-                        </Grid>
-                      </ButtonSocial>
                       <div>
                         <p
                           style={{
@@ -270,7 +285,12 @@ const Register = () => {
                   <Grid
                     item
                     xs={12}
-                    style={{ display: "flex", justifyContent: "flex-end", marginBottom:'1vw',marginRight:'1vw'}}
+                    style={{
+                      display: "flex",
+                      justifyContent: "flex-end",
+                      marginBottom: "1vw",
+                      marginRight: "1vw",
+                    }}
                   >
                     <ArrowLeft />
                     <ArrowRight />

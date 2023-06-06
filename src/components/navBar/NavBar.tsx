@@ -1,8 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Grid } from "@mui/material";
 import styled from "@emotion/styled";
 import Logo from "../../assets/logo.png";
 import { motion } from "framer-motion";
+import { BLUECOLOR } from "../../colors/Colors";
+import { AppContext } from "../../context/AppContext";
+import { useHistory } from "react-router-dom";
 const Image = styled.img({
   width: "50%",
 });
@@ -11,7 +14,6 @@ const Text = styled.p({
   letterSpacing: 1,
   fontWeight: 300,
   margin: 0,
-
   width: "100%",
 });
 const Link = styled.a({
@@ -37,7 +39,6 @@ const CountMarket = styled.button({
   borderRadius: 200,
   fontWeight: 400,
   fontSize: 13,
-  marginLeft: "50%",
 });
 const Container = styled.header({
   paddingTop: "2.5vh",
@@ -52,7 +53,6 @@ const WhiteText = styled.p({
   fontWeight: 500,
   letterSpacing: 1.5,
   color: "white",
-
   margin: 0,
 });
 const SubrayedText = styled(WhiteText)({
@@ -68,10 +68,32 @@ const BlackContainer = styled.div({
   flexDirection: "row",
   justifyContent: "center",
 });
+const ButtonLogin = styled.div({
+  backgroundColor: BLUECOLOR,
+  color: "white",
+  fontWeight: 700,
+  width: "100%",
+  borderRadius: 200,
+  padding: "0.5vw 0",
+  zIndex: 999,
+  position: "relative",
+  cursor: "pointer",
+});
 const NavBar = () => {
+  const { login, setLogin } = useContext(AppContext);
   const [isScrolled, setIsScrolled] = useState(false);
   const [lastScrollTime, setLastScrollTime] = useState(0);
   const [isActive, setIsActive] = useState(false);
+  const history = useHistory();
+
+  const handleClick = () => {
+    if (login) {
+      setLogin(false);
+    }
+    if(!login){
+      history.push("/login");
+    }
+  };
 
   const toggleSearchBar = () => {
     setIsActive(!isActive);
@@ -168,10 +190,7 @@ const NavBar = () => {
                         </Link>
                       </Grid>
                       <Grid item xs={2}>
-                        <Link
-                          href="/product"
-                          style={{ textAlign: "left" }}
-                        >
+                        <Link href="/product" style={{ textAlign: "left" }}>
                           WOMEN
                         </Link>
                       </Grid>
@@ -240,12 +259,20 @@ const NavBar = () => {
                       ></path>
                     </svg>
                   </Grid>
-                  <Grid item xs={5} md={3} style={{display:'flex',justifyContent:'flex-start'
-                  }}>
+                  <Grid
+                    item
+                    xs={5}
+                    md={3}
+                    style={{ display: "flex", justifyContent: "flex-start" }}
+                  >
                     <Image src={Logo} />
                   </Grid>
                   <Grid item xs={4} md={3}>
-                    <Grid container justifyContent={"flex-end"}>
+                    <Grid
+                      container
+                      justifyContent={"flex-end"}
+                      alignItems={"center"}
+                    >
                       <Grid
                         item
                         xs={2}
@@ -313,9 +340,9 @@ const NavBar = () => {
                             alignItems: "center",
                             position: "relative",
                             zIndex: 99999,
+                            opacity: login ? 1 : 0,
                           }}
                         >
-                            
                           <svg
                             width="22"
                             height="22"
@@ -332,7 +359,7 @@ const NavBar = () => {
                           </svg>
                         </div>
                       </Grid>
-                      <Grid item xs={2} style={{ justifyContent: "flex-end" }}>
+                      <Grid item xs={2}>
                         <div
                           style={{
                             height: "3vw",
@@ -342,13 +369,22 @@ const NavBar = () => {
                             position: "relative",
                             zIndex: 99999,
                             backgroundColor: "white",
-                            width: "8vw",
+                            opacity: login ? 1 : 0,
                           }}
                         >
                           <CountMarket aria-label="My cart">
                             <p style={{ margin: 0 }}>0</p>
                           </CountMarket>
                         </div>
+                      </Grid>
+                      <Grid item xs={4}>
+                          <ButtonLogin
+                            style={{ textAlign: "center" }}
+                            onClick={() => handleClick()}
+                          >
+                            {login ? "Log Out" : "Sign In"}
+                          </ButtonLogin>
+
                       </Grid>
                     </Grid>
                   </Grid>
