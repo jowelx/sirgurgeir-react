@@ -340,10 +340,11 @@ const NavBar = () => {
                             alignItems: "center",
                             position: "relative",
                             zIndex: 99999,
-                            opacity: login ? 1 : 0,
+                         
                           }}
                         >
                           <svg
+                            style={{   opacity: login ? 1 : 0,}}
                             width="22"
                             height="22"
                             viewBox="0 0 20 20"
@@ -369,10 +370,10 @@ const NavBar = () => {
                             position: "relative",
                             zIndex: 99999,
                             backgroundColor: "white",
-                            opacity: login ? 1 : 0,
+                       
                           }}
                         >
-                          <CountMarket aria-label="My cart">
+                          <CountMarket aria-label="My cart"             style={{   opacity: login ? 1 : 0,}}>
                             <p style={{ margin: 0 }}>0</p>
                           </CountMarket>
                         </div>
