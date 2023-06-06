@@ -10,6 +10,7 @@ import Contact from "../views/Contact/Contact";
 import Cart from "../views/Cart/Cart";
 import IndexLogin from "../views/Login";
 import PaymentGateWay from "../views/PaymentGateway/PaymentGateway";
+import WishList from "../views/Wishlist/WishList";
 interface PublicRouteProps {
   component: React.ComponentType<any>;
   [key: string]: any;
@@ -36,6 +37,7 @@ const Routes: React.FC = () => {
       <PublicRoute path="/Cart" component={Cart} />
       <PublicRoute path="/Login" component={IndexLogin} />
       <PublicRoute path="/payment" component={PaymentGateWay} />
+      <PublicRoute path="/wishList" component={WishList} />
     </Switch>
   );
 };

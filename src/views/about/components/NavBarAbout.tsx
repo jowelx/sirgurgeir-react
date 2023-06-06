@@ -31,7 +31,7 @@ const Container = styled.div({
 const Icon = styled.img({
   width: 25,
   height: 25,
-  marginTop:'-0.3vw'
+  marginTop: "-0.3vw",
 });
 const Link = styled.a({
   width: "100%",
@@ -49,9 +49,8 @@ const NavBarAbout = () => {
       <Grid container justifyContent={"space-around"}>
         <Grid item xs={2}>
           <a href="/">
-          <Logo alt="Sirgurgeir" src={imgLogo} />
+            <Logo alt="Sirgurgeir" src={imgLogo} />
           </a>
-
         </Grid>
         <Grid item xs={5}>
           <Grid container>
@@ -67,15 +66,18 @@ const NavBarAbout = () => {
             <Grid item xs={2}>
               <Grid container>
                 <Grid item xs={4}>
-                  <Icon src={IconHeart} />
+                  <Link href="/wishlist">
+                    <Icon src={IconHeart} />
+                  </Link>
                 </Grid>
                 <Grid item xs={4}>
-                  <Icon src={IconPerson} />
+                  <Link href="/searchproduct">
+                    <Icon src={IconPerson} />
+                  </Link>
                 </Grid>
                 <Grid item xs={4}>
-                  <Link href={"cart"}>
-       
-                  <Icon src={IconShop} />
+                  <Link href={"/cart"}>
+                    <Icon src={IconShop} />
                   </Link>
                 </Grid>
               </Grid>
