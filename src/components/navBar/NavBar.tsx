@@ -13,7 +13,7 @@ const Image = styled.img({
 const Icon = styled.img({
   width: 25,
   height: 25,
-  marginTop:'-0.3vw'
+  marginTop: "-0.3vw",
 });
 const Text = styled.p({
   fontSize: "1.5vh",
@@ -348,12 +348,17 @@ const NavBar = () => {
                             zIndex: 99999,
                           }}
                         >
-                         {login&& <Link href="/wishlist">
-                                                    <Icon
-                                                style={{ opacity: login ? 1 : 0,marginTop:'0.2vw' }}
-                            src={IconHeart} />
-                          </Link>}
-
+                          {login && (
+                            <Link href="/wishlist">
+                              <Icon
+                                style={{
+                                  opacity: login ? 1 : 0,
+                                  marginTop: "0.2vw",
+                                }}
+                                src={IconHeart}
+                              />
+                            </Link>
+                          )}
                         </div>
                       </Grid>
                       <Grid item xs={2}>
@@ -368,12 +373,14 @@ const NavBar = () => {
                             backgroundColor: "white",
                           }}
                         >
-                          <CountMarket
-                            aria-label="My cart"
-                            style={{ opacity: login ? 1 : 0 }}
-                          >
-                            <p style={{ margin: 0 }}>0</p>
-                          </CountMarket>
+                          <Link href="/cart">
+                            <CountMarket
+                              aria-label="My cart"
+                              style={{ opacity: login ? 1 : 0,cursor:'pointer' }}
+                            >
+                              <p style={{ margin: 0 }}>0</p>
+                            </CountMarket>
+                          </Link>
                         </div>
                       </Grid>
                       <Grid item xs={4}>
