@@ -6,6 +6,7 @@ import IconPerson from "../../../assets/IconPerson.png";
 import IconShop from "../../../assets/IconShop.png";
 import IconHeart from "../../../assets/IconHeart.png";
 import { PrincipalFont } from "../../../fonts/Fonts";
+import { motion } from "framer-motion";
 const dataNav = [
   { name: "ABOUT", url: "/about" },
   { name: "MEN", url: "/SearchProduct" },
@@ -31,7 +32,7 @@ const Container = styled.div({
 const Icon = styled.img({
   width: 25,
   height: 25,
-  marginTop: "-0.3vw",
+  marginTop: "0.5vw",
 });
 const Link = styled.a({
   width: "100%",
@@ -46,13 +47,8 @@ const Link = styled.a({
 const NavBarAbout = () => {
   return (
     <Container>
-      <Grid container justifyContent={"space-around"}>
-        <Grid item xs={2}>
-          <a href="/">
-            <Logo alt="Sirgurgeir" src={imgLogo} />
-          </a>
-        </Grid>
-        <Grid item xs={5}>
+      <Grid container justifyContent={"space-around"} alignItems={"center"}>
+        <Grid item xs={4}>
           <Grid container>
             {dataNav.map((item, index) => {
               return (
@@ -63,24 +59,73 @@ const NavBarAbout = () => {
                 </Grid>
               );
             })}
+          </Grid>
+        </Grid>
+        <Grid item xs={2}>
+          <a href="/">
+            <Logo alt="Sirgurgeir" src={imgLogo} />
+          </a>
+        </Grid>
+        <Grid item xs={4}>
+          <Grid container>
+            <Grid item xs={6}>
+              <Link href="/searchproduct">
+              <div style={{ display: "flex", alignItems: "center" }}>
+                <motion.input
+                  type="text"
+                  placeholder="Buscar"
+                  transition={{ duration: 0.5 }}
+                  style={{
+                    width: "100%",
+                    padding: "0.5rem",
+                    zIndex: 99,
+                  }}
+                />
+                <div
+                  style={{
+                    height: "3vw",
+                    marginLeft: "1vw",
+                    display: "flex",
+                    flexDirection: "row",
+                    alignItems: "center",
+                    position: "relative",
+                    zIndex: 99999,
+                    backgroundColor: "white",
+                  }}
+                >
+                  <svg
+                    style={{
+                      textAlign: "right",
+                      backgroundColor: "white",
+                    }}
+                    width="22"
+                    height="22"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      clipRule="evenodd"
+                      d="M10.1657 2.99992C6.76378 2.44425 3.55557 4.75156 2.99992 8.15343C2.44426 11.5553 4.75157 14.7635 8.15344 15.3192C11.5553 15.8748 14.7635 13.5675 15.3192 10.1657C15.8748 6.76379 13.5675 3.55558 10.1657 2.99992ZM2.09471 8.00557C2.73203 4.10377 6.41171 1.45739 10.3135 2.09471C14.2153 2.73204 16.8617 6.41172 16.2244 10.3135C16.0094 11.6298 15.4481 12.8032 14.6489 13.7559L18.2844 17.4846C18.4612 17.666 18.4575 17.9563 18.2762 18.1331C18.0948 18.3099 17.8045 18.3063 17.6277 18.1249L14.0152 14.4198C12.4522 15.8606 10.2662 16.5936 8.00558 16.2244C4.10378 15.5871 1.4574 11.9074 2.09471 8.00557Z"
+                      fill="black"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+              </Link>
+
+            </Grid>
             <Grid item xs={2}>
-              <Grid container>
-                <Grid item xs={4}>
-                  <Link href="/wishlist">
-                    <Icon src={IconHeart} />
-                  </Link>
-                </Grid>
-                <Grid item xs={4}>
-                  <Link href="/searchproduct">
-                    <Icon src={IconPerson} />
-                  </Link>
-                </Grid>
-                <Grid item xs={4}>
-                  <Link href={"/cart"}>
-                    <Icon src={IconShop} />
-                  </Link>
-                </Grid>
-              </Grid>
+              <Link href="/wishlist">
+                <Icon src={IconHeart} />
+              </Link>
+            </Grid>
+
+            <Grid item xs={1}>
+              <Link href={"/cart"}>
+                <Icon src={IconShop} />
+              </Link>
             </Grid>
           </Grid>
         </Grid>

@@ -80,7 +80,7 @@ const ButtonLogin = styled.div({
   fontWeight: 700,
   width: "100%",
   borderRadius: 200,
-  padding: "0.5vw 0",
+  padding: "0.6vw 0",
   zIndex: 999,
   position: "relative",
   cursor: "pointer",
@@ -337,7 +337,7 @@ const NavBar = () => {
                           }}
                         ></motion.input>
                       </Grid>
-                      <Grid item xs={2}>
+                    { login&& <Grid item xs={2}>
                         <div
                           style={{
                             backgroundColor: "white",
@@ -360,8 +360,8 @@ const NavBar = () => {
                             </Link>
                           )}
                         </div>
-                      </Grid>
-                      <Grid item xs={2}>
+                      </Grid>}
+                     {login&&  <Grid item xs={2}>
                         <div
                           style={{
                             height: "3vw",
@@ -382,14 +382,18 @@ const NavBar = () => {
                             </CountMarket>
                           </Link>
                         </div>
-                      </Grid>
+                      </Grid>}
                       <Grid item xs={4}>
-                        <ButtonLogin
+                        <div
+                        style={{width:'100%',backgroundColor:'white',padding:'0 0.5vw',position:'relative',zIndex:999}}>
+              <ButtonLogin
                           style={{ textAlign: "center" }}
                           onClick={() => handleClick()}
                         >
                           {login ? "Log Out" : "Sign In"}
                         </ButtonLogin>
+                        </div>
+          
                       </Grid>
                     </Grid>
                   </Grid>
