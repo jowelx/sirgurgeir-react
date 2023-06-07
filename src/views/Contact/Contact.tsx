@@ -7,6 +7,7 @@ const Contact = () => {
         <NavBarAbout />
         <br/>    <br/>
         <FormContact />
+           <br/>   <br/>
         <Footer />
     </>)
 }

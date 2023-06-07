@@ -23,6 +23,7 @@ const Text = styledE.p({
   display: "inline-block",
   fontSize: "1vw",
   margin: 0,
+
 });
 const TextStrong = styledE.p({
   display: "inline-block",
@@ -62,7 +63,7 @@ const Content = () => {
             <TextStrong>"hoodies"</TextStrong>
           </div>
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={3}>
           <div
             style={{
               display: "flex",
@@ -72,10 +73,10 @@ const Content = () => {
               width: "100%",
             }}
           >
-            <Text>Sort by</Text>
+            <Text style={{  width:'100%'}}>Sort by</Text>
 
             <CustomSelect
-              style={{ width: "8vw" }}
+              style={{ width: "7vw",padding:0 }}
               value={age}
               onChange={handleChange}
               displayEmpty

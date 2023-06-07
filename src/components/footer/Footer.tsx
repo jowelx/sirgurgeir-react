@@ -27,9 +27,9 @@ const Text = styled.p({
   fontSize: "1.5vh",
 });
 const Social = styled.img({
-  width: 25,
-  height: 25,
-
+  width: "1.5vw",
+  height: "1.5vw",
+marginTop:'0.5vw',
   cursor: "pointer",
 });
 const ButtonInit = styled.div({
@@ -124,7 +124,7 @@ const Footer = () => {
                     </Grid>
                     <Grid item xs={5}></Grid>
                     <Grid item xs={4}>
-                      <Grid container>
+                      <Grid container alignItems={"center"}>
                         <Grid item xs={4}>
                           <TittleList style={{ margin: 0 }}>Contact</TittleList>
                         </Grid>
