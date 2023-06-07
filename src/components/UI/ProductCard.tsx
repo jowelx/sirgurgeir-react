@@ -15,13 +15,13 @@ const Sale = styled.p({
   backgroundColor: "red",
   top: 0,
   left: 0,
-  fontSize: "1vw",
+  fontSize: "1.8vh",
   color: "white",
   padding: "0.5vw 1vw",
 });
 const Icon = styled.img({
-  height: "2vw",
-  width: "2vw",
+  height: "4vh",
+  width: "4vh",
 });
 const Container = styled.div({
   width: "100%",
@@ -44,12 +44,12 @@ const ContainerIcon = styled.div({
 });
 const Name = styled.p({
   margin: 0,
-  fontSize: "1.2vw",
+  fontSize: "2.5vh",
   textAlign: "left",
 });
 const Price = styled.p({
   margin: 0,
-  fontSize: "0.8vw",
+  fontSize: "2vh",
   fontWeight: 600,
   textAlign: "left",
 });

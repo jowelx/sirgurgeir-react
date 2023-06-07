@@ -7,7 +7,7 @@ import EastIcon from '@mui/icons-material/East';
 import ArrowIcon from "../../../assets/ProductArrow.png";
 import { BLUECOLOR } from "../../../colors/Colors";
 const Title = styled.p({
-  fontSize: "2.5vw",
+  fontSize: "5vh",
   textAlign: "left",
   fontWeight: 600,
 });
@@ -49,9 +49,9 @@ const Products = () => {
           <Title>Currated Picks</Title>
         </Grid>
         <Grid item xs={12}>
-          <Grid container columnSpacing={10}>
+          <Grid container justifyContent={"center"} columnSpacing={10} rowSpacing={4}>
             {data.map((item, index) => (
-             index <=3&& <Grid key={index} item xs={3}>
+             index <=3&& <Grid key={index} item xs={10}md={3}>
                 <ProductCard
                   xl
                   name={item.name}

@@ -19,7 +19,7 @@ const Container = styledE.div({
   borderRadius: 15,
 });
 const Title = styledE.p({
-  fontSize: "1vw",
+  fontSize: "2vh",
   margin: 0,
   fontFamily: PrincipalFont,
   fontWeight: 400,

@@ -13,16 +13,16 @@ const Container = styled.div({
 const BlueTittle = styled.p({
   fontFamily: PrincipalFont,
   color: BLUECOLOR,
-  fontSize: "14vh",
+  fontSize: "11.5vh",
   fontWeight: 700,
   margin: 0,
-lineHeight:'6vw',
+  lineHeight: "10vh",
   display: "inline-block",
 });
 const YellowTittle = styled.p({
   fontFamily: PrincipalFont,
   color: YELLOWCOLOR,
-  fontSize: "14vh",
+  fontSize: "11.5vh",
   fontWeight: 700,
   margin: 0,
   display: "inline-block",
@@ -31,13 +31,13 @@ const Text = styled.p({
   fontFamily: PrincipalFont,
   color: BLUECOLOR,
   fontSize: "3vh",
-  marginBottom:'0.1vw'
+  marginBottom: "0.1vw",
 });
 const SubText = styled.p({
   fontFamily: PrincipalFont,
   color: BLUECOLOR,
   fontSize: "1.8vh",
-  marginTop:'.1vw'
+  marginTop: ".1vw",
 });
 const PersonIcon = styled.img({
   width: 30,
@@ -99,11 +99,7 @@ const ArrowRight = styled(EastIcon)({
 const Body = () => {
   return (
     <>
-      <Grid
-        container
-        justifyContent={"center"}
-        style={{marginTop:'4vw'}}
-      >
+      <Grid container justifyContent={"center"} style={{ marginTop: "8vh" }}>
         <Grid item xs={12}>
           <BlueTittle>About</BlueTittle>
         </Grid>
@@ -115,7 +111,7 @@ const Body = () => {
             inceptos himenaeos.
           </Text>
         </Grid>
-        <Grid item xs={5}>
+        <Grid item xs={12} md={5}>
           <Grid
             container
             justifyContent={"flex-start"}
@@ -135,10 +131,10 @@ const Body = () => {
             </Grid>
           </Grid>
         </Grid>
-        <Grid item xs={5}>
+        <Grid item xs={12} md={5}>
           <Grid container justifyContent={"flex-end"}>
             {data.map((item) => (
-              <Grid key={item} item xs={10}>
+              <Grid key={item} item xs={11} md={10}>
                 <Grid container alignItems={"center"}>
                   <Grid item xs={2}>
                     <ContainerIconPerson>
@@ -163,17 +159,17 @@ const Body = () => {
         </Grid>
         <Grid item xs={12}>
           <Container>
-            <BlueTittle>
-              What our happy <br /> customers say
-            </BlueTittle>
+            <BlueTittle style={{fontSize:'10vh'}}>What our happy</BlueTittle>
+            <br />
+            <BlueTittle style={{fontSize:'10vh'}}>customers say</BlueTittle>
           </Container>
         </Grid>
         <Grid item xs={10}>
           <Grid container style={{ marginTop: "4vw" }}>
             {LastData.map((item, index) => (
-              <Grid item xs={4}>
+              <Grid item xs={12} md={4}>
                 <Grid container>
-                  <Grid item xs={2}>
+                  <Grid item xs={4} md={2}>
                     <ContainerIconPerson style={{ border: 0 }}>
                       <PersonIcon src={ComillasIcon} />
                     </ContainerIconPerson>

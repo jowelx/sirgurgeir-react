@@ -18,7 +18,7 @@ const ContainerIcon = styled.div({
   borderRadius: 400,
   width: 40,
   height: 40,
-  marginTop:'2vh'
+  marginTop: "2vh",
 });
 const ImageBackground = styled.div({
   width: "100%",
@@ -34,17 +34,17 @@ const ShadowContent = styled.div({
 });
 const Title = styled.p({
   margin: 0,
-  fontFamily:PrincipalFont ,
+  fontFamily: PrincipalFont,
   fontWeight: 700,
-  lineHeight:'6vw',
+  lineHeight: "7vw",
   color: "white",
-  fontSize: "14vh",
+  fontSize: "7vw",
   textAlign: "left",
   borderBottom: "solid 2px rgb(255,255,255)",
-    marginTop:'1vh'
+  marginTop: "1vh",
 });
 const Text = styled.p({
-  fontFamily: PrincipalFont ,
+  fontFamily: PrincipalFont,
   textAlign: "justify",
   fontSize: "3vh",
   color: "white",
@@ -63,12 +63,16 @@ const Header = () => {
       <ImageBackground>
         <ShadowContent>
           <ContainerText>
-            <Title>
-              The best collection of
-              <br /> chairs is here
-            </Title>
             <Grid container>
               <Grid item xs={11}>
+                <Title>
+                  The best collection of
+                  <br /> chairs is here
+                </Title>
+              </Grid>
+            </Grid>
+            <Grid container>
+              <Grid item xs={12}md={11}>
                 <Text>
                   Qorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
                   vulputate libero et velit interdum, ac <br />
@@ -76,7 +80,7 @@ const Header = () => {
                   torquent per conubia nostra, per inceptos <br /> himenaeos.
                 </Text>
               </Grid>
-              <Grid item xs={1}>
+              <Grid item xs={12}md={1}>
                 <ContainerIcon>
                   <Icon src={ArrowDown} />
                 </ContainerIcon>

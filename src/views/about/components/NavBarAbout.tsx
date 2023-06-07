@@ -7,6 +7,8 @@ import IconShop from "../../../assets/IconShop.png";
 import IconHeart from "../../../assets/IconHeart.png";
 import { PrincipalFont } from "../../../fonts/Fonts";
 import { motion } from "framer-motion";
+import MenuIcon from '@mui/icons-material/Menu';
+import MenuMobile from "./MenuMobile";
 import { BLUECOLOR } from "../../../colors/Colors";
 const dataNav = [
   { name: "ABOUT", url: "/about" },
@@ -25,10 +27,10 @@ const Button = styled.div({
   fontFamily: PrincipalFont,
 });
 const Container = styled.div({
-  position: "absolute",
   left: 0,
   right: 0,
-  top: "5vh",
+  marginTop: "2vh",
+  marginBottom:'2vh'
 });
 const Icon = styled.img({
   width: "1.9vw",
@@ -48,8 +50,8 @@ const Input = styled(motion.input)({
   width: "100%",
   padding: "0.5vw",
   zIndex: 99,
-  outline:0,
-  borderRadius:2,
+  outline: 0,
+  borderRadius: 2,
   fontSize: "1vw",
   color: BLUECOLOR,
   border: "solid .1vw rgb(100,100,100)",
@@ -59,9 +61,33 @@ const Input = styled(motion.input)({
   },
 });
 const NavBarAbout = () => {
+    const [state, setState] = React.useState({
+    top: false,
+    left: false,
+    bottom: false,
+    right: false,
+  });
+
+  const toggleDrawer =
+    (anchor: any, open: boolean) =>
+    (event: React.KeyboardEvent | React.MouseEvent) => {
+      if (
+        event.type === 'keydown' &&
+        ((event as React.KeyboardEvent).key === 'Tab' ||
+          (event as React.KeyboardEvent).key === 'Shift')
+      ) {
+        return;
+      }
+
+      setState({ ...state, [anchor]: open });
+    };
   return (
     <Container>
-      <Grid container justifyContent={"space-around"} alignItems={"center"}>
+      <MenuMobile
+        toggleDrawer={toggleDrawer}
+        state={state}
+      />
+      <Grid container justifyContent={"space-around"} alignItems={"center"} sx={{ display: { xs: 'none' ,md:'flex'} }}>
         <Grid item xs={4}>
           <Grid container>
             {dataNav.map((item, index) => {
@@ -83,27 +109,26 @@ const NavBarAbout = () => {
         <Grid item xs={4}>
           <Grid container alignItems={"center"}>
             <Grid item xs={6}>
-           
-                <div style={{ display: "flex", alignItems: "center" }}>
-                  <Input
-                    type="text"
-                    placeholder="Buscar"
-                    transition={{ duration: 0.5 }}
-                    style={{}}
-                  />
-                  <div
-                    style={{
-                      height: "3vw",
-                      marginLeft: "1vw",
-                      display: "flex",
-                      flexDirection: "row",
-                      alignItems: "center",
-                      position: "relative",
-                      zIndex: 99999,
-                    }}
+              <div style={{ display: "flex", alignItems: "center" }}>
+                <Input
+                  type="text"
+                  placeholder="Buscar"
+                  transition={{ duration: 0.5 }}
+                  style={{}}
+                />
+                <div
+                  style={{
+                    height: "3vw",
+                    marginLeft: "1vw",
+                    display: "flex",
+                    flexDirection: "row",
+                    alignItems: "center",
+                    position: "relative",
+                    zIndex: 99999,
+                  }}
                 >
                   <Link href="/searchproduct">
-                                        <svg
+                    <svg
                       style={{
                         textAlign: "right",
                       }}
@@ -120,11 +145,9 @@ const NavBarAbout = () => {
                         fill="black"
                       ></path>
                     </svg>
-                     </Link>
-
-                  </div>
+                  </Link>
                 </div>
-    
+              </div>
             </Grid>
             <Grid item xs={2}>
               <Link href="/wishlist">
@@ -136,6 +159,61 @@ const NavBarAbout = () => {
               <Link href={"/cart"}>
                 <Icon src={IconShop} />
               </Link>
+            </Grid>
+          </Grid>
+        </Grid>
+      </Grid>
+            <Grid container justifyContent={"space-around"} alignItems={"center"} sx={{ display: { xs: 'flex' ,md:'none'} }}>
+        <Grid item xs={4}>
+          <MenuIcon  onClick={toggleDrawer('left', true)}/>
+        </Grid>
+        <Grid item xs={4}>
+          <a href="/">
+            <Logo alt="Sirgurgeir" src={imgLogo} style={{width:'100%'}} />
+          </a>
+        </Grid>
+        <Grid item xs={4}>
+          <Grid container alignItems={"center"} justifyContent={"center"}>
+            <Grid item xs={6}>
+              <div style={{ display: "flex", alignItems: "center",width:'12vh' }}>
+                <Input
+                  type="text"
+                  placeholder="Buscar"
+                  transition={{ duration: 0.5 }}
+                  style={{fontSize:'2vh'}}
+                />
+                <div
+                  style={{
+                    height: "3vw",
+                    marginLeft: "1vw",
+                    display: "flex",
+                    flexDirection: "row",
+                    alignItems: "center",
+                    position: "relative",
+                    zIndex: 99999,
+                  }}
+                >
+                  <Link href="/searchproduct">
+                    <svg
+                      style={{
+                        textAlign: "right",
+                      }}
+                      width="3vw"
+                      height="3vw"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        clipRule="evenodd"
+                        d="M10.1657 2.99992C6.76378 2.44425 3.55557 4.75156 2.99992 8.15343C2.44426 11.5553 4.75157 14.7635 8.15344 15.3192C11.5553 15.8748 14.7635 13.5675 15.3192 10.1657C15.8748 6.76379 13.5675 3.55558 10.1657 2.99992ZM2.09471 8.00557C2.73203 4.10377 6.41171 1.45739 10.3135 2.09471C14.2153 2.73204 16.8617 6.41172 16.2244 10.3135C16.0094 11.6298 15.4481 12.8032 14.6489 13.7559L18.2844 17.4846C18.4612 17.666 18.4575 17.9563 18.2762 18.1331C18.0948 18.3099 17.8045 18.3063 17.6277 18.1249L14.0152 14.4198C12.4522 15.8606 10.2662 16.5936 8.00558 16.2244C4.10378 15.5871 1.4574 11.9074 2.09471 8.00557Z"
+                        fill="black"
+                      ></path>
+                    </svg>
+                  </Link>
+                </div>
+              </div>
             </Grid>
           </Grid>
         </Grid>

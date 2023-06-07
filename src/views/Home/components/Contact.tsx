@@ -66,7 +66,7 @@ const Contact = () => {
   return (
     <Container>
       <Grid container spacing={4} justifyContent={"space-between"}>
-        <Grid item xs={6}>
+        <Grid item xs={12}md={6}>
           <Grid container justifyContent={"space-between"}>
             <Grid item xs={12}>
               <Tittle>
@@ -106,7 +106,7 @@ const Contact = () => {
             </Grid>
           </Grid>
         </Grid>
-              <Grid item xs={5}>
+              <Grid item xs={12}md={5}>
                   <Image src={'./assets/16.png'}/>
         </Grid>
       </Grid>

@@ -27,7 +27,7 @@ const data = [
   },
 ];
 const Title = styled.p({
-  fontSize: "2.5vw",
+  fontSize: "5vh",
   textAlign: "left",
   fontWeight: 600,
 });
@@ -40,7 +40,7 @@ const Image = styled.img({
 });
 const ContainerImage = styled.div({
   position: "relative",
-  height: "22vw",
+  height: "40vh",
   backgroundColor: "rgba(0,0,0,1)",
   borderRadius: 12,
   overflow: "hidden",
@@ -68,9 +68,9 @@ const Category = () => {
           <Title>Currated picks</Title>
         </Grid>
         <Grid item xs={12}>
-          <Grid container columnSpacing={4}>
+          <Grid container justifyContent={"center"} columnSpacing={4} rowSpacing={5}>
             {data.map((item, index) => (
-              <Grid item xs={3}>
+              <Grid item xs={8}md={3}>
                 <ContainerImage>
                   <Image src={item.img} />
                   <div>

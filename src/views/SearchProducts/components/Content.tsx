@@ -21,13 +21,12 @@ const CustomSelect = styled(Select)(({ theme }) => ({
 
 const Text = styledE.p({
   display: "inline-block",
-  fontSize: "1vw",
+  fontSize: "2.3vh",
   margin: 0,
-
 });
 const TextStrong = styledE.p({
   display: "inline-block",
-  fontSize: "1vw",
+  fontSize: "2.3vh",
   margin: 0,
   fontWeight: 600,
 });
@@ -53,17 +52,35 @@ const Content = () => {
   return (
     <>
       <Grid container justifyContent={"space-between"} alignItems={"center"}>
-        <Grid item xs={8}>
+        <Grid item xs={12} md={8}>
           <div style={{ display: "flex", flexDirection: "row" }}>
-            <Text>Showing &nbsp;</Text>
-            <TextStrong>9 &nbsp;</TextStrong>
-            <Text>results from total &nbsp;</Text>
-            <TextStrong>37&nbsp;</TextStrong>
-            <Text>for&nbsp;</Text>
-            <TextStrong>"hoodies"</TextStrong>
+            <Grid container>
+              <Grid item xs={12} sx={{ display: { xs: "none", md: "flex" } }}>
+                <Text>Showing &nbsp;</Text>
+                <TextStrong>9 &nbsp;</TextStrong>
+                <Text>results from total &nbsp;</Text>
+                <TextStrong>37&nbsp;</TextStrong>
+                <Text>for&nbsp;</Text>
+                <TextStrong>"hoodies"</TextStrong>
+              </Grid>
+              <Grid item xs={12} sx={{ display: { xs: "flex", md: "none" } }}>
+                <Grid container>
+                  <Grid item xs={12}>
+                    <Text>Showing &nbsp;</Text>
+                    <TextStrong>9 &nbsp;</TextStrong>
+                    <Text>results from total &nbsp;</Text>
+                  </Grid>
+                  <Grid item xs={12}>
+                    <TextStrong>37&nbsp;</TextStrong>
+                    <Text>for&nbsp;</Text>
+                    <TextStrong>"hoodies"</TextStrong>
+                  </Grid>
+                </Grid>
+              </Grid>
+            </Grid>
           </div>
         </Grid>
-        <Grid item xs={3}>
+        <Grid item xs={12} md={3}>
           <div
             style={{
               display: "flex",
@@ -73,10 +90,10 @@ const Content = () => {
               width: "100%",
             }}
           >
-            <Text style={{  width:'100%'}}>Sort by</Text>
+            <Text style={{ width: "100%" }}>Sort by</Text>
 
             <CustomSelect
-              style={{ width: "7vw",padding:0 }}
+              style={{ width: "7vw", padding: 0 }}
               value={age}
               onChange={handleChange}
               displayEmpty
@@ -88,7 +105,7 @@ const Content = () => {
             </CustomSelect>
           </div>
         </Grid>
-        <Grid item xs={7}>
+        <Grid item xs={12} md={7}>
           <div
             style={{
               display: "flex",
@@ -97,17 +114,39 @@ const Content = () => {
               alignItems: "center",
             }}
           >
-            <Text>Aplied Filters:</Text>
-            <Chip label="Hoodies" variant="outlined" onDelete={handleDelete} />
-            <Chip label="$50-$150" variant="outlined" onDelete={handleDelete} />
-            <Chip label="Largue" variant="outlined" onDelete={handleDelete} />
+            <Grid container>
+              <Grid item xs={12} md={3}>
+                <Text>Aplied Filters:</Text>
+              </Grid>
+              <Grid item xs={6} md={3}>
+                <Chip
+                  label="Hoodies"
+                  variant="outlined"
+                  onDelete={handleDelete}
+                />
+              </Grid>
+              <Grid item xs={6} md={3}>
+                <Chip
+                  label="$50-$150"
+                  variant="outlined"
+                  onDelete={handleDelete}
+                />
+              </Grid>
+              <Grid item xs={6} md={3}>
+                <Chip
+                  label="Largue"
+                  variant="outlined"
+                  onDelete={handleDelete}
+                />
+              </Grid>
+            </Grid>
           </div>
         </Grid>
         <Grid item xs={12}>
           <div style={{ minHeight: "70vh", margin: "2vw 0" }}>
             <Grid container spacing={4}>
               {data.map((item, index) => (
-                <Grid item xs={4}>
+                <Grid item xs={12} md={4}>
                   <ProductCard
                     img={item.img}
                     name={item.name}

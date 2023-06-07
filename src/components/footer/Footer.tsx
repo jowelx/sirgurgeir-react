@@ -27,9 +27,9 @@ const Text = styled.p({
   fontSize: "1.5vh",
 });
 const Social = styled.img({
-  width: "1.5vw",
-  height: "1.5vw",
-marginTop:'0.5vw',
+  width: "3vh",
+  height: "3vh",
+  marginTop:'0.5vw',
   cursor: "pointer",
 });
 const ButtonInit = styled.div({
@@ -41,7 +41,6 @@ const ButtonInit = styled.div({
   display: "flex",
   alignItems: "center",
   justifyContent: "space-around",
-  marginLeft: 60,
 });
 const Divider = styled.div({
   height: 1,
@@ -84,11 +83,11 @@ const Footer = () => {
   return (
     <Container>
       <Grid container justifyContent={"center"}>
-        <Grid item xs={11}>
+        <Grid item xs={10} md={11}>
           <Grid container justifyContent={"space-between"}>
-            <Grid item xs={3}>
+            <Grid item xs={12}md={3}>
               <Grid container alignItems={"center"}>
-                <Grid item xs={10}>
+                <Grid item xs={12}md={10}>
                   <Logo src={"./assets/logo.png"} />
                 </Grid>
                 <Grid item xs={12}>
@@ -96,12 +95,12 @@ const Footer = () => {
                 </Grid>
               </Grid>
             </Grid>
-            <Grid item xs={7}>
+            <Grid item xs={12}md={7}>
               <Grid container rowSpacing={6}>
                 {data.map((item, index) => {
                   return (
                     <Grid item xs={3}>
-                      <div style={{ marginLeft: 60 }}>
+                      <div style={{ marginLeft: 0 }}>
                         <TittleList>{item.tittle}</TittleList>
                         {item.content.map((i, e) => {
                           return (
@@ -117,13 +116,13 @@ const Footer = () => {
 
                 <Grid item xs={12}>
                   <Grid container justifyContent={"flex-start"}>
-                    <Grid item xs={3}>
+                    <Grid item xs={6} md={2}>
                       <ButtonInit>
                         Back to top <NorthIcon style={{ fontSize: 15 }} />
                       </ButtonInit>
                     </Grid>
-                    <Grid item xs={5}></Grid>
-                    <Grid item xs={4}>
+                    <Grid item xs={12} md={5}></Grid>
+                    <Grid item xs={12}md={4}>
                       <Grid container alignItems={"center"}>
                         <Grid item xs={4}>
                           <TittleList style={{ margin: 0 }}>Contact</TittleList>
@@ -143,13 +142,13 @@ const Footer = () => {
               <Divider />
             </Grid>
             <Grid item xs={12}>
-              <Grid container justifyContent={"space-between"}>
-                <Grid item xs={4}>
+              <Grid container justifyContent={"space-around"}>
+                <Grid item xs={11}md={4}>
                   <EndText style={{ textAlign: "left" }}>
                     2023. All Rights Reserved
                   </EndText>
                 </Grid>
-                <Grid item xs={4}>
+                <Grid item xs={12}md={4}>
                   <Grid container>
                     {end.map((item, index) => {
                       return (

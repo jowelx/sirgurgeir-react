@@ -7,6 +7,8 @@ import { BLUECOLOR } from "../../colors/Colors";
 import { AppContext } from "../../context/AppContext";
 import { useHistory } from "react-router-dom";
 import IconHeart from "../../assets/IconHeart.png";
+import MenuMobile from "../../views/about/components/MenuMobile";
+import MenuIcon from "@mui/icons-material/Menu";
 const Image = styled.img({
   width: "50%",
 });
@@ -91,7 +93,26 @@ const NavBar = () => {
   const [lastScrollTime, setLastScrollTime] = useState(0);
   const [isActive, setIsActive] = useState(false);
   const history = useHistory();
+  const [state, setState] = React.useState({
+    top: false,
+    left: false,
+    bottom: false,
+    right: false,
+  });
 
+  const toggleDrawer =
+    (anchor: any, open: boolean) =>
+    (event: React.KeyboardEvent | React.MouseEvent) => {
+      if (
+        event.type === "keydown" &&
+        ((event as React.KeyboardEvent).key === "Tab" ||
+          (event as React.KeyboardEvent).key === "Shift")
+      ) {
+        return;
+      }
+
+      setState({ ...state, [anchor]: open });
+    };
   const handleClick = () => {
     if (login) {
       setLogin(false);
@@ -127,6 +148,7 @@ const NavBar = () => {
   }, [isScrolled, lastScrollTime]);
   return (
     <>
+      <MenuMobile toggleDrawer={toggleDrawer} state={state} />
       <Grid
         container
         justifyContent={"center"}
@@ -220,64 +242,24 @@ const NavBar = () => {
                     xs={3}
                     sx={{ display: { xs: "flex", md: "none" } }}
                   >
-                    <svg
-                      width="20"
-                      height="20"
-                      viewBox="0 0 20 20"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M2.28 3.56C2.98692 3.56 3.56 2.98692 3.56 2.28C3.56 1.57308 2.98692 1 2.28 1C1.57308 1 1 1.57308 1 2.28C1 2.98692 1.57308 3.56 2.28 3.56Z"
-                        fill="#231F20"
-                      ></path>
-                      <path
-                        d="M2.28 11.31C2.98692 11.31 3.56 10.7369 3.56 10.03C3.56 9.32308 2.98692 8.75 2.28 8.75C1.57308 8.75 1 9.32308 1 10.03C1 10.7369 1.57308 11.31 2.28 11.31Z"
-                        fill="#231F20"
-                      ></path>
-                      <path
-                        d="M10.03 11.31C10.7369 11.31 11.31 10.7369 11.31 10.03C11.31 9.32308 10.7369 8.75 10.03 8.75C9.32308 8.75 8.75 9.32308 8.75 10.03C8.75 10.7369 9.32308 11.31 10.03 11.31Z"
-                        fill="#231F20"
-                      ></path>
-                      <path
-                        d="M19.0698 10.03C19.0698 10.7369 18.4967 11.31 17.7898 11.31C17.0828 11.31 16.5098 10.7369 16.5098 10.03C16.5098 9.32308 17.0828 8.75 17.7898 8.75C18.4967 8.75 19.0698 9.32308 19.0698 10.03Z"
-                        fill="#231F20"
-                      ></path>
-                      <path
-                        d="M11.31 2.28C11.31 2.98692 10.7369 3.56 10.03 3.56C9.32308 3.56 8.75 2.98692 8.75 2.28C8.75 1.57308 9.32308 1 10.03 1C10.7369 1 11.31 1.57308 11.31 2.28Z"
-                        fill="#231F20"
-                      ></path>
-                      <path
-                        d="M17.7898 3.56C18.4967 3.56 19.0698 2.98692 19.0698 2.28C19.0698 1.57308 18.4967 1 17.7898 1C17.0828 1 16.5098 1.57308 16.5098 2.28C16.5098 2.98692 17.0828 3.56 17.7898 3.56Z"
-                        fill="#231F20"
-                      ></path>
-                      <path
-                        d="M3.56 17.7898C3.56 18.4967 2.98692 19.0698 2.28 19.0698C1.57308 19.0698 1 18.4967 1 17.7898C1 17.0828 1.57308 16.5098 2.28 16.5098C2.98692 16.5098 3.56 17.0828 3.56 17.7898Z"
-                        fill="#231F20"
-                      ></path>
-                      <path
-                        d="M10.03 19.0698C10.7369 19.0698 11.31 18.4967 11.31 17.7898C11.31 17.0828 10.7369 16.5098 10.03 16.5098C9.32308 16.5098 8.75 17.0828 8.75 17.7898C8.75 18.4967 9.32308 19.0698 10.03 19.0698Z"
-                        fill="#231F20"
-                      ></path>
-                      <path
-                        d="M19.0698 17.7898C19.0698 18.4967 18.4967 19.0698 17.7898 19.0698C17.0828 19.0698 16.5098 18.4967 16.5098 17.7898C16.5098 17.0828 17.0828 16.5098 17.7898 16.5098C18.4967 16.5098 19.0698 17.0828 19.0698 17.7898Z"
-                        fill="#231F20"
-                      ></path>
-                    </svg>
+                    <MenuIcon onClick={toggleDrawer("left", true)} />
                   </Grid>
                   <Grid
                     item
                     xs={5}
                     md={3}
                     style={{ display: "flex", justifyContent: "flex-start" }}
+                    sx={{ display: { xs: "none", md: "flex" } }}
                   >
-                    <Image src={Logo} />
+                    <Image src={Logo} style={{ width: "25vh" }} />
                   </Grid>
+
                   <Grid item xs={4} md={3}>
                     <Grid
                       container
                       justifyContent={"flex-end"}
                       alignItems={"center"}
+                      sx={{ display: { xs: "none", md: "flex" } }}
                     >
                       <Grid
                         item
@@ -324,7 +306,12 @@ const NavBar = () => {
                           initial={{ opacity: 0, x: 200 }}
                           animate={{
                             opacity: isActive ? 1 : 0,
-                            x: isActive ?  window.innerWidth <1800 ?0.009*window.innerWidth  -(window.innerWidth *0.05):-0.04*window.innerWidth : 200,
+                            x: isActive
+                              ? window.innerWidth < 1800
+                                ? 0.009 * window.innerWidth -
+                                  window.innerWidth * 0.05
+                                : -0.04 * window.innerWidth
+                              : 200,
                           }}
                           transition={{ duration: 0.5 }}
                           style={{
@@ -334,67 +321,80 @@ const NavBar = () => {
                             right: 10,
                             padding: "0.5vw",
                             zIndex: 99,
-                            fontSize:'1vw'
+                            fontSize: "1vw",
                           }}
                         ></motion.input>
                       </Grid>
-                    { login&& <Grid item xs={2}>
-                        <div
-                          style={{
-                            backgroundColor: "white",
-                            height: "3vw",
-                            display: "flex",
-                            alignItems: "center",
-                            position: "relative",
-                            zIndex: 99999,
-                          }}
-                        >
-                          {login && (
-                            <Link href="/wishlist">
-                              <Icon
+                      {login && (
+                        <Grid item xs={2}>
+                          <div
+                            style={{
+                              backgroundColor: "white",
+                              height: "3vw",
+                              display: "flex",
+                              alignItems: "center",
+                              position: "relative",
+                              zIndex: 99999,
+                            }}
+                          >
+                            {login && (
+                              <Link href="/wishlist">
+                                <Icon
+                                  style={{
+                                    opacity: login ? 1 : 0,
+                                    marginTop: "0.2vw",
+                                  }}
+                                  src={IconHeart}
+                                />
+                              </Link>
+                            )}
+                          </div>
+                        </Grid>
+                      )}
+                      {login && (
+                        <Grid item xs={2}>
+                          <div
+                            style={{
+                              height: "3vw",
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "flex-start",
+                              position: "relative",
+                              zIndex: 99999,
+                              backgroundColor: "white",
+                            }}
+                          >
+                            <Link href="/cart">
+                              <CountMarket
+                                aria-label="My cart"
                                 style={{
                                   opacity: login ? 1 : 0,
-                                  marginTop: "0.2vw",
+                                  cursor: "pointer",
                                 }}
-                                src={IconHeart}
-                              />
+                              >
+                                <p style={{ margin: 0 }}>0</p>
+                              </CountMarket>
                             </Link>
-                          )}
-                        </div>
-                      </Grid>}
-                     {login&&  <Grid item xs={2}>
-                        <div
-                          style={{
-                            height: "3vw",
-                            display: "flex",
-                            alignItems: "center",
-                            justifyContent: "flex-start",
-                            position: "relative",
-                            zIndex: 99999,
-                            backgroundColor: "white",
-                          }}
-                        >
-                          <Link href="/cart">
-                            <CountMarket
-                              aria-label="My cart"
-                              style={{ opacity: login ? 1 : 0,cursor:'pointer' }}
-                            >
-                              <p style={{ margin: 0 }}>0</p>
-                            </CountMarket>
-                          </Link>
-                        </div>
-                      </Grid>}
+                          </div>
+                        </Grid>
+                      )}
                       <Grid item xs={4}>
                         <div
-                        style={{width:'100%',backgroundColor:'white',padding:'0 0.5vw',position:'relative',zIndex:999}}>
-              <ButtonLogin
-                          style={{ textAlign: "center" ,fontSize:'1.15vw'}}
-                          onClick={() => handleClick()}
+                          style={{
+                            width: "100%",
+                            backgroundColor: "white",
+                            padding: "0 0.5vw",
+                            position: "relative",
+                            zIndex: 999,
+                          }}
                         >
-                          {login ? "Log Out" : "Sign In"}
-                        </ButtonLogin>
+                          <ButtonLogin
+                            style={{ textAlign: "center", fontSize: "1.15vw" }}
+                            onClick={() => handleClick()}
+                          >
+                            {login ? "Log Out" : "Sign In"}
+                          </ButtonLogin>
                         </div>
-          
                       </Grid>
                     </Grid>
                   </Grid>

@@ -100,10 +100,10 @@ const FormContact = () => {
     marginRight: "1vw",
   });
   return (
-    <Grid container justifyContent={"center"} style={{marginTop:'8vw'}}>
+    <Grid container justifyContent={"center"} >
       <Grid item xs={8}>
         <Grid container>
-          <Grid item xs={6}>
+          <Grid item xs={12} md={6}  sx={{ display: { xs: "none", md: "flex" } }}>
             <ContainerImage>
               <div style={{    borderRadius: "10px 0px 0px 10px", backgroundColor: 'rgba(50,50,50,0.5)', height: '100%', backdropFilter: 'blur(2px)' }}>
               <Grid
@@ -181,7 +181,7 @@ const FormContact = () => {
 
             </ContainerImage>
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={12}md={6}>
             <ContainerBlue>
               <Formik
                 initialValues={initialValues}
@@ -231,7 +231,7 @@ const FormContact = () => {
                         />
                       </Grid>
                       <Grid item xs={4}>
-                        <Button type="submit">Send</Button>
+                        <Button type="submit" style={{fontSize:'2vh'}}>Send</Button>
                       </Grid>
                     </Grid>
                   </Form>

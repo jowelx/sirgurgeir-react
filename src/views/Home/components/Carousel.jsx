@@ -38,7 +38,7 @@ const ContainerText = styled.div({
   bottom: 0,
 })
 const Discount = styled.div({
-  fontSize: "20vh",
+  fontSize: "14vh",
   textTransform: 'uppercase',
   fontWeight: 600,
   color: 'white'

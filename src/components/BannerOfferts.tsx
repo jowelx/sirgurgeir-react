@@ -13,7 +13,7 @@ const Container = styled.div({
 });
 const Image = styled.img({
   width: "auto",
-  height: "100%",
+  height: "26vw",
 });
 const ContainerImage = styled.div({
   width: "100%",

@@ -16,7 +16,7 @@ import CustomizedCheckbox from "../../../components/UI/CheckBox";
 const typeCategory = ["Hoodies", "Jackets", "Sweaters"];
 const Container = styledE.div({});
 const Title = styledE.p({
-  fontSize: "0.9vw",
+  fontSize: "1.2vh",
   margin: 0,
   fontFamily: PrincipalFont,
   fontWeight: 400,

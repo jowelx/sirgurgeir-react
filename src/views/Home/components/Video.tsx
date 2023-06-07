@@ -56,7 +56,7 @@ const Dot = styled.div({
   transition: "all 0.3s",
 });
 const Tittle = styled.p({
-  fontSize: 48,
+  fontSize: "6vh",
   margin: 0,
   fontWeight: 500,
   textAlign: "left",

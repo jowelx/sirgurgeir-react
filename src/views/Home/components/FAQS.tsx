@@ -66,7 +66,7 @@ const FAQGS = () => {
         {data.map((item, index) => {
           return (
             <>
-              <Grid item xs={3}>
+              <Grid item xs={12}md={3}>
                 <Card>
                   <Text>Q: {item.q}</Text>
                   <Text>A: {item.a}</Text>
@@ -75,7 +75,7 @@ const FAQGS = () => {
             </>
           );
         })}
-        <Grid item xs={5}>
+        <Grid item xs={12}md={5}>
           <Text>
             Thanks for choosing ThatsLifeStudio! We hope you love <br /> your
             new wardrobe as much as we do. Enjoy!

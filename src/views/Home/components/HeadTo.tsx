@@ -31,7 +31,7 @@ const Text = styled.p({
 const Tittle = styled.p({
     textAlign: 'left',
     margin:0,
-    fontSize: "7vh",
+    fontSize: "6vh",
     color: 'white',
 })
 

@@ -24,33 +24,32 @@ const data = [
 ];
 const H1 = styled.p({
   color: "black",
-  marginBottom:0,
-  fontSize: "4vw",
+  marginBottom: 0,
+  fontSize: "8vh",
   textAlign: "left",
   fontWeight: 600,
   lineHeight: 1.2,
 });
 const H2 = styled.p({
   color: "black",
-  fontSize: "1.6vw",
-marginBottom:'0.5vw',
+  fontSize: "3vh",
+  marginBottom: "0.5vw",
   textAlign: "left",
 });
 const H3 = styled.p({
   color: "#5E5E5E",
-  fontSize: "1.2vw",
+  fontSize: "1.8vh",
   textAlign: "left",
-  
 });
 const H4 = styled.p({
-  fontSize: "1vw",
+  fontSize: "2.4vh",
   color: "#5E5E5E",
   textAlign: "left",
   lineHeight: 1.4,
-  marginTop:'0.2vw'
+  marginTop: "0.2vw",
 });
 const Button = styled.div({
-  width: "10vw",
+  width: "20vh",
   borderRadius: 6,
   backgroundColor: BLUECOLOR,
   padding: "1vw",
@@ -70,38 +69,46 @@ const Header = () => {
     <>
       <div>
         <Grid container rowSpacing={5}>
-          <Grid item xs={6}>
-            <H1>
-              Level up your style
-              <br />
-              with our summer <br />
-              collections
-            </H1>
-            <H4>
-              Porem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-              vulputate
-              <br /> libero et velit interdum, ac aliquet odio mattis. Class
-              aptent taciti sociosqu ad <br />
-              litora torquent per conubia nostra, per inceptos himenaeos.
-            </H4>
-            <br />
-            <Button>
-              Shop Now
-              <Arrow src={ArrowIcon} />
-            </Button>
+          <Grid item xs={12} md={6}>
+            <Grid container>
+              <Grid item xs={12}>
+                <H1>
+                  Level up your style
+                  <br />
+                  with our summer <br />
+                  collections
+                </H1>
+              </Grid>
+              <Grid item xs={12}>
+                <H4>
+                  Porem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+                  vulputate
+                  <br /> libero et velit interdum, ac aliquet odio mattis. Class
+                  aptent taciti sociosqu ad <br />
+                  litora torquent per conubia nostra, per inceptos himenaeos.
+                </H4>
+              </Grid>
+              <Grid item xs={12}>
+                <br />
+                <Button>
+                  Shop Now
+                  <Arrow src={ArrowIcon} />
+                </Button>
+              </Grid>
+            </Grid>
           </Grid>
-          <Grid item xs={6}>
-            <div style={{ width: "45vw", overflow: "hidden", height: "75vh" }}>
+          <Grid item xs={12} md={6}>
+            <div style={{ width: "auto", overflow: "hidden", height: "75vh" }}>
               <Image src={image} />
             </div>
           </Grid>
-          <Grid item xs={6}>
-            <H2 style={{fontWeight:600}}>
+          <Grid item xs={12} md={6}>
+            <H2 style={{ fontWeight: 600 }}>
               We provide best
               <br /> customer experiences
             </H2>
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={12} md={6}>
             <div
               style={{
                 padding: "0.5vw",
@@ -118,7 +125,7 @@ const Header = () => {
           <Grid item xs={12}>
             <Grid container justifyContent={"space-around"} columnSpacing={2}>
               {data.map((item, index) => (
-                <Grid key={index} item xs={3}>
+                <Grid key={index} item xs={12} md={3}>
                   <div style={{ width: "100%" }}>
                     <div
                       style={{
