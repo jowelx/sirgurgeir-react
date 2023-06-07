@@ -142,15 +142,15 @@ const Register = () => {
       <Grid item xs={11}>
         <Grid container>
           <Grid item xs={4}>
-            <div style={{paddingTop:'4vw'}}>
+            <div style={{paddingTop:'0.1vw'}}>
             <Grid container>
               <Grid item xs={12}>
                 <Logo src={logo} />
               </Grid>
-              <Grid item xs={12}>
+              <Grid item xs={12} style={{marginTop:'3vw'}}>
                 <Title>Welcome back</Title>
               </Grid>
-              <Grid item xs={12}>
+              <Grid item xs={12} style={{marginBottom:'1.5vw'}}>
                 <Text>Create an account</Text>
               </Grid>
               <Grid item xs={12}>
