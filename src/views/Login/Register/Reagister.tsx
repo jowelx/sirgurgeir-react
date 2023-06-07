@@ -21,7 +21,7 @@ const Logo = styled.img({
 const Title = styled.p({
   color: BLUECOLOR,
   fontWeight: 700,
-  fontSize: "3.8vw",
+  fontSize: "3.5vw",
   textAlign: "left",
   marginBottom: 0,
   marginTop: "1.5vw",
@@ -30,7 +30,7 @@ const Text = styled.p({
   color: BLUECOLOR,
   margin: 0,
   fontWeight: 500,
-  fontSize: "1.8vw",
+  fontSize: "1.6vw",
   textAlign: "left",
 });
 const Input = styled(Field)({
@@ -45,7 +45,7 @@ const Input = styled(Field)({
 const Button = styled.div({
   backgroundColor: BLUECOLOR,
   color: "white",
-  padding: "1.5vw",
+  padding: "1vw",
   width: "100%",
   marginTop: "1vw",
   borderRadius: 8,
@@ -73,8 +73,8 @@ const ButtonSocial = styled.div({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  padding: "1.2vw",
-  margin: "1vw 0",
+  padding: "1vw",
+  margin: "0.5vw 0",
   cursor:'pointer'
 });
 const Icon = styled.img({
@@ -142,6 +142,7 @@ const Register = () => {
       <Grid item xs={11}>
         <Grid container>
           <Grid item xs={4}>
+            <div style={{paddingTop:'4vw'}}>
             <Grid container>
               <Grid item xs={12}>
                 <Logo src={logo} />
@@ -253,6 +254,8 @@ const Register = () => {
                 </Formik>
               </Grid>
             </Grid>
+            </div>
+
           </Grid>
           <Grid
             item

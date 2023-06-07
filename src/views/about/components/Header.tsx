@@ -36,6 +36,7 @@ const Title = styled.p({
   margin: 0,
   fontFamily:PrincipalFont ,
   fontWeight: 700,
+  lineHeight:'6vw',
   color: "white",
   fontSize: "14vh",
   textAlign: "left",

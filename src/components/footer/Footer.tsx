@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { Grid } from "@mui/material";
-import NorthIcon from '@mui/icons-material/North';
+import NorthIcon from "@mui/icons-material/North";
 const Container = styled.footer({
   width: "100%",
-    paddingTop: "14vh",
-  paddingBottom: '8vh'
+  paddingTop: "2vw",
+  paddingBottom: "8vh",
 });
 const Logo = styled.img({
   marginTop: "7vh",
@@ -27,34 +27,34 @@ const Text = styled.p({
   fontSize: "1.5vh",
 });
 const Social = styled.img({
-    width: 25,
-    height: 25,
-    
-  cursor: 'pointer',
-})
+  width: 25,
+  height: 25,
+
+  cursor: "pointer",
+});
 const ButtonInit = styled.div({
   padding: 8,
-    fontWeight: 600,
-  cursor: 'pointer',
+  fontWeight: 600,
+  cursor: "pointer",
   fontSize: "1.5vh",
-    backgroundColor: "rgba(255, 194, 0, 1)",
-    display: 'flex',
-    alignItems: 'center',
-  justifyContent: 'space-around',
-  marginLeft:60
+  backgroundColor: "rgba(255, 194, 0, 1)",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "space-around",
+  marginLeft: 60,
 });
 const Divider = styled.div({
-    height: 1,
-    width: '100%',
-    marginBottom: '4vh',
-    marginTop: '10vh',
-    backgroundColor: 'rgba(255, 194, 0, 1)'
-})
+  height: 1,
+  width: "100%",
+  marginBottom: "4vh",
+  marginTop: "10vh",
+  backgroundColor: "rgba(255, 194, 0, 1)",
+});
 const EndText = styled.p({
-    fontWeight: 300,
-    letterSpacing: 1,
-     fontSize: "1.8vh",
-})
+  fontWeight: 300,
+  letterSpacing: 1,
+  fontSize: "1.8vh",
+});
 const data = [
   {
     tittle: "Men",
@@ -74,9 +74,12 @@ const data = [
   },
 ];
 const images = [
-    './assets/tiktok.png','./assets/twiter.png','./assets/ig.png','./assets/fb.png'
-]
-const end =['Privacy Policy','Cookies Policy','Terms and conditions']
+  "./assets/tiktok.png",
+  "./assets/twiter.png",
+  "./assets/ig.png",
+  "./assets/fb.png",
+];
+const end = ["Privacy Policy", "Cookies Policy", "Terms and conditions"];
 const Footer = () => {
   return (
     <Container>
@@ -98,77 +101,67 @@ const Footer = () => {
                 {data.map((item, index) => {
                   return (
                     <Grid item xs={3}>
-                      <div style={{marginLeft:60}}>
-                    <TittleList>{item.tittle}</TittleList>
-                      {item.content.map((i, e) => {
-                        return (
-                          <>
-                            <Text style={{ cursor: "pointer" }}>{i}</Text>
-                          </>
-                        );
-                      })}
+                      <div style={{ marginLeft: 60 }}>
+                        <TittleList>{item.tittle}</TittleList>
+                        {item.content.map((i, e) => {
+                          return (
+                            <>
+                              <Text style={{ cursor: "pointer" }}>{i}</Text>
+                            </>
+                          );
+                        })}
                       </div>
-  
                     </Grid>
                   );
                 })}
-                             
-                                  
-                             
+
                 <Grid item xs={12}>
                   <Grid container justifyContent={"flex-start"}>
                     <Grid item xs={3}>
-                                          <ButtonInit>Back to top <NorthIcon style={{fontSize:15}} /></ButtonInit>
-                                      </Grid>
-                                      <Grid item xs={5}>
-                                          
-                                      </Grid>
-                                      <Grid item xs={4}>
-                                          <Grid container>
-                                              <Grid item xs={4}>
-                                                  
-                                          <TittleList style={{margin:0}}>
-                                              Contact
-                                          </TittleList>
-                                              </Grid>
-                                               {images.map((item, index) => (
-                                              <Grid item xs={2}>
-                                                  
-                                              <Social src={ item} />
-                                                  </Grid>
-                                 ))}    
-                                          </Grid>
-                                              
+                      <ButtonInit>
+                        Back to top <NorthIcon style={{ fontSize: 15 }} />
+                      </ButtonInit>
+                    </Grid>
+                    <Grid item xs={5}></Grid>
+                    <Grid item xs={4}>
+                      <Grid container>
+                        <Grid item xs={4}>
+                          <TittleList style={{ margin: 0 }}>Contact</TittleList>
                         </Grid>
+                        {images.map((item, index) => (
+                          <Grid item xs={2}>
+                            <Social src={item} />
+                          </Grid>
+                        ))}
+                      </Grid>
+                    </Grid>
                   </Grid>
                 </Grid>
               </Grid>
-                      </Grid>
-                      <Grid item xs={12}>
-                          <Divider/>
-                      </Grid>
-                      <Grid item xs={12}>
-                          <Grid container justifyContent={'space-between'}>
-                              <Grid item xs={4}>
-                                  <EndText style={{textAlign: 'left'}}>
-                                  2023. All Rights Reserved
-                                  </EndText> 
-                              </Grid>
-                              <Grid item xs={4}>
-                                  <Grid container>
-                                        {end.map((item, index) => {
-                                  return (<Grid item xs={4}>
-                                      <EndText>
-                                          {item}
-                                  </EndText>
-                                  </Grid>)
-                              })}    
-                                  </Grid>
-                              
-                              </Grid>
-                            
-                          </Grid>
-                      </Grid>
+            </Grid>
+            <Grid item xs={12}>
+              <Divider />
+            </Grid>
+            <Grid item xs={12}>
+              <Grid container justifyContent={"space-between"}>
+                <Grid item xs={4}>
+                  <EndText style={{ textAlign: "left" }}>
+                    2023. All Rights Reserved
+                  </EndText>
+                </Grid>
+                <Grid item xs={4}>
+                  <Grid container>
+                    {end.map((item, index) => {
+                      return (
+                        <Grid item xs={4}>
+                          <EndText>{item}</EndText>
+                        </Grid>
+                      );
+                    })}
+                  </Grid>
+                </Grid>
+              </Grid>
+            </Grid>
           </Grid>
         </Grid>
       </Grid>

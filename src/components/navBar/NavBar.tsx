@@ -303,8 +303,8 @@ const NavBar = () => {
                               textAlign: "right",
                               backgroundColor: "white",
                             }}
-                            width="22"
-                            height="22"
+                            width="1.6vw"
+                            height="1.6vw"
                             viewBox="0 0 20 20"
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
@@ -324,16 +324,17 @@ const NavBar = () => {
                           initial={{ opacity: 0, x: 200 }}
                           animate={{
                             opacity: isActive ? 1 : 0,
-                            x: isActive ? -50 : 200,
+                            x: isActive ?  window.innerWidth <1800 ?0.009*window.innerWidth  -(window.innerWidth *0.05):-0.04*window.innerWidth : 200,
                           }}
                           transition={{ duration: 0.5 }}
                           style={{
                             position: "absolute",
-                            top: "8%",
-                            transform: "translateY(50%)",
+                            top: "0.4vw",
+                            transform: "translateY(50vw)",
                             right: 10,
-                            padding: "0.5rem",
+                            padding: "0.5vw",
                             zIndex: 99,
+                            fontSize:'1vw'
                           }}
                         ></motion.input>
                       </Grid>
@@ -387,7 +388,7 @@ const NavBar = () => {
                         <div
                         style={{width:'100%',backgroundColor:'white',padding:'0 0.5vw',position:'relative',zIndex:999}}>
               <ButtonLogin
-                          style={{ textAlign: "center" }}
+                          style={{ textAlign: "center" ,fontSize:'1.15vw'}}
                           onClick={() => handleClick()}
                         >
                           {login ? "Log Out" : "Sign In"}

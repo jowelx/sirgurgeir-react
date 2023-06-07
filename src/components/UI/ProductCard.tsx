@@ -56,6 +56,7 @@ const Price = styled.p({
 const ContainerData = styled.div({
   margin: "1vw 0vw",
   padding: "0.5vw 0.5vw",
+  marginTop:'0.1vw'
 });
 const ProductCard = ({ xl, name, img, price, sale }: Prop) => {
   return (

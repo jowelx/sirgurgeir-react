@@ -24,6 +24,7 @@ const data = [
 ];
 const H1 = styled.p({
   color: "black",
+  marginBottom:0,
   fontSize: "4vw",
   textAlign: "left",
   fontWeight: 600,
@@ -32,19 +33,21 @@ const H1 = styled.p({
 const H2 = styled.p({
   color: "black",
   fontSize: "1.6vw",
-
+marginBottom:'0.5vw',
   textAlign: "left",
 });
 const H3 = styled.p({
   color: "#5E5E5E",
   fontSize: "1.2vw",
   textAlign: "left",
+  
 });
 const H4 = styled.p({
   fontSize: "1vw",
   color: "#5E5E5E",
   textAlign: "left",
-  lineHeight: 2,
+  lineHeight: 1.4,
+  marginTop:'0.2vw'
 });
 const Button = styled.div({
   width: "10vw",

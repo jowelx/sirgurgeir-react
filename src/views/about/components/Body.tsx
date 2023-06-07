@@ -5,8 +5,8 @@ import { PrincipalFont } from "../../../fonts/Fonts";
 import { BLUECOLOR, YELLOWCOLOR } from "../../../colors/Colors";
 import Person from "../../../assets/personBlue.png";
 import { Divider } from "@mui/material";
-import ComillasIcon from '../../../assets/Comillas.png'
-import EastIcon from '@mui/icons-material/East';
+import ComillasIcon from "../../../assets/Comillas.png";
+import EastIcon from "@mui/icons-material/East";
 const Container = styled.div({
   marginTop: "20vh",
 });
@@ -16,6 +16,7 @@ const BlueTittle = styled.p({
   fontSize: "14vh",
   fontWeight: 700,
   margin: 0,
+lineHeight:'6vw',
   display: "inline-block",
 });
 const YellowTittle = styled.p({
@@ -30,11 +31,13 @@ const Text = styled.p({
   fontFamily: PrincipalFont,
   color: BLUECOLOR,
   fontSize: "3vh",
+  marginBottom:'0.1vw'
 });
 const SubText = styled.p({
   fontFamily: PrincipalFont,
   color: BLUECOLOR,
   fontSize: "1.8vh",
+  marginTop:'.1vw'
 });
 const PersonIcon = styled.img({
   width: 30,
@@ -49,55 +52,63 @@ const ContainerIconPerson = styled.div({
   justifyContent: "center",
 });
 const data = [0, 1, 2];
-const LastData = [{
-    profesion:"Comedic Actor",
-    name:"Will Rogers",
-    text: "Worem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos."
-},{
-    profesion:"Industrialist & philanthropist",
-    name:"Andrew Carnegie",
-    text: "Worem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos."
-},{
-    profesion:"British philosopher",
-    name:"John Stuart Mill",
-    text: "Worem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos."
-  },]
+const LastData = [
+  {
+    profesion: "Comedic Actor",
+    name: "Will Rogers",
+    text: "Worem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
+  },
+  {
+    profesion: "Industrialist & philanthropist",
+    name: "Andrew Carnegie",
+    text: "Worem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
+  },
+  {
+    profesion: "British philosopher",
+    name: "John Stuart Mill",
+    text: "Worem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
+  },
+];
 const ArrowLeft = styled(EastIcon)({
   padding: "1.5vh",
   borderRadius: 200,
   border: `solid 1px ${BLUECOLOR}`,
-  backgroundColor: 'rgba(0,0,0,0)',
-  color:BLUECOLOR,
+  backgroundColor: "rgba(0,0,0,0)",
+  color: BLUECOLOR,
   cursor: "pointer",
   transform: "rotate(180deg)",
   transition: "0.2s ease",
   "&:hover": {
     color: "white",
-      backgroundColor: BLUECOLOR,
+    backgroundColor: BLUECOLOR,
   },
 });
 const ArrowRight = styled(EastIcon)({
   padding: "1.5vh",
   borderRadius: 200,
-  border:`solid 1px ${BLUECOLOR}`,
-  backgroundColor: 'rgba(0,0,0,0)',
+  border: `solid 1px ${BLUECOLOR}`,
+  backgroundColor: "rgba(0,0,0,0)",
   cursor: "pointer",
-  color:BLUECOLOR,
+  color: BLUECOLOR,
   transition: "all 0.2s ease",
   "&:hover": {
     color: "white",
-      backgroundColor: BLUECOLOR,
+    backgroundColor: BLUECOLOR,
   },
 });
 const Body = () => {
   return (
     <>
-      <Grid container justifyContent={"center"} style={{marginBottom:"15vh"}}>
+      <Grid
+        container
+        justifyContent={"center"}
+        style={{marginTop:'4vw'}}
+      >
         <Grid item xs={12}>
           <BlueTittle>About</BlueTittle>
         </Grid>
         <Grid item xs={10}>
-          <Text style={{ marginBottom: "20vh" }}>
+          <Text style={{ marginBottom: "4vw" }}>
             Qorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
             vulputate libero et velit interdum, ac aliquet odio mattis. Class
             aptent taciti sociosqu ad litora torquent per conubia nostra, per
@@ -127,23 +138,25 @@ const Body = () => {
         <Grid item xs={5}>
           <Grid container justifyContent={"flex-end"}>
             {data.map((item) => (
-                <Grid key={item} item xs={10}>
-                    <Grid container alignItems={"center"}>
-                        <Grid item xs={2}>
-                            <ContainerIconPerson>
-                                <PersonIcon src={Person}/>
-</ContainerIconPerson>
-                        </Grid>
-                        <Grid item xs={10}>
-                            <Text style={{textAlign:"left",width:"100%"}}>
-                                Lorem ipsum dolor sit amet
-                            </Text>
-                            <SubText style={{textAlign:"left",width:"100%"}}>
-Worem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.
-                            </SubText>
-                            </Grid>
-                    </Grid>
-                    <Divider/>
+              <Grid key={item} item xs={10}>
+                <Grid container alignItems={"center"}>
+                  <Grid item xs={2}>
+                    <ContainerIconPerson>
+                      <PersonIcon src={Person} />
+                    </ContainerIconPerson>
+                  </Grid>
+                  <Grid item xs={10}>
+                    <Text style={{ textAlign: "left", width: "100%" }}>
+                      Lorem ipsum dolor sit amet
+                    </Text>
+                    <SubText style={{ textAlign: "left", width: "100%" }}>
+                      Worem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Nunc vulputate libero et velit interdum, ac aliquet odio
+                      mattis.
+                    </SubText>
+                  </Grid>
+                </Grid>
+                <Divider />
               </Grid>
             ))}
           </Grid>
@@ -156,46 +169,43 @@ Worem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero e
           </Container>
         </Grid>
         <Grid item xs={10}>
-                  <Grid container style={{marginTop:'20vh'}}>
-                      
-                      {LastData.map((item, index) => (
-                          <Grid item xs={4}>
-                              <Grid container>
-                                  <Grid item xs={2}>
-                                      <ContainerIconPerson style={{border:0}}>
-                                          <PersonIcon src={ComillasIcon}/>
-                                      </ContainerIconPerson>
-                                  </Grid>
-                                  <Grid item xs={11}>
-                                      <Text style={{textAlign:'justify'}}>
-                                          {item.text}
-                                      </Text>
-                                      
-                                  <Divider />
-                                  </Grid>
-                                  
-                                  <Grid item xs={11}>
-                                      <Text style={{textAlign:"left"}}>
-                                          {item.name}
-                                      </Text>
-                                      <SubText style={{textAlign:"left"}}>
-                                          {item.profesion}
-                                      </SubText>
-                                      </Grid>
-                                  
-                              </Grid>
-                              
-                              </Grid>
-                      ))}
+          <Grid container style={{ marginTop: "4vw" }}>
+            {LastData.map((item, index) => (
+              <Grid item xs={4}>
+                <Grid container>
+                  <Grid item xs={2}>
+                    <ContainerIconPerson style={{ border: 0 }}>
+                      <PersonIcon src={ComillasIcon} />
+                    </ContainerIconPerson>
+                  </Grid>
+                  <Grid item xs={11}>
+                    <Text style={{ textAlign: "justify" }}>{item.text}</Text>
+                    <Divider />
+                  </Grid>
+                  <Grid item xs={11}>
+                    <Text style={{ textAlign: "left" }}>{item.name}</Text>
+                    <SubText style={{ textAlign: "left" }}>
+                      {item.profesion}
+                    </SubText>
+                  </Grid>
+                </Grid>
+              </Grid>
+            ))}
           </Grid>
         </Grid>
         <Grid item xs={12} />
         <Grid item xs={2}>
-          <div style={{marginTop:'5vw',width:'100%',display:'flex',justifyContent:'space-around'}}>
+          <div
+            style={{
+              marginTop: "5vw",
+              width: "100%",
+              display: "flex",
+              justifyContent: "space-around",
+            }}
+          >
             <ArrowLeft />
-            <ArrowRight/>
+            <ArrowRight />
           </div>
-
         </Grid>
       </Grid>
     </>

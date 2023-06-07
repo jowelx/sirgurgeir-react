@@ -7,7 +7,8 @@ import ArrowIcon from "../assets/Arrow.png";
 import EastIcon from '@mui/icons-material/East';
 const Container = styled.div({
   borderRadius: 12,
-  marginBottom: "5vw",
+  marginBottom: "4vw",
+  marginTop:'2vw',
   backgroundColor: BLUECOLOR,
 });
 const Image = styled.img({
