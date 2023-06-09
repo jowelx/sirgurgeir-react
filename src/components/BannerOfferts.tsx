@@ -9,7 +9,7 @@ const Container = styled.div({
   borderRadius: 12,
   marginBottom: "4vw",
   marginTop:'2vw',
-  backgroundColor: BLUECOLOR,
+
 });
 const Image = styled.img({
   width: "auto",
@@ -26,6 +26,8 @@ const BlueContainer = styled.div({
   alignItems: "flex-start",
   flexDirection: "column",
   justifyContent: "flex-start",
+  backgroundColor: BLUECOLOR,
+    marginTop:'-0.2vh'
 });
 const Button = styled.div({
   borderRadius: 6,
@@ -54,14 +56,32 @@ const Arrow = styled(EastIcon)({
 const BannerOffert = () => {
   return (
     <Container>
-      <Grid container>
+      <Grid container alignItems={"center"} sx={{display:{xs:'none',md:'flex'}}}>
         <Grid item xs={4}>
           <ContainerImage>
             <Image src={Banner} />
           </ContainerImage>
         </Grid>
         <Grid item xs={8}>
-          <BlueContainer>
+          <BlueContainer style={{height:'38vh'}}>
+            <LittleTitle>LIMITED OFFER</LittleTitle>
+            <Text>35% off only this friday and get special gift</Text>
+            <Button>
+              Grab it now
+              <Arrow />
+            </Button>
+          </BlueContainer>
+        </Grid>
+      </Grid>
+          <Grid container alignItems={"center"} sx={{display:{xs:'flex',md:'none'}}}>
+        <Grid item xs={4}>
+          <ContainerImage>
+            <Image src={Banner} style={{height:'32vw'}} />
+          </ContainerImage>
+        </Grid>
+        <Grid item xs={8}>
+          <BlueContainer
+      >
             <LittleTitle>LIMITED OFFER</LittleTitle>
             <Text>35% off only this friday and get special gift</Text>
             <Button>

@@ -19,9 +19,11 @@ const Title = styled.p({
 const Text = styled.p({
   color: "rgba(94, 94, 94, 1)",
   textAlign: "left",
+
+
 });
 const Icon = styled.img({
-  width: "1.5vw",
+  width: "3vh",
   height: "auto",
 });
 const Card = () => {
@@ -30,10 +32,10 @@ const Card = () => {
       <Grid container>
         <Grid item xs={12}>
           <Grid container alignItems={"flex-start"}>
-            <Grid item xs={1}>
+            <Grid item xs={2}md={1}>
               <Icon src={Truck} />
             </Grid>
-            <Grid item xs={11}>
+            <Grid item xs={10}md={11}>
               <Title>Free shipping</Title>
               <Text>
                 Borem ipsum dolor sit amet, consectetur adipiscing elit. Nunc{" "}
@@ -45,10 +47,10 @@ const Card = () => {
         </Grid>
         <Grid item xs={12}>
           <Grid container>
-            <Grid item xs={1}>
+            <Grid item xs={2}md={1}>
               <Icon src={Check} />
             </Grid>
-            <Grid item xs={11}>
+            <Grid item xs={10}md={11}>
               <Title>Free shipping</Title>
               <Text>
                 Borem ipsum dolor sit amet, consectetur adipiscing elit. Nunc

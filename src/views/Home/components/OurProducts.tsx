@@ -18,6 +18,7 @@ const Tittle = styled.h3({
 });
 const Card = styled.div({
   width: "100%",
+    marginBottom: "1vh",
 });
 const Image = styled.img({
   width: "100%",
@@ -25,17 +26,17 @@ const Image = styled.img({
 });
 const ContainerImage = styled.div({
   width: "100%",
-  height: "61vh",
+  height: "60vh",
   overflow: "hidden",
-  marginBottom: "2vh",
+  marginBottom: "1vh",
 });
 const TittleCard = styled.p({
-  fontSize: 20,
+  fontSize: "2.5vh",
   margin: 0,
   textAlign: "left",
 });
 const Price = styled.p({
-  fontSize: 10,
+  fontSize: "2vh",
   margin: 0,
   textAlign: "left",
 });
@@ -69,10 +70,10 @@ const OurProducts = () => {
           <Tittle>Our Products</Tittle>
         </Grid>
         <Grid item xs={12}>
-          <Grid container columnSpacing={2}>
+          <Grid container columnSpacing={4} rowSpacing={5}>
             {data.map((item, index) => {
               return (
-                <Grid item xs={12} md={3} key={index}>
+                <Grid item xs={12} md={3} key={index} >
                   <Link href="product">
                     <Card>
                       <ContainerImage>

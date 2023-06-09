@@ -19,18 +19,19 @@ const InputSearch = styled.input({
     margin: 0,
     outline: "none",
     border: 0,
-    paddingLeft: "1vw",
-    backgroundColor: "rgba(0,0,0,0)",
+    paddingLeft: "1vh",
+  backgroundColor: "rgba(0,0,0,0)",
+    fontSize:'2vh'
 });
 const ContainerYelow = styled.div({
     backgroundColor: YELLOWCOLOR,
     borderRadius: 12,
-    padding:'2vw 1vw'
+    padding:'3vh 2vh'
 });
 const BlueText = styled.p({
     color: BLUECOLOR,
     margin: 0,
-    fontSize: '1.8vw',
+    fontSize: '4vh',
     fontWeight:700
 });
 const TruckImage = styled.img({
@@ -42,7 +43,7 @@ const Cursor = styled.img({
 });
 const InputCoupons = styled.input({
     border: 0,
-    borderRadius: 15,
+    borderRadius: "1vh",
     backgroundColor: 'rgba(217, 217, 217, 1)',
     padding: '1.2vw 1vw',
     outline: "none",
@@ -58,7 +59,7 @@ const SearchBar = () => {
             justifyContent={"space-between"}
             alignItems={"center"}
           >
-            <Grid item xs={5} style={{}}>
+            <Grid item xs={10} md={ 5} style={{}}>
               <Cursor src={cursor} />
               <InputSearch placeholder="Ship to colombia" />
             </Grid>
@@ -73,15 +74,15 @@ const SearchBar = () => {
           <Grid item xs={12}>
               <ContainerYelow>
                   <Grid container justifyContent={"space-around"} alignItems={"center"}>
-                      <Grid item xs={1}>
+                      <Grid item xs={1} md={1}>
                           <TruckImage src={truck} />
                       </Grid>
-                      <Grid item xs={5}>
+                      <Grid item xs={11}md={5}>
                           <BlueText>
                               DELIVERY FREE
                           </BlueText>
                       </Grid>
-                       <Grid item xs={6}>
+                       <Grid item xs={12}md={6}>
                           <InputCoupons  placeholder="Enter your code"/>
                           
                       </Grid>

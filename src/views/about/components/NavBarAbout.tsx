@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "@emotion/styled";
 import { Grid } from "@mui/material";
 import imgLogo from "../../../assets/logo.png";
@@ -7,9 +7,10 @@ import IconShop from "../../../assets/IconShop.png";
 import IconHeart from "../../../assets/IconHeart.png";
 import { PrincipalFont } from "../../../fonts/Fonts";
 import { motion } from "framer-motion";
-import MenuIcon from '@mui/icons-material/Menu';
+import MenuIcon from "@mui/icons-material/Menu";
 import MenuMobile from "./MenuMobile";
 import { BLUECOLOR } from "../../../colors/Colors";
+import { AppContext } from "../../../context/AppContext";
 const dataNav = [
   { name: "ABOUT", url: "/about" },
   { name: "MEN", url: "/SearchProduct" },
@@ -30,7 +31,7 @@ const Container = styled.div({
   left: 0,
   right: 0,
   marginTop: "2vh",
-  marginBottom:'2vh'
+  marginBottom: "2vh",
 });
 const Icon = styled.img({
   width: "1.9vw",
@@ -60,8 +61,19 @@ const Input = styled(motion.input)({
     color: BLUECOLOR,
   },
 });
+const ButtonLogin = styled.div({
+  backgroundColor: BLUECOLOR,
+  color: "white",
+  fontWeight: 700,
+  borderRadius: 200,
+  padding: "0.6vw 0",
+  zIndex: 999,
+  position: "relative",
+  cursor: "pointer",
+});
 const NavBarAbout = () => {
-    const [state, setState] = React.useState({
+  const {login}=useContext(AppContext)
+  const [state, setState] = React.useState({
     top: false,
     left: false,
     bottom: false,
@@ -72,9 +84,9 @@ const NavBarAbout = () => {
     (anchor: any, open: boolean) =>
     (event: React.KeyboardEvent | React.MouseEvent) => {
       if (
-        event.type === 'keydown' &&
-        ((event as React.KeyboardEvent).key === 'Tab' ||
-          (event as React.KeyboardEvent).key === 'Shift')
+        event.type === "keydown" &&
+        ((event as React.KeyboardEvent).key === "Tab" ||
+          (event as React.KeyboardEvent).key === "Shift")
       ) {
         return;
       }
@@ -83,11 +95,13 @@ const NavBarAbout = () => {
     };
   return (
     <Container>
-      <MenuMobile
-        toggleDrawer={toggleDrawer}
-        state={state}
-      />
-      <Grid container justifyContent={"space-around"} alignItems={"center"} sx={{ display: { xs: 'none' ,md:'flex'} }}>
+      <MenuMobile toggleDrawer={toggleDrawer} state={state} />
+      <Grid
+        container
+        justifyContent={"space-around"}
+        alignItems={"center"}
+        sx={{ display: { xs: "none", md: "flex" } }}
+      >
         <Grid item xs={4}>
           <Grid container>
             {dataNav.map((item, index) => {
@@ -149,38 +163,101 @@ const NavBarAbout = () => {
                 </div>
               </div>
             </Grid>
-            <Grid item xs={2}>
+           {login&& <Grid item xs={1}>
               <Link href="/wishlist">
                 <Icon src={IconHeart} />
               </Link>
-            </Grid>
+            </Grid>}
 
-            <Grid item xs={1}>
+           {login&&  <Grid item xs={1}>
               <Link href={"/cart"}>
                 <Icon src={IconShop} />
               </Link>
+            </Grid>}
+            <Grid item xs={2}>
+              <div
+                style={{
+                  width: "100%",
+                  backgroundColor: "white",
+                  padding: "0 0.5vw",
+                  position: "relative",
+                }}
+              >
+                <Link href="/login">
+                <ButtonLogin
+                  style={{
+                    textAlign: "center",
+                    fontSize: "2vh",
+                    padding: "0.6vh",
+                  }}
+                >
+                 {login ? "Log Out" : "Sign In"}
+                </ButtonLogin>
+                </Link>
+
+              </div>
             </Grid>
           </Grid>
         </Grid>
       </Grid>
-            <Grid container justifyContent={"space-around"} alignItems={"center"} sx={{ display: { xs: 'flex' ,md:'none'} }}>
-        <Grid item xs={4}>
-          <MenuIcon  onClick={toggleDrawer('left', true)}/>
+      <Grid
+        container
+        justifyContent={"space-around"}
+        alignItems={"center"}
+        sx={{ display: { xs: "flex", md: "none" } }}
+      >
+        <Grid item xs={3}>
+          <MenuIcon onClick={toggleDrawer("left", true)} />
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={5}>
           <a href="/">
-            <Logo alt="Sirgurgeir" src={imgLogo} style={{width:'100%'}} />
+            <Logo alt="Sirgurgeir" src={imgLogo} style={{ width: "100%" }} />
           </a>
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={3}>
+          <Grid container justifyContent={"flex-end"}>
+            <Grid item xs={10}>
+              <div
+                style={{
+                  width: "100%",
+                  backgroundColor: "white",
+                  padding: "0 0.5vw",
+                  position: "relative",
+                }}
+              >
+                <ButtonLogin
+                  style={{
+                    textAlign: "center",
+                    fontSize: "2vh",
+                    padding: "0.6vh",
+                  }}
+                >
+                  Sig In
+                </ButtonLogin>
+              </div>
+            </Grid>
+          </Grid>
+        </Grid>
+        <Grid item xs={12}>
           <Grid container alignItems={"center"} justifyContent={"center"}>
-            <Grid item xs={6}>
-              <div style={{ display: "flex", alignItems: "center",width:'12vh' }}>
+            <Grid item xs={8}>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  width: "100%",
+                  marginTop: "1vh",
+                }}
+              >
                 <Input
                   type="text"
                   placeholder="Buscar"
                   transition={{ duration: 0.5 }}
-                  style={{fontSize:'2vh'}}
+                  style={{
+                    fontSize: "2.4vh",
+                    borderRadius: "0.6vh",
+                    padding: "1vh",
+                  }}
                 />
                 <div
                   style={{
@@ -198,8 +275,8 @@ const NavBarAbout = () => {
                       style={{
                         textAlign: "right",
                       }}
-                      width="3vw"
-                      height="3vw"
+                      width="3vh"
+                      height="3vh"
                       viewBox="0 0 20 20"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"

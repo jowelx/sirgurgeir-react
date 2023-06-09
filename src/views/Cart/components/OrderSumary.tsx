@@ -12,7 +12,7 @@ const Icon = styled.img({
 });
 const ButtonBlue = styled.div({
   borderRadius: 200,
-  padding: "0.5vw",
+  padding: "1vh",
   backgroundColor: BLUECOLOR,
   display: "flex",
   flexDirection: "row",
@@ -36,8 +36,8 @@ const PriceUnit = styled.p({
 const PriceTotal = styled.p({
   fontWeight: 700,
   textAlign: "right",
-  fontSize: "1.4vw",
-  marginTop:'1vw'
+  fontSize: "2.8vh",
+  marginTop:'1.8vh'
 });
 const OrderSumary = ({ data }: any) => {
       const [count, setCount] = useState(0);
@@ -90,7 +90,7 @@ borderRadius: 11
           <ButtonBlue>
             <p
               style={{
-                fontSize: "1vw",
+                fontSize: "2vh",
                 fontWeight: 600,
                 color: "white",
                 margin: " 0",
@@ -98,14 +98,14 @@ borderRadius: 11
             >
               Checkout now
             </p>
-            <div>
+            <div style={{display:'flex',alignItems:'center'}}>
               <Icon
                 style={{
                   marginLeft: "2vw",
-                  padding: "0.5vw",
+                  padding: "0.5vh",
                   borderRadius: 200,
                   border: "solid 1px white",
-                  width: "0.8vw",
+                  width: "1.8vh",
                   height: "auto",
                 }}
                 src={ArrowIcon}

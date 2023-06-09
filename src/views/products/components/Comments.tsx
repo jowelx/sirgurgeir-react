@@ -6,7 +6,7 @@ import { PrincipalFont } from "../../../fonts/Fonts";
 import { BLUECOLOR } from "../../../colors/Colors";
 const data = [0,1,2]
 const Avatar = styled.img({
-  width: "4vw",
+  width: "6vh",
 });
 const Container = styled.div({
     marginBottom:'5vw'
@@ -23,10 +23,10 @@ const Title = styled.p({
 const Text = styled.p({
   color: "rgba(94, 94, 94, 1)",
     textAlign: "left",
-  fontSize:'0.8vw'
+  fontSize:'1.6vh'
 });
 const PrincipalTitle = styled.p({
-    fontSize: '1.5vw',
+    fontSize: '4vh',
     margin: 0,
     fontFamily: PrincipalFont,
     fontWeight: 600,

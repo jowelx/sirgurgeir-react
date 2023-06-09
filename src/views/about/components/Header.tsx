@@ -46,7 +46,7 @@ const Title = styled.p({
 const Text = styled.p({
   fontFamily: PrincipalFont,
   textAlign: "justify",
-  fontSize: "3vh",
+  fontSize: "2.5vh",
   color: "white",
 });
 const ContainerText = styled.div({

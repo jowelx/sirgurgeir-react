@@ -62,8 +62,10 @@ const ProductCard = ({ xl, name, img, price, sale }: Prop) => {
   return (
     <a href="/product" style={{textDecoration: "none"}}>
     <Paper elevation={3}>
-      <Container>
-        <ContainerImage style={{ height: xl ? "40vh" : "35vh" }}>
+        <Container>
+          <Grid container sx={{display:{xs:'none',md:'flex'}}}>
+            <Grid item xs={12}>
+                     <ContainerImage style={{ height: xl ? "40vh" : "30vh" }}>
           <Image src={img} />
           <ContainerIcon>
             <Icon src={Heart} />
@@ -80,7 +82,33 @@ const ProductCard = ({ xl, name, img, price, sale }: Prop) => {
               <Icon src={IconCart} />
             </Grid>
           </Grid>
-        </ContainerData>
+        </ContainerData> 
+</Grid>
+          </Grid>
+          <Grid container sx={{display:{xs:'flex',md:'none'}}}>
+            <Grid item xs={12}>
+                     <ContainerImage style={{ height: xl ? "20vh" : "20vh" }}>
+          <Image src={img} />
+          <ContainerIcon>
+            <Icon src={Heart} />
+          </ContainerIcon>
+          {sale && <Sale>SALE</Sale>}
+        </ContainerImage>
+        <ContainerData>
+          <Grid container>
+            <Grid item xs={10}>
+              <Name>{name}</Name>
+              <Price>${price}</Price>
+            </Grid>
+            <Grid item xs={2}>
+              <Icon style={{  height: "3vh",
+  width: "3vh",}} src={IconCart} />
+            </Grid>
+          </Grid>
+        </ContainerData> 
+</Grid>
+          </Grid>
+
       </Container>
     </Paper>
     </a>

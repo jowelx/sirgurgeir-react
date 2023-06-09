@@ -19,7 +19,7 @@ const ImageText = styled.p({
 });
 const TittleList = styled.p({
   textAlign: "left",
-  fontSize: "3vh",
+  fontSize: "2.4vh",
   fontWeight: 600,
 });
 const Text = styled.p({
@@ -39,6 +39,7 @@ const ButtonInit = styled.div({
   fontSize: "1.5vh",
   backgroundColor: "rgba(255, 194, 0, 1)",
   display: "flex",
+  marginBottom:'2.5vh',
   alignItems: "center",
   justifyContent: "space-around",
 });
@@ -80,6 +81,9 @@ const images = [
 ];
 const end = ["Privacy Policy", "Cookies Policy", "Terms and conditions"];
 const Footer = () => {
+    const volverAlInicio = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
   return (
     <Container>
       <Grid container justifyContent={"center"}>
@@ -117,7 +121,7 @@ const Footer = () => {
                 <Grid item xs={12}>
                   <Grid container justifyContent={"flex-start"}>
                     <Grid item xs={6} md={2}>
-                      <ButtonInit>
+                      <ButtonInit onClick={volverAlInicio}>
                         Back to top <NorthIcon style={{ fontSize: 15 }} />
                       </ButtonInit>
                     </Grid>

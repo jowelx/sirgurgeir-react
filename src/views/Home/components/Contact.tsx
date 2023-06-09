@@ -11,7 +11,7 @@ const Container = styled.div({
   marginTop: "20vh",
 });
 const Tittle = styled.p({
-  fontSize: 50,
+  fontSize:"6vh",
   textAlign: "left",
 });
 const Text = styled.p({
@@ -21,7 +21,7 @@ const Text = styled.p({
   margin: 0,
 });
 const ContainerCheckBox = styled.div({
-  marginTop: "10vh",
+  marginTop: "6vh",
 });
 const Checkbox = styled.input`
   appearance: none;
@@ -44,7 +44,7 @@ const Input = styled.input({
 });
 const Button = styled.button({
   width: "100%",
-  marginTop: "10vh",
+  marginTop: "6vh",
   backgroundColor: "transparent",
   borderRadius: 200,
   padding: 10,
@@ -101,7 +101,7 @@ const Contact = () => {
                 </Grid>
               </ContainerCheckBox>
             </Grid>
-            <Grid item xs={4}>
+            <Grid item xs={6}md={4}>
               <Button>Join E-mail List</Button>
             </Grid>
           </Grid>

@@ -21,7 +21,7 @@ const Logo = styled.img({
 const Title = styled.p({
   color: BLUECOLOR,
   fontWeight: 700,
-  fontSize: "3.5vw",
+  fontSize: "7vh",
   textAlign: "left",
   marginBottom: 0,
   marginTop: "1.5vw",
@@ -30,7 +30,7 @@ const Text = styled.p({
   color: BLUECOLOR,
   margin: 0,
   fontWeight: 500,
-  fontSize: "1.6vw",
+  fontSize: "3vh",
   textAlign: "left",
 });
 const Input = styled(Field)({
@@ -39,15 +39,15 @@ const Input = styled(Field)({
   backgroundColor: "rgba(0,0,0,0)",
   borderBottom: "solid 1px rgb(200,200,200)",
   width: "100%",
-  marginTop: "1vw",
-  padding: "1.11vw",
+  marginTop: "3vh",
+  padding: "1.11vh",
 });
 const Button = styled.div({
   backgroundColor: BLUECOLOR,
   color: "white",
-  padding: "1vw",
+  padding: "2vh 1vh",
   width: "100%",
-  marginTop: "1vw",
+  marginTop: "2vh",
   borderRadius: 8,
   cursor:'pointer'
 });
@@ -73,12 +73,12 @@ const ButtonSocial = styled.div({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  padding: "1vw",
+  padding: "2vh",
   margin: "0.5vw 0",
   cursor:'pointer'
 });
 const Icon = styled.img({
-  height: "2vw",
+  height: "3vh",
   width: "auto",
 });
 const ImageBg = styled.img({
@@ -140,8 +140,8 @@ const Register = () => {
   return (
     <Grid container justifyContent={"center"}>
       <Grid item xs={11}>
-        <Grid container>
-          <Grid item xs={4}>
+        <Grid container >
+          <Grid item xs={12}md={4}>
             <div style={{paddingTop:'0.1vw'}}>
             <Grid container>
               <Grid item xs={12}>
@@ -259,13 +259,18 @@ const Register = () => {
           </Grid>
           <Grid
             item
-            xs={8}
+            md={8}
+            xs={12}
             style={{ display: "flex", justifyContent: "flex-end" }}
           >
+            <Grid container
+                 sx={{ display: { xs: "none", md: "flex" } }}
+            >
+              <Grid item xs={12}  style={{ display: "flex", justifyContent: "flex-end" }}>
             <ContainerImageRegister>
               <ImageBg src={bg} />
               <ContainerText>
-                <Grid container>
+                <Grid container          >
                   <Grid
                     item
                     xs={12}
@@ -301,6 +306,10 @@ const Register = () => {
                 </Grid>
               </ContainerText>
             </ContainerImageRegister>
+              </Grid>
+
+            </Grid>
+
           </Grid>
         </Grid>
       </Grid>

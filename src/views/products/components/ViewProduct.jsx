@@ -107,7 +107,7 @@ const ViewProducts = () => {
 
   return (
     <div>
-      <Container style={{ width: "90%", height: "30vw", margin: "0 auto" }}>
+      <Container style={{ width: "90%", height: "45vh", margin: "0 auto" }}>
         <Carousel
           ref={carouselRef}
           slides={slides}

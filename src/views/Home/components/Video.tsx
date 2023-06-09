@@ -14,7 +14,7 @@ const ContainerText = styled.div({
   position: "absolute",
   bottom: 0,
   width: "99%",
-  height: "26%",
+  height: "30%",
   paddingLeft: ".5%",
 });
 const Link = styled.a({

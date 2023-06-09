@@ -44,20 +44,20 @@ const Cart = () => {
       <Grid item xs={12}>
         <NavBarAbout />
       </Grid>
-      <Grid item xs={10}>
+      <Grid item xs={11} md={10}>
         <Grid container columnSpacing={4} justifyContent={"space-around"}>
-          <Grid item xs={6}>
+          <Grid item xs={12} md={6}>
             <SearchBar />
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs={12}md={4}>
             <OrderSumary data={values} />
           </Grid>
         </Grid>
         <Grid container columnSpacing={4} justifyContent={"space-around"}>
-          <Grid item xs={6}>
+          <Grid item xs={12} md={6}>
             <OrderData data={values} setData={setValues} />
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs={12} md={4}>
             <PaymentMethod />
           </Grid>
         </Grid>

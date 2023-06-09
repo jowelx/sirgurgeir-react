@@ -63,7 +63,7 @@ const Content = () => {
                 <Text>for&nbsp;</Text>
                 <TextStrong>"hoodies"</TextStrong>
               </Grid>
-              <Grid item xs={12} sx={{ display: { xs: "flex", md: "none" } }}>
+              <Grid item xs={12} sx={{ display: { xs: "none", md: "none" } }}>
                 <Grid container>
                   <Grid item xs={12}>
                     <Text>Showing &nbsp;</Text>
@@ -80,7 +80,7 @@ const Content = () => {
             </Grid>
           </div>
         </Grid>
-        <Grid item xs={12} md={3}>
+        <Grid item xs={12} md={3} sx={{ display: { xs: "none", md: "none" } }}>
           <div
             style={{
               display: "flex",
@@ -105,7 +105,7 @@ const Content = () => {
             </CustomSelect>
           </div>
         </Grid>
-        <Grid item xs={12} md={7}>
+        <Grid item xs={12} md={7} sx={{ display: { xs: "none", md: "none" } }}>
           <div
             style={{
               display: "flex",
@@ -144,9 +144,9 @@ const Content = () => {
         </Grid>
         <Grid item xs={12}>
           <div style={{ minHeight: "70vh", margin: "2vw 0" }}>
-            <Grid container spacing={4}>
+            <Grid container>
               {data.map((item, index) => (
-                <Grid item xs={12} md={4}>
+                <Grid item xs={6} md={3}  sx={{ px: { xs: 1, md: 2 }, py: { xs: 2, md: 4 } }}>
                   <ProductCard
                     img={item.img}
                     name={item.name}

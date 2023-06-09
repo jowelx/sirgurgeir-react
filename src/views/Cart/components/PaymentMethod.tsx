@@ -9,14 +9,14 @@ import stripe from '../../../assets/s.png';
 import visa from '../../../assets/v.jpg';
 import mastercard from '../../../assets/m.png'
 const Title = styled.p({
-        fontSize: '1.6vw',
+        fontSize: '3vh',
     textAlign: 'left',
     color: BLUECOLOR,
     fontWeight:700
 })
 const Image = styled.img({
     width: 'auto',
-    height: '2vw',
+    height: '4vh',
     
 })
 const Images = [mastercard,paypal,stripe,coinbase,visa,binance]
@@ -29,7 +29,7 @@ const PaymentMethod = () => {
 </Title>
             </Grid>
             {Images.map((i) => (
-                <Grid item xs={4}>
+                <Grid item xs={6} md={4}>
                     
                 <Image src={i} />
                     </Grid>

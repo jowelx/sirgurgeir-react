@@ -53,8 +53,8 @@ const BpCheckedIcon = styled(BpIcon)({
   },
 });
 const ImageProduct = styledE.img({
-  width: "auto",
-  height: "25vh",
+  width: "100%",
+  height: "auto",
   borderRadius: 5,
 });
 const NameProduct = styledE.p({
@@ -62,13 +62,13 @@ const NameProduct = styledE.p({
   textAlign: "left",
 });
 const PriceProduct = styledE.p({
-  fontSize: "1.6vw",
+  fontSize: "2vh",
   color: BLUECOLOR,
   fontWeight: 700,
   margin: 0,
 });
 const SubTitle = styledE.p({
-  fontSize: "1vw",
+  fontSize: "2vh",
   fontWeight: 600,
   margin: "1vw 0",
   textAlign: "left",
@@ -95,8 +95,8 @@ const Button = styledE.div({
   transition: "all 0.4s ease",
 });
 const Color = styledE.div({
-  width: "1vw",
-  height: "1vw",
+  width: "1.5vh",
+  height: "1.5vh",
   borderRadius: 500,
 });
 const Sale = styledE.p({
@@ -146,7 +146,7 @@ const ProductCart = ({ data, setData, index }: any) => {
           inputProps={{ "aria-label": "Checkbox demo" }}
         />
       </Grid>
-      <Grid item xs={3}>
+      <Grid item xs={4} md={3}>
         <ContainerImage>
           <ImageProduct src={img} />
           <Sale>Sale</Sale>
@@ -155,14 +155,14 @@ const ProductCart = ({ data, setData, index }: any) => {
           </div>
         </ContainerImage>
       </Grid>
-      <Grid item xs={7} style={{marginLeft:'1vw'}}>
+      <Grid item xs={6} md={7} style={{marginLeft:'1vw'}}>
         <NameProduct>{name}</NameProduct>
         <SubTitle>Size</SubTitle>
         <Grid container justifyContent={"space-between"} alignItems={"center"}>
-          <Grid item xs={2}>
+          <Grid item xs={2}md={2}>
             <ButtonSize>{size}</ButtonSize>
           </Grid>
-          <Grid item xs={3}>
+          <Grid item xs={3} md={3}>
             <Grid
               container
               alignItems={"center"}

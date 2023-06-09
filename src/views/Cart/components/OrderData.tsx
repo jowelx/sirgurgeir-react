@@ -7,7 +7,7 @@ import styledE from "@emotion/styled";
 import Checkbox, { CheckboxProps } from "@mui/material/Checkbox";
 import imageProduct from "../../../assets/18.png";
 const Tittle = styledE.p({
-  fontSize: "1.6vw",
+  fontSize: "3vh",
   textAlign: "left",
   color: BLUECOLOR,
   fontWeight: 700,

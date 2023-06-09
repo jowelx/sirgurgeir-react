@@ -12,7 +12,7 @@ const Container = styled.div({
 });
 const Title = styled.p({
   fontWeight: 700,
-  fontSize: '3.5vw',
+  fontSize: '5vh',
   color:BLUECOLOR
 })
 const WishList = () => {
@@ -26,7 +26,7 @@ const WishList = () => {
               My wishlist
 </Title>
           </Grid>
-          <Grid item xs={8}>
+          <Grid item xs={11}md={8}>
             <Content />
           </Grid>
         </Grid>

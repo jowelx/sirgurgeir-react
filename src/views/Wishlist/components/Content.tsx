@@ -55,9 +55,9 @@ const Content = () => {
 
         <Grid item xs={12}>
           <div style={{ minHeight: "70vh", margin: "2vw 0" }}>
-            <Grid container spacing={4}>
+            <Grid container  >
               {dataWishlist.map((item, index) => (
-                <Grid item xs={3}>
+                <Grid item xs={6} md={3} sx={{ px: { xs: 1, md: 2 }, py: { xs: 2, md: 4 } }}>
                   <ProductCard
                     img={item.img}
                     name={item.name}

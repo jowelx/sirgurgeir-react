@@ -98,7 +98,10 @@ const handleBack = () => {
       return prevIndex - 1;
     }
   });
-};
+  };
+    function handleChangeIndex(index) {
+    setIndex(index);
+  }
   useEffect(() => {
     const interval = setInterval(() => {
       // Avanzar al siguiente slide
@@ -109,10 +112,11 @@ const handleBack = () => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data.length]);
 
-  function handleChangeIndex(index) {
-    setIndex(index);
-  }
-    return (<Container>
+
+  return (
+    <Grid container>
+<Grid xs={12}  sx={{display:{xs:'none',md:'flex'}}}>
+       <Container>
   <SwipeableViews
       index={index}
       onChangeIndex={handleChangeIndex}
@@ -171,6 +175,10 @@ const handleBack = () => {
     
       ))}
     </SwipeableViews>
-    </Container>)
+    </Container>     
+</Grid>
+    </Grid>
+    
+)
 }
 export default CarouselSection 

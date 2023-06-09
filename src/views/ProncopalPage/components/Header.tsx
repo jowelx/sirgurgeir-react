@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "@emotion/styled";
 import { Grid } from "@mui/material";
 import ArrowIcon from "../../../assets/ArrowWhite.png";
 import { BLUECOLOR } from "../../../colors/Colors";
 import image from "../../../assets/2.png";
+import { ArrowLeft,ArrowRight } from "../../../components/UI/Arrows";
+import SwipeableViews from "react-swipeable-views";
 const data = [
   {
     title: "Lorem Ipsum",
@@ -65,6 +67,29 @@ const Image = styled.img({
   height: "100%",
 });
 const Header = () => {
+  const [index, setIndex] = useState(0);
+  function handleChangeIndex(index: number) {
+    setIndex(index);
+  }
+  const handleNext = () => {
+    setIndex((prevIndex) => {
+      if (prevIndex === data.length - 1) {
+        return 0;
+      } else {
+        return prevIndex + 1;
+      }
+    });
+  };
+
+  const handleBack = () => {
+    setIndex((prevIndex) => {
+      if (prevIndex === 0) {
+        return data.length - 1;
+      } else {
+        return prevIndex - 1;
+      }
+    });
+  };
   return (
     <>
       <div>
@@ -123,14 +148,19 @@ const Header = () => {
             </div>
           </Grid>
           <Grid item xs={12}>
-            <Grid container justifyContent={"space-around"} columnSpacing={2}>
+            <Grid
+              container
+              justifyContent={"space-around"}
+              columnSpacing={2}
+              sx={{ display: { xs: "none", md: "flex" } }}
+            >
               {data.map((item, index) => (
                 <Grid key={index} item xs={12} md={3}>
                   <div style={{ width: "100%" }}>
                     <div
                       style={{
-                        width: "5vw",
-                        height: "5vw",
+                        width: "10vh",
+                        height: "10vh",
                         borderRadius: 12,
                         backgroundColor: "rgba(235, 235, 235, 1)",
                       }}
@@ -142,6 +172,42 @@ const Header = () => {
                   </div>
                 </Grid>
               ))}
+            </Grid>
+            <Grid
+              container
+              justifyContent={"space-around"}
+              columnSpacing={2}
+              sx={{ display: { xs: "flex", md: "none" } }}
+            >
+              <Grid item xs={12} md={3}>
+                <SwipeableViews
+                  index={index}
+                  onChangeIndex={handleChangeIndex}
+                  enableMouseEvents={true}
+                  animateTransitions={true}
+                  axis={"x"}
+                  containerStyle={{ height: "auto", width: "100%" }}
+                >
+                  {data.map((item, index) => (
+                    <div key={index} style={{ width: "100%" }}>
+                      <div
+                        style={{
+                          width: "10vh",
+                          height: "10vh",
+                          borderRadius: 12,
+                          backgroundColor: "rgba(235, 235, 235, 1)",
+                        }}
+                      />
+                      <H2 style={{ color: BLUECOLOR, fontWeight: 600 }}>
+                        {item.title}
+                      </H2>
+                      <H4>{item.text}</H4>
+                    </div>
+                  ))}
+                </SwipeableViews>
+                <ArrowLeft onClick={handleBack}/>
+                <ArrowRight onClick={handleNext}/>
+              </Grid>
             </Grid>
           </Grid>
         </Grid>

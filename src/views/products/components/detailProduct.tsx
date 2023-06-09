@@ -11,7 +11,7 @@ import IconShop from "../../../assets/IconShop.png";
 import Card from "./Card";
 const Title = styled.p({
   textAlign: "left",
-  fontSize: "1.6vw",
+  fontSize: "2vh",
 });
 const ShortText = styled.p({
   textAlign: "left",
@@ -24,25 +24,25 @@ const Star = styled(StarRateIcon)({
 });
 const YelowText = styled.p({
   color: YELLOWCOLOR,
-  fontSize: "1vw",
+  fontSize: "2vh",
 });
 const Icon = styled.img({
-  width: "2vw",
-  height: "2vw",
+  width: "4vh",
+  height: "4vh",
 });
 const IconRegla = styled.img({
-  width: "1.8vw",
+  width: "2.5vh",
 });
 const SubTitle = styled.p({
-  fontSize: "1.5vw",
+  fontSize: "2vh",
   fontFamily: PrincipalFont,
   fontWeight: 600,
   margin: "1vw 0",
   textAlign: "left",
 });
 const Button = styled.div({
-  width: "2vw",
-  height: "2vw",
+  width: "4vh",
+  height: "4vh",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
@@ -70,7 +70,7 @@ const ButtonSize = styled.div({
   },
 });
 const Price = styled.p({
-  fontSize: "2vw",
+  fontSize: "2.5vh",
   fontFamily: PrincipalFont,
   fontWeight: 700,
   textAlign: "left",
@@ -112,11 +112,13 @@ const DetailProduct = () => {
   const [selectedSize, setSelecteSize] = useState<number>(0);
   const [amount, setAmount] = useState<number>(1);
   return (
-    <Grid container justifyContent={"flex-start"} alignItems={"center"}>
-      <Grid item xs={12} md={8}>
+    <Grid container justifyContent={"center"} alignItems={"center"}>
+      <Grid item xs={10}md={12}>
+        <Grid container justifyContent={"flex-start"} alignItems={"center"}>
+                <Grid item xs={10} md={8}>
         <Title>Rorem ipsum dolor sit amet ipsum dolor sit</Title>
       </Grid>
-      <Grid item xs={4} md={4}>
+      <Grid item xs={2} md={4}>
         <Icon src={IconHeart} />
       </Grid>
       <Grid item xs={2}>
@@ -155,14 +157,14 @@ const DetailProduct = () => {
         </ContainerSizes>
       </Grid>
       <Grid item xs={12}>
-        <ContainerMargin>
+        <ContainerMargin style={{display:'flex',alignItems:'center'}}>
           <div style={{ marginRight: "1vw" }}>
             <IconRegla src={RegleIcon} />
           </div>
           <YelowText>Size Guide</YelowText>
         </ContainerMargin>
       </Grid>
-      <Grid item xs={2}>
+      <Grid item xs={4} md={2}>
         <Grid container alignItems={"center"} justifyContent={"flex-start"}>
           <Grid item xs={3}>
             <Button onClick={() => setAmount(amount < 2 ? 1 : amount - 1)}>
@@ -183,11 +185,11 @@ const DetailProduct = () => {
           </Grid>
         </Grid>
       </Grid>
-      <Grid item xs={12} />
-      <Grid item xs={8}>
+      <Grid item xs={10}md={12} />
+      <Grid item xs={12} md={8}>
         <div style={{ margin: "2vw 0" }}>
           <Grid container alignItems={"center"} justifyContent={"flex-start"}>
-            <Grid item xs={5}>
+            <Grid item xs={5}md={5}>
               <ButtonBlue>
                 <p
                   style={{ fontWeight: 600, color: "white", margin: "1.2vw 0" }}
@@ -210,9 +212,9 @@ const DetailProduct = () => {
               </ButtonBlue>
             </Grid>
 
-            <Grid item xs={5}>
+            <Grid item xs={5} md={5}>
               <ButtonWhite>
-                <p style={{ fontWeight: 600, color: BLUECOLOR }}>Check Out</p>
+                <p style={{ fontWeight: 600, color: BLUECOLOR , margin: "1.2vw 0" }}>Check Out</p>
                 <div>
                   <Icon
                     style={{
@@ -220,7 +222,7 @@ const DetailProduct = () => {
                       padding: "0.5vw",
                       borderRadius: 200,
                       border: "solid 1px white",
-                      width: "2vw",
+                      width: "2vh",
                       height: "auto",
                     }}
                     src={IconShop}
@@ -234,6 +236,9 @@ const DetailProduct = () => {
       <Grid item xs={10}>
         <Card />
       </Grid>
+</Grid>
+      </Grid>
+
     </Grid>
   );
 };

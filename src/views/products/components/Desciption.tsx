@@ -57,10 +57,10 @@ const DataText = styledE.p({
   color: "rgba(94, 94, 94, 1)",
   textAlign: "left",
   margin: "0.2vw 0",
-  fontSize: "0.8vw",
+  fontSize: "1.4vh",
 });
 const PrincipalTitle = styledE.p({
-  fontSize: "1.5vw",
+  fontSize: "4vh",
   margin: 0,
   fontFamily: PrincipalFont,
   fontWeight: 600,

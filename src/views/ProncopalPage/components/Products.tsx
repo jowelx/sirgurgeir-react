@@ -49,11 +49,11 @@ const Products = () => {
           <Title>Currated Picks</Title>
         </Grid>
         <Grid item xs={12}>
-          <Grid container justifyContent={"center"} columnSpacing={10} rowSpacing={4}>
+          <Grid container justifyContent={"center"} >
             {data.map((item, index) => (
-             index <=3&& <Grid key={index} item xs={10}md={3}>
+             index <=3&& <Grid key={index} item xs={6}md={3} sx={{ px: { xs: 1, md: 3 }, py: { xs: 2, md: 4 } }}>
                 <ProductCard
-                  xl
+        xl
                   name={item.name}
                   img={item.img}
                   price={item.price}

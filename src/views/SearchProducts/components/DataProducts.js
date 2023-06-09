@@ -36,4 +36,15 @@ export const data = [
     name: "Porem ipsum",
     img: Image5,
   },
+  {
+    price: "10",
+    name: "Porem ipsum",
+    img: Image1,
+    sale: true,
+  },
+  {
+    price: "10",
+    name: "Porem ipsum",
+    img: Image3,
+  },
 ];
