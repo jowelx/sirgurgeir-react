@@ -116,7 +116,7 @@ const FiltersMobile = () => {
       {filter && (
               <Grid item xs={10}>
                   <div style={{position:'relative',backgroundColor:'red',height:'auto',width:'100%'}}>
-                             <Container style={{position:'fixed',top:"25%",zIndex:999,backgroundColor:'white'}}>
+                             <Container style={{position:'absolute',top:"25%",zIndex:999,backgroundColor:'white'}}>
             <div>
               {Categories.map((item, index) => (
                 <div key={index}>
