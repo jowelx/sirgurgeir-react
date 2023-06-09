@@ -136,21 +136,21 @@ const Body = () => {
             alignItems={"flex-start"}
           >
             <Grid item xs={12}>
-              <YellowTittle style={{ fontSize: "6vh" }}>Why&nbsp;</YellowTittle>
-              <BlueTittle style={{ fontSize: "6vh" }}>should</BlueTittle>
+              <YellowTittle style={{ fontSize: "6vh",lineHeight:'6vh' }}>Why&nbsp;</YellowTittle>
+              <BlueTittle style={{ fontSize: "6vh",lineHeight:'6vh' }}>should</BlueTittle>
               <br />
-              <BlueTittle style={{ fontSize: "6vh" }}>choose&nbsp;</BlueTittle>
-              <YellowTittle style={{ fontSize: "6vh" }}>our</YellowTittle>
+              <BlueTittle style={{ fontSize: "6vh",lineHeight:'6vh' }}>choose&nbsp;</BlueTittle>
+              <YellowTittle style={{ fontSize: "6vh",lineHeight:'6vh' }}>our</YellowTittle>
             </Grid>
             <Grid item xs={11}>
-              <BlueTittle style={{ fontSize: "6vh", textAlign: "left" }}>
+              <BlueTittle style={{ fontSize: "6vh", textAlign: "left",lineHeight:'6vh' }}>
                 product?&nbsp;&nbsp;
               </BlueTittle>
             </Grid>
           </Grid>
         </Grid>
         <Grid item xs={12} md={5}>
-          <Grid container justifyContent={"flex-end"}>
+          <Grid container justifyContent={"center"}>
             {data.map((item) => (
               <Grid key={item} item xs={11} md={10}>
                 <Grid container alignItems={"center"}>
@@ -177,9 +177,9 @@ const Body = () => {
         </Grid>
         <Grid item xs={12} sx={{ display: { xs: "flex", md: "none" } }}>
           <Container style={{marginTop:'1vh'}}>
-            <BlueTittle style={{ fontSize: "6vh" }}>What our happy</BlueTittle>
+            <BlueTittle style={{ fontSize: "6vh",lineHeight:'6vh' }}>What our happy</BlueTittle>
             <br />
-            <BlueTittle style={{ fontSize: "6vh" }}>customers say</BlueTittle>
+            <BlueTittle style={{ fontSize: "6vh",lineHeight:'6vh' }}>customers say</BlueTittle>
           </Container>
         </Grid>
         <Grid

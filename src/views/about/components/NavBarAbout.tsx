@@ -238,7 +238,7 @@ const NavBarAbout = () => {
             </Grid>
           </Grid>
         </Grid>
-        <Grid item xs={12}>
+        <Grid item xs={12} style={{marginTop:'1.5vh'}}>
           <Grid container alignItems={"center"} justifyContent={"center"}>
             <Grid item xs={8}>
               <div

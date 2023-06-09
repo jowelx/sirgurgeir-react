@@ -205,6 +205,7 @@ const Header = () => {
                     </div>
                   ))}
                 </SwipeableViews>
+                 <br/>
                 <ArrowLeft onClick={handleBack}/>
                 <ArrowRight onClick={handleNext}/>
               </Grid>

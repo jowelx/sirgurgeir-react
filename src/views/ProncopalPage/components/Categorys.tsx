@@ -140,6 +140,7 @@ const Category = () => {
                   </ContainerImage>
                 ))}
               </SwipeableViews>
+              <br/>
                           <ArrowLeft onClick={handleBack}/>
                 <ArrowRight onClick={handleNext}/>
             </Grid>

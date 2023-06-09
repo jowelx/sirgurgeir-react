@@ -35,7 +35,8 @@ const Button = styled.div({
   padding: "0.8vw",
   display: 'flex',
   justifyContent:'space-around',
-  alignItems:'center'
+  alignItems: 'center',
+   fontSize: "1.5vh",
 });
 const Text = styled.p({
   color: "white",
@@ -76,7 +77,7 @@ const BannerOffert = () => {
           <Grid container alignItems={"center"} sx={{display:{xs:'flex',md:'none'}}}>
         <Grid item xs={4}>
           <ContainerImage>
-            <Image src={Banner} style={{height:'32vw'}} />
+            <Image src={Banner} style={{height:'29vw'}} />
           </ContainerImage>
         </Grid>
         <Grid item xs={8}>

@@ -95,9 +95,9 @@ const ProductCard = ({ xl, name, img, price, sale }: Prop) => {
           {sale && <Sale>SALE</Sale>}
         </ContainerImage>
         <ContainerData>
-          <Grid container>
+          <Grid container alignItems={"center"}>
             <Grid item xs={10}>
-              <Name>{name}</Name>
+              <Name style={{fontSize:'2vh'}}>{name}</Name>
               <Price>${price}</Price>
             </Grid>
             <Grid item xs={2}>
