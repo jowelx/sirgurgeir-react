@@ -22,7 +22,7 @@ const CustomSelect = styled(Select)(({ theme }) => ({
 const Categories = ["Category", "Brands", "Price", "Size"];
 const Container = styledE.div({
   border: " 1.5px solid #E8E8E8",
-    padding: "2vw",
+  padding: "2vw",
   borderRadius: 15,
 });
 const Title = styledE.p({
@@ -114,33 +114,46 @@ const FiltersMobile = () => {
         </Grid>
       </Grid>
       {filter && (
-              <Grid item xs={10}>
-                  <div style={{position:'relative',backgroundColor:'red',height:'auto',width:'100%'}}>
-                             <Container style={{position:'absolute',top:"25%",zIndex:999,backgroundColor:'white'}}>
-            <div>
-              {Categories.map((item, index) => (
-                <div key={index}>
-                  <Accordion
-                    style={{ backgroundColor: "rgba(0,0,0,0)" }}
-                    onChange={handleChange("panel1")}
-                  >
-                    <AccordionSummary
+        <Grid item xs={10}>
+          <div
+            style={{
+              position: "relative",
+              backgroundColor: "red",
+              height: "auto",
+              width: "100%",
+            }}
+          >
+            <Container
+              style={{
+                position: "absolute",
+                top: "25%",
+                zIndex: 999,
+                backgroundColor: "white",
+              }}
+            >
+              <div>
+                {Categories.map((item, index) => (
+                  <div key={index}>
+                    <Accordion
                       style={{ backgroundColor: "rgba(0,0,0,0)" }}
-                      aria-controls="panel1d-content"
-                      id="panel1d-header"
+                      onChange={handleChange("panel1")}
                     >
-                      <Title>{item}</Title>
-                    </AccordionSummary>
-                    <AccordionDetails>
-                      {index === 0 && <SubCategory />}
-                    </AccordionDetails>
-                  </Accordion>
-                </div>
-              ))}
-            </div>
-          </Container>  
+                      <AccordionSummary
+                        style={{ backgroundColor: "rgba(0,0,0,0)" }}
+                        aria-controls="panel1d-content"
+                        id="panel1d-header"
+                      >
+                        <Title>{item}</Title>
+                      </AccordionSummary>
+                      <AccordionDetails>
+                        {index === 0 && <SubCategory />}
+                      </AccordionDetails>
+                    </Accordion>
                   </div>
- 
+                ))}
+              </div>
+            </Container>
+          </div>
         </Grid>
       )}
     </Grid>

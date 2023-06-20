@@ -11,6 +11,7 @@ import Cart from "../views/Cart/Cart";
 import IndexLogin from "../views/Login";
 import PaymentGateWay from "../views/PaymentGateway/PaymentGateway";
 import WishList from "../views/Wishlist/WishList";
+import Succes from "../views/PaymentGateway/Succes/Succes";
 interface PublicRouteProps {
   component: React.ComponentType<any>;
   [key: string]: any;
@@ -38,6 +39,7 @@ const Routes: React.FC = () => {
       <PublicRoute path="/Login" component={IndexLogin} />
       <PublicRoute path="/payment" component={PaymentGateWay} />
       <PublicRoute path="/wishList" component={WishList} />
+      <PublicRoute path='/paymentSuccess' component={Succes}/>
     </Switch>
   );
 };

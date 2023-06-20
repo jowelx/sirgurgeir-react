@@ -15,19 +15,22 @@ const SearchProducts = () => {
     <>
       <NavBarAbout />
       <Container>
-        <Grid container     sx={{
-        justifyContent: 'center',  // Valor por defecto
-        '@media (min-width: 960px)': {
-          justifyContent: 'flex-start',  // Aplica a partir del breakpoint md
-        },
-      }}>
-          <Grid item xs={3} sx={{display:{xs:'none',md:'flex'}}}>
+        <Grid
+          container
+          sx={{
+            justifyContent: "center", // Valor por defecto
+            "@media (min-width: 960px)": {
+              justifyContent: "flex-start", // Aplica a partir del breakpoint md
+            },
+          }}
+        >
+          <Grid item xs={3} sx={{ display: { xs: "none", md: "flex" } }}>
             <Filter />
           </Grid>
-              <Grid item xs={12} sx={{display:{xs:'flex',md:'none'}}}>
+          <Grid item xs={12} sx={{ display: { xs: "flex", md: "none" } }}>
             <FiltersMobile />
           </Grid>
-          <Grid item xs={11} md={8}>
+          <Grid item xs={11} md={7}>
             <Content />
           </Grid>
         </Grid>
@@ -37,7 +40,7 @@ const SearchProducts = () => {
             <BannerOffert />
           </Grid>
         </Grid>
-        <Footer/>
+        <Footer />
       </Container>
     </>
   );

@@ -88,16 +88,17 @@ borderRadius: 11
         </Grid>
         <Grid item xs={8}>
           <ButtonBlue>
-            <p
+            <a href="/payment"
               style={{
                 fontSize: "2vh",
                 fontWeight: 600,
                 color: "white",
                 margin: " 0",
+                textDecoration:'none'
               }}
             >
               Checkout now
-            </p>
+            </a>
             <div style={{display:'flex',alignItems:'center'}}>
               <Icon
                 style={{

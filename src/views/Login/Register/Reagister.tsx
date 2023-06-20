@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import styled from "@emotion/styled";
 import { Grid } from "@mui/material";
 import { BLUECOLOR } from "../../../colors/Colors";
-import logo from "../../../assets/logo.png";
+import logo from "../../../assets/logo.svg";
 import * as Yup from "yup";
 import google from "../../../assets/google.png";
 import { Formik, Field, Form, ErrorMessage } from "formik";
@@ -12,7 +12,7 @@ import { AppContext } from "../../../context/AppContext";
 import EastIcon from "@mui/icons-material/East";
 import { useHistory } from 'react-router-dom';
 const Logo = styled.img({
-  height: "8vh",
+  height: "12vh",
   width: "auto",
   display: "flex",
   alignSelf: "flex-start",
@@ -134,6 +134,7 @@ const Register = () => {
 
   const handleClick = () => {
     setLogin(true);
+    localStorage.setItem('login', true.toString());
     history.push('/');
   };
 

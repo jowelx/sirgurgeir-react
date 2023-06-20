@@ -120,8 +120,10 @@ const Payment = () => {
           <Input />
               </Grid>
              
-        <Grid item xs={11}>
-          <Button>Continue to payment</Button>
+            <Grid item xs={11}>
+              <a href="/paymentSuccess" style={{color:'white',textDecoration:'none'}}>
+                <Button>Continue to payment</Button>
+                </a>
         </Grid>
           </Grid>  
               </Grid>

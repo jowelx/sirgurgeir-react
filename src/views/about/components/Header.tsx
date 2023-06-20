@@ -36,9 +36,9 @@ const Title = styled.p({
   margin: 0,
   fontFamily: PrincipalFont,
   fontWeight: 700,
-  lineHeight: "5vh",
+  lineHeight: "9vh",
   color: "white",
-  fontSize: "5vh",
+  fontSize: "12vh",
   textAlign: "left",
   borderBottom: "solid 2px rgb(255,255,255)",
   marginTop: "1vh",
@@ -54,7 +54,7 @@ const ContainerText = styled.div({
   bottom: 0,
   left: 0,
   right: 0,
-  padding: "8vh",
+  padding: "7vh",
 });
 
 const Header = () => {
@@ -66,21 +66,20 @@ const Header = () => {
             <Grid container>
               <Grid item xs={11}>
                 <Title>
-                  The best collection of
-                  <br /> chairs is here
+                  Talk about
+                  <br /> your brand
                 </Title>
               </Grid>
             </Grid>
             <Grid container>
-              <Grid item xs={12}md={11}>
+              <Grid item xs={12} md={11}>
                 <Text>
-                  Qorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-                  vulputate libero et velit interdum, ac <br />
-                  aliquet odio mattis. Class aptent taciti sociosqu ad litora
-                  torquent per conubia nostra, per inceptos <br /> himenaeos.
+                  Share information about your brand with your customers.
+                  <br /> Describe a product, make announcements, or welcome
+                  customers to your store.
                 </Text>
               </Grid>
-              <Grid item xs={12}md={1}>
+              <Grid item xs={12} md={1}>
                 <ContainerIcon>
                   <Icon src={ArrowDown} />
                 </ContainerIcon>

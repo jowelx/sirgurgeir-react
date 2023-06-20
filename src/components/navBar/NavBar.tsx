@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Grid } from "@mui/material";
 import styled from "@emotion/styled";
-import Logo from "../../assets/logo.png";
+import Logo from "../../assets/logo.svg";
 import { motion } from "framer-motion";
 import { BLUECOLOR } from "../../colors/Colors";
 import { AppContext } from "../../context/AppContext";
@@ -10,7 +10,7 @@ import IconHeart from "../../assets/IconHeart.png";
 import MenuMobile from "../../views/about/components/MenuMobile";
 import MenuIcon from "@mui/icons-material/Menu";
 const Image = styled.img({
-  width: "50%",
+  width: "40%",
 });
 const Icon = styled.img({
   width: 25,
@@ -265,7 +265,7 @@ const NavBar = () => {
                     style={{ display: "flex", justifyContent: "flex-start" }}
                     sx={{ display: { xs: "none", md: "flex" } }}
                   >
-                    <Image src={Logo} style={{ width: "20vh" }} />
+                    <Image src={Logo} style={{ width: "18vh" }} />
                   </Grid>
 
                   <Grid item xs={4} md={3}>
@@ -441,64 +441,68 @@ const NavBar = () => {
                       </Grid>
                     </Grid>
                   </Grid>
-                                      <Grid container    sx={{ display: { xs: "flex", md: "none" } }}>
-        <Grid item xs={12}style={{marginTop:'1.5vh'}}>
-          <Grid container alignItems={"center"} justifyContent={"center"}>
-            <Grid item xs={8}>
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  width: "100%",
-                  marginTop: "1vh",
-                }}
-              >
-                <Input
-                  type="text"
-                  placeholder="Buscar"
-                  transition={{ duration: 0.5 }}
-                  style={{
-                    fontSize: "2.4vh",
-                    borderRadius: "0.6vh",
-                    padding: "1vh",
-                  }}
-                />
-                <div
-                  style={{
-                    height: "3vw",
-                    marginLeft: "1vw",
-                    display: "flex",
-                    flexDirection: "row",
-                    alignItems: "center",
-                    position: "relative",
-                    zIndex: 99999,
-                  }}
-                >
-                  <Link href="/searchproduct">
-                    <svg
-                      style={{
-                        textAlign: "right",
-                      }}
-                      width="3vh"
-                      height="3vh"
-                      viewBox="0 0 20 20"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        d="M10.1657 2.99992C6.76378 2.44425 3.55557 4.75156 2.99992 8.15343C2.44426 11.5553 4.75157 14.7635 8.15344 15.3192C11.5553 15.8748 14.7635 13.5675 15.3192 10.1657C15.8748 6.76379 13.5675 3.55558 10.1657 2.99992ZM2.09471 8.00557C2.73203 4.10377 6.41171 1.45739 10.3135 2.09471C14.2153 2.73204 16.8617 6.41172 16.2244 10.3135C16.0094 11.6298 15.4481 12.8032 14.6489 13.7559L18.2844 17.4846C18.4612 17.666 18.4575 17.9563 18.2762 18.1331C18.0948 18.3099 17.8045 18.3063 17.6277 18.1249L14.0152 14.4198C12.4522 15.8606 10.2662 16.5936 8.00558 16.2244C4.10378 15.5871 1.4574 11.9074 2.09471 8.00557Z"
-                        fill="black"
-                      ></path>
-                    </svg>
-                  </Link>
-                </div>
-              </div>
-            </Grid>
-          </Grid>
-        </Grid>
+                  <Grid container sx={{ display: { xs: "flex", md: "none" } }}>
+                    <Grid item xs={12} style={{ marginTop: "1.5vh" }}>
+                      <Grid
+                        container
+                        alignItems={"center"}
+                        justifyContent={"center"}
+                      >
+                        <Grid item xs={8}>
+                          <div
+                            style={{
+                              display: "flex",
+                              alignItems: "center",
+                              width: "100%",
+                              marginTop: "1vh",
+                            }}
+                          >
+                            <Input
+                              type="text"
+                              placeholder="Buscar"
+                              transition={{ duration: 0.5 }}
+                              style={{
+                                fontSize: "2.4vh",
+                                borderRadius: "0.6vh",
+                                padding: "1vh",
+                              }}
+                            />
+                            <div
+                              style={{
+                                height: "3vw",
+                                marginLeft: "1vw",
+                                display: "flex",
+                                flexDirection: "row",
+                                alignItems: "center",
+                                position: "relative",
+                                zIndex: 99999,
+                              }}
+                            >
+                              <Link href="/searchproduct">
+                                <svg
+                                  style={{
+                                    textAlign: "right",
+                                  }}
+                                  width="3vh"
+                                  height="3vh"
+                                  viewBox="0 0 20 20"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    fillRule="evenodd"
+                                    clipRule="evenodd"
+                                    d="M10.1657 2.99992C6.76378 2.44425 3.55557 4.75156 2.99992 8.15343C2.44426 11.5553 4.75157 14.7635 8.15344 15.3192C11.5553 15.8748 14.7635 13.5675 15.3192 10.1657C15.8748 6.76379 13.5675 3.55558 10.1657 2.99992ZM2.09471 8.00557C2.73203 4.10377 6.41171 1.45739 10.3135 2.09471C14.2153 2.73204 16.8617 6.41172 16.2244 10.3135C16.0094 11.6298 15.4481 12.8032 14.6489 13.7559L18.2844 17.4846C18.4612 17.666 18.4575 17.9563 18.2762 18.1331C18.0948 18.3099 17.8045 18.3063 17.6277 18.1249L14.0152 14.4198C12.4522 15.8606 10.2662 16.5936 8.00558 16.2244C4.10378 15.5871 1.4574 11.9074 2.09471 8.00557Z"
+                                    fill="black"
+                                  ></path>
+                                </svg>
+                              </Link>
+                            </div>
+                          </div>
+                        </Grid>
+                      </Grid>
                     </Grid>
+                  </Grid>
                 </Grid>
               </Grid>
             </Grid>

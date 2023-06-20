@@ -5,7 +5,7 @@ import * as Yup from "yup";
 import TextField from "../../../components/UI/TextField";
 import styled from "@emotion/styled";
 import { BLUECOLOR, YELLOWCOLOR } from "../../../colors/Colors";
-import LogoWhite from "../../../assets/LogoWhite.png";
+import LogoWhite from "../../../assets/logo.svg";
 import bgI from "../../../assets/backgorundImage.png";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import EmailIcon from "@mui/icons-material/Email";
@@ -57,7 +57,7 @@ const FormContact = () => {
     width: "100%",
     color: BLUECOLOR,
     backgroundColor: YELLOWCOLOR,
-    borderRadius: 20,
+    borderRadius: 4,
     border: 0,
     fontSize: "1.2vw",
     fontWeight: 600,
@@ -99,6 +99,13 @@ const FormContact = () => {
     borderRadius: 10,
     marginRight: "1vw",
   });
+  const Tittle = styled.p({
+        fontSize: "3vw",
+    fontWeight: 600,
+    color: "white",
+    margin: 0,
+    textAlign: "center",
+  })
   return (
     <Grid container justifyContent={"center"} >
       <Grid item xs={8}>
@@ -118,7 +125,7 @@ const FormContact = () => {
                     WE’re open for any suggestion or just to have a chat
                   </Text>
                 </Grid>
-                <Grid item xs={10} style={{ marginTop: "4vw" }}>
+                <Grid item xs={10} style={{ marginTop: "1vh"}}>
                   {info.map((item, index) => (
                     <Grid
                       container
@@ -191,8 +198,10 @@ const FormContact = () => {
                 {({ errors, touched }: any) => (
                   <Form>
                     <Grid container justifyContent={"center"} rowSpacing={2}>
-                      <Grid item xs={4}>
-                        <Logo src={LogoWhite} />
+                      <Grid item xs={8}>
+                        <Tittle>
+                          Contact us!
+                        </Tittle>
                       </Grid>
                       <Grid item xs={10}>
                         <TextField

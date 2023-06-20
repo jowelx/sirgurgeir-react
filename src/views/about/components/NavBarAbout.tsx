@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import styled from "@emotion/styled";
-import { Grid } from "@mui/material";
-import imgLogo from "../../../assets/logo.png";
+import { Grid ,Badge} from "@mui/material";
+import imgLogo from "../../../assets/logo.svg";
 import IconPerson from "../../../assets/IconPerson.png";
 import IconShop from "../../../assets/IconShop.png";
 import IconHeart from "../../../assets/IconHeart.png";
@@ -11,6 +11,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import MenuMobile from "./MenuMobile";
 import { BLUECOLOR } from "../../../colors/Colors";
 import { AppContext } from "../../../context/AppContext";
+import BadgeCustom from "../../../components/UI/BadgeCustom";
 const dataNav = [
   { name: "ABOUT", url: "/about" },
   { name: "MEN", url: "/SearchProduct" },
@@ -19,7 +20,7 @@ const dataNav = [
   { name: "CONTACT", url: "/contact" },
 ];
 const Logo = styled.img({
-  width: "60%",
+  width: "50%",
   height: "auto",
 });
 
@@ -171,7 +172,9 @@ const NavBarAbout = () => {
 
            {login&&  <Grid item xs={1}>
               <Link href={"/cart"}>
+                <BadgeCustom>
                 <Icon src={IconShop} />
+                </BadgeCustom> 
               </Link>
             </Grid>}
             <Grid item xs={2}>
@@ -183,8 +186,9 @@ const NavBarAbout = () => {
                   position: "relative",
                 }}
               >
-                <Link href="/login">
-                <ButtonLogin
+                <Link href={!login?"/login":undefined}>
+                  <ButtonLogin
+                    onClick={()=>login?localStorage.removeItem('login'):null}
                   style={{
                     textAlign: "center",
                     fontSize: "2vh",
@@ -194,7 +198,6 @@ const NavBarAbout = () => {
                  {login ? "Log Out" : "Sign In"}
                 </ButtonLogin>
                 </Link>
-
               </div>
             </Grid>
           </Grid>

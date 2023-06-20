@@ -10,7 +10,7 @@ import { styled } from "@mui/material";
 import Chip from "@mui/material/Chip";
 import { ReactNode } from "react";
 import Pagination from "@mui/material/Pagination";
-import { data } from "./DataProducts";
+import { data, dataA } from "./DataProducts";
 import ProductCard from "../../../components/UI/ProductCard";
 import BannerOffert from "../../../components/BannerOfferts";
 const CustomSelect = styled(Select)(({ theme }) => ({
@@ -144,9 +144,9 @@ const Content = () => {
         </Grid>
         <Grid item xs={12}>
           <div style={{ minHeight: "70vh", margin: "2vw 0" }}>
-            <Grid container>
+            {page %2 ?<Grid container>
               {data.map((item, index) => (
-                <Grid item xs={6} md={3}  sx={{ px: { xs: 1, md: 2 }, py: { xs: 2, md: 4 } }}>
+                <Grid item xs={6} md={4}  sx={{ px: { xs: 1, md: 4 }, py: { xs: 2, md: 3 } }}>
                   <ProductCard
                     img={item.img}
                     name={item.name}
@@ -155,7 +155,18 @@ const Content = () => {
                   />
                 </Grid>
               ))}
-            </Grid>
+            </Grid>:<Grid container>
+              {dataA.map((item, index) => (
+                <Grid item xs={6} md={4}  sx={{ px: { xs: 1, md: 4 }, py: { xs: 2, md: 3 } }}>
+                  <ProductCard
+                    img={item.img}
+                    name={item.name}
+                    price={item.price}
+                    sale={item.sale}
+                  />
+                </Grid>
+              ))}
+            </Grid>}
           </div>
         </Grid>
         <Grid item xs={12}>

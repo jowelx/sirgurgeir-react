@@ -7,9 +7,19 @@ const Container = styled.footer({
   paddingTop: "2vw",
   paddingBottom: "8vh",
 });
+const Link = styled.a({
+  width: "100%",
+  fontSize: "1.8vh",
+  letterSpacing: 1,
+  fontWeight: 300,
+  margin: 0,
+  color: "rgb(10,10,10)",
+  textAlign: "left",
+  textDecoration: "none",
+});
 const Logo = styled.img({
   marginTop: "7vh",
-  width: "100%",
+  width: "50%",
 });
 const ImageText = styled.p({
   fontSize: "4vh",
@@ -29,7 +39,7 @@ const Text = styled.p({
 const Social = styled.img({
   width: "3vh",
   height: "3vh",
-  marginTop:'0.5vw',
+  marginTop: "0.5vw",
   cursor: "pointer",
 });
 const ButtonInit = styled.div({
@@ -39,7 +49,7 @@ const ButtonInit = styled.div({
   fontSize: "1.5vh",
   backgroundColor: "rgba(255, 194, 0, 1)",
   display: "flex",
-  marginBottom:'2.5vh',
+  marginBottom: "2.5vh",
   alignItems: "center",
   justifyContent: "space-around",
 });
@@ -59,14 +69,17 @@ const data = [
   {
     tittle: "Men",
     content: ["Explore men", "Clothing", "Snow", "Motocycle", "Archive sale"],
+    link: "/SearchProduct",
   },
   {
     tittle: "Women",
     content: ["Explore women", "Clothing", "Snow", "Archive sale"],
+    link: "SearchProduct",
   },
   {
     tittle: "Explore",
     content: ["Journal", "Our Stores", "About"],
+    link: "PrincipalPage",
   },
   {
     tittle: "Support",
@@ -81,25 +94,25 @@ const images = [
 ];
 const end = ["Privacy Policy", "Cookies Policy", "Terms and conditions"];
 const Footer = () => {
-    const volverAlInicio = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  const volverAlInicio = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
   return (
     <Container>
       <Grid container justifyContent={"center"}>
         <Grid item xs={10} md={11}>
           <Grid container justifyContent={"space-between"}>
-            <Grid item xs={12}md={3}>
+            <Grid item xs={12} md={3}>
               <Grid container alignItems={"center"}>
-                <Grid item xs={12}md={10}>
-                  <Logo src={"./assets/logo.png"} />
+                <Grid item xs={12} md={10}>
+                  <Logo src={"./assets/logo.svg"} />
                 </Grid>
                 <Grid item xs={12}>
                   <ImageText>Live the experience!</ImageText>
                 </Grid>
               </Grid>
             </Grid>
-            <Grid item xs={12}md={7}>
+            <Grid item xs={12} md={7}>
               <Grid container rowSpacing={6}>
                 {data.map((item, index) => {
                   return (
@@ -109,7 +122,9 @@ const Footer = () => {
                         {item.content.map((i, e) => {
                           return (
                             <>
-                              <Text style={{ cursor: "pointer" }}>{i}</Text>
+                              <Link href={item.link}>
+                                <Text style={{ cursor: "pointer" }}>{i}</Text>
+                              </Link>
                             </>
                           );
                         })}
@@ -126,10 +141,12 @@ const Footer = () => {
                       </ButtonInit>
                     </Grid>
                     <Grid item xs={12} md={5}></Grid>
-                    <Grid item xs={12}md={4}>
+                    <Grid item xs={12} md={4}>
                       <Grid container alignItems={"center"}>
                         <Grid item xs={4}>
+                          <Link href={'/contact'}>
                           <TittleList style={{ margin: 0 }}>Contact</TittleList>
+                          </Link>
                         </Grid>
                         {images.map((item, index) => (
                           <Grid item xs={2}>
@@ -147,12 +164,12 @@ const Footer = () => {
             </Grid>
             <Grid item xs={12}>
               <Grid container justifyContent={"space-around"}>
-                <Grid item xs={11}md={4}>
+                <Grid item xs={11} md={4}>
                   <EndText style={{ textAlign: "left" }}>
                     2023. All Rights Reserved
                   </EndText>
                 </Grid>
-                <Grid item xs={12}md={4}>
+                <Grid item xs={12} md={4}>
                   <Grid container>
                     {end.map((item, index) => {
                       return (

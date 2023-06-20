@@ -11,7 +11,7 @@ const Product = () => {
   return (
     <>
       <NavBarAbout />
-      <Offert/>
+      <Offert />
       <div style={{ marginTop: "10vh" }}>
         <Grid container>
           <Grid item xs={12} md={6}>
@@ -20,10 +20,14 @@ const Product = () => {
           <Grid item xs={12} md={6}>
             <DetailProduct />
           </Grid>
-          <Grid xs={10} md={6}><Comments/></Grid>
-          <Grid xs={12} md={4}><Description /></Grid>
+          <Grid xs={10} md={6}>
+            <Comments />
+          </Grid>
+          <Grid xs={12} md={4}>
+            <Description />
+          </Grid>
           <Grid md={12}>
-<Footer/>
+            <Footer />
           </Grid>
         </Grid>
       </div>

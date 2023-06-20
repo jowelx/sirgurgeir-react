@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import { useSpring, animated } from "react-spring";
 import Carousel from "react-spring-3d-carousel";
 import { config } from "react-spring";
+import {Grid} from '@mui/material'
 import styled from "@emotion/styled";
 import ArrowIcon from "../../../assets/ProductArrow.png";
 import { BLUECOLOR } from "../../../colors/Colors";
@@ -10,6 +11,16 @@ import SR from "../../../assets/Ropa/SRosa.png";
 import SN from "../../../assets/Ropa/SNegro.png";
 import scan from '../../../assets/scanIcon.png'
 import { PrincipalFont } from "../../../fonts/Fonts";
+import AI1 from '../../../assets/Ropa/1.webp'
+import AI2 from '../../../assets/Ropa/2.webp'
+import AI3 from '../../../assets/Ropa/3.webp'
+import AI4 from '../../../assets/Ropa/4.webp'
+const AditionalImages = [
+  { img: AI1 },
+  { img: AI2 },
+  { img: AI3 },
+   { img:AI4}
+]
 const ArrowLeft = styled.img({
   padding: "1.2vh",
   borderRadius: 200,
@@ -68,6 +79,10 @@ const ContainerDot = styled.div({
   transition: "0.4s ease",
   cursor:'pointer'
 });
+const AditionalImage = styled.img({
+  width: '100%',
+  borderRadius:4
+})
 const ViewProducts = () => {
   const [goToSlide, setGoToSlide] = useState(0);
   const offsetRadius = 2;
@@ -142,10 +157,21 @@ const ViewProducts = () => {
         <div>
           <img src={scan}/>
         </div>
-        <p style={{fontFamily:PrincipalFont,fontSize:'1vw' ,marginLeft:'1vw',color:'rgba(34, 34, 34, 1)'}}>
+        <p style={{fontFamily:PrincipalFont,fontSize:'1vw' ,marginLeft:'1vw',color:'rgba(34, 34, 34, 1)',marginBottom:0}}>
           Roll over image to zoom in
         </p>
       </div>
+      </div>
+      <div style={{display:'flex',justifyContent:'center',alignItems:'center',padding:'0 5vh'}}>
+      <Grid container columnSpacing={1}>
+       
+        {AditionalImages.map((item, index) => (
+           <Grid item xs={3}>
+          <AditionalImage src={item.img} />
+           </Grid>
+        ))}
+       
+</Grid>
       </div>
 
     </div>

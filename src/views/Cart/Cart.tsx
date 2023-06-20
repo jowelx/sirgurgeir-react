@@ -40,7 +40,7 @@ const Cart = () => {
     },
   ]);
   return (
-    <Grid container justifyContent={"center"} style={{ marginTop: "10vw" }}>
+    <Grid container justifyContent={"center"}>
       <Grid item xs={12}>
         <NavBarAbout />
       </Grid>
