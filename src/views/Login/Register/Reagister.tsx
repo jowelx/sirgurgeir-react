@@ -65,7 +65,7 @@ const initialValues = {
   password: "",
 };
 const ButtonSocial = styled.div({
-  width: "100%",
+  width: "96.5%",
   borderRadius: 6,
   border: "solid 1px rgb(232,232,232)",
   color: BLUECOLOR,
