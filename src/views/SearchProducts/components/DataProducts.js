@@ -1,13 +1,13 @@
-import Image1 from "../../../assets/6.png";
-import Image2 from "../../../assets/34.png";
-import Image3 from "../../../assets/33.png";
-import Image4 from "../../../assets/27.png";
-import Image5 from "../../../assets/18.png";
-import Image6 from "../../../assets/28.png";
-import Image7 from "../../../assets/34.png";
-import Image8 from "../../../assets/16.png";
-import Image9 from "../../../assets/30.jpg";
-import Image10 from "../../../assets/15.png";
+import Image1 from "../../../assets/Ropa/6.webp";
+import Image2 from "../../../assets/Ropa/2.webp";
+import Image3 from "../../../assets/Ropa/1.webp";
+import Image4 from "../../../assets/Ropa/6.webp";
+import Image5 from "../../../assets/Ropa/7.webp";
+import Image6 from "../../../assets/Ropa/9.webp";
+import Image7 from "../../../assets/Ropa/2.webp";
+import Image8 from "../../../assets/Ropa/10.webp";
+import Image9 from "../../../assets/Ropa/1.webp";
+import Image10 from "../../../assets/Ropa/12.webp";
 export const data = [
   {
     price: "10",
