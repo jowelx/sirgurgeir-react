@@ -150,7 +150,7 @@ const ProductCart = ({ data, setData, index }: any) => {
         <ContainerImage>
           <ImageProduct src={img} />
           <Sale>Sale</Sale>
-          <div style={{ position: "absolute", top: 0, right: "0.8vw" }}>
+          <div style={{ position: "absolute", top: "0.5vh", right: "0.8vh" }}>
             <Icon src={Heart} />
           </div>
         </ContainerImage>

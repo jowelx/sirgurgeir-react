@@ -6,7 +6,7 @@ import { BLUECOLOR } from "../../../../colors/Colors";
 import Footer from "../../../../components/footer/Footer";
 import NavBarAbout from "../../../about/components/NavBarAbout";
 const Container = styled(Grid)({
-  height: "100vh",
+  height: "75vh",
 });
 const Link = styled.a({
   textDecoration: "none",
