@@ -8,7 +8,7 @@ import PaymentMethod from "./components/PaymentMethod";
 import NavBarAbout from "../about/components/NavBarAbout";
 import Footer from "../../components/footer/Footer";
 
-import imageProduct from "../../assets/18.png";
+import imageProduct from "../../assets/Ropa/1.webp";
 const Cart = () => {
   const [values, setValues] = useState([
     {
