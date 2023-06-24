@@ -262,10 +262,9 @@ const NavBar = () => {
                     item
                     xs={5}
                     md={3}
-                    style={{ display: "flex", justifyContent: "flex-start" }}
-                    sx={{ display: { xs: "none", md: "flex" } }}
+                    style={{ display: "flex", justifyContent: "center" }}
                   >
-                    <Image src={Logo} style={{ width: "18vh" }} />
+                    <Image src={Logo} style={{ width: "12vh" }} />
                   </Grid>
 
                   <Grid item xs={4} md={3}>
