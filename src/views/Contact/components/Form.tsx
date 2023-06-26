@@ -44,8 +44,9 @@ const ContainerBlue = styled.div({
 const ContainerBlueRounded = styled.div({
   width: "100%",
   backgroundColor: BLUECOLOR,
-  padding: "1vw 2vw",
+  padding: "5vh 2vh",
   borderRadius: "10px",
+
 });
 const FormContact = () => {
   const initialValues = {
@@ -255,7 +256,7 @@ const FormContact = () => {
             </ContainerBlue>
           </Grid>
               <Grid item xs={12}md={6} sx={{display:{xs:'flex',md:'none'}}}>
-            <ContainerBlueRounded>
+            <ContainerBlueRounded >
               <Formik
                 initialValues={initialValues}
                 validationSchema={validationSchema}
@@ -265,7 +266,7 @@ const FormContact = () => {
                   <Form>
                     <Grid container justifyContent={"center"} rowSpacing={2}>
                       <Grid item xs={8}>
-                        <Tittle>
+                        <Tittle style={{fontSize:'5vh'}}>
                           Contact us!
                         </Tittle>
                       </Grid>
@@ -306,7 +307,7 @@ const FormContact = () => {
                         />
                       </Grid>
                       <Grid item xs={4}>
-                        <Button type="submit" style={{fontSize:'2vh'}}>Send</Button>
+                        <Button type="submit" style={{fontSize:'2.5vh'}}>Send</Button>
                       </Grid>
                     </Grid>
                   </Form>
