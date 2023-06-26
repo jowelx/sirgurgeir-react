@@ -38,10 +38,10 @@ const Title = styled.p({
   fontWeight: 700,
   lineHeight: "9vh",
   color: "white",
-  fontSize: "12vh",
+  fontSize: "10vh",
   textAlign: "left",
   borderBottom: "solid 2px rgb(255,255,255)",
-  marginTop: "1vh",
+
 });
 const Text = styled.p({
   fontFamily: PrincipalFont,
@@ -54,7 +54,8 @@ const ContainerText = styled.div({
   bottom: 0,
   left: 0,
   right: 0,
-  padding: "7vh",
+  padding: "5vh",
+  top:'34vh'
 });
 
 const Header = () => {

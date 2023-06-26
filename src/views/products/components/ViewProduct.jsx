@@ -157,7 +157,7 @@ const ViewProducts = () => {
         <div>
           <img src={scan}/>
         </div>
-        <p style={{fontFamily:PrincipalFont,fontSize:'1vw',marginTop:0 ,marginLeft:'1vw',color:'rgba(34, 34, 34, 1)',marginBottom:0}}>
+        <p style={{fontFamily:PrincipalFont,fontSize:'2.5vh',marginTop:0 ,marginLeft:'1vw',color:'rgba(34, 34, 34, 1)',marginBottom:0}}>
           Roll over image to zoom in
         </p>
       </div>

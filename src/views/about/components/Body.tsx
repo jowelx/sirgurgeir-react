@@ -153,7 +153,7 @@ const Body = () => {
           <Grid container justifyContent={"center"}>
             {data.map((item) => (
               <Grid key={item} item xs={11} md={10}>
-                <Grid container alignItems={"center"}>
+                <Grid container alignItems={"center"} columnSpacing={5}>
                   <Grid item xs={2}>
                     <ContainerIconPerson>
                       <PersonIcon src={Person} />

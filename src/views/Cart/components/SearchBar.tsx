@@ -13,7 +13,8 @@ const Container = styled.div({
 });
 const YelowText = styled.p({
     margin: 0,
-    color: YELLOWCOLOR,
+  color: YELLOWCOLOR,
+    marginLeft:'-2vh'
 });
 const InputSearch = styled.input({
     margin: 0,
@@ -59,7 +60,7 @@ const SearchBar = () => {
             justifyContent={"space-between"}
             alignItems={"center"}
           >
-            <Grid item xs={10} md={ 5} style={{}}>
+            <Grid item xs={9} md={ 5} style={{}}>
               <Cursor src={cursor} />
               <InputSearch placeholder="Ship to colombia" />
             </Grid>

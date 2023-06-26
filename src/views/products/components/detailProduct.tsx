@@ -95,6 +95,7 @@ const ButtonBlue = styled.div({
   justifyContent: "center",
   alignItems: "center",
   cursor: "pointer",
+  padding:'0.6vh'
 });
 const ButtonWhite = styled.div({
   borderRadius: 200,
@@ -203,7 +204,7 @@ const DetailProduct = () => {
                 alignItems={"center"}
                 justifyContent={"flex-start"}
               >
-                <Grid item xs={5} md={5}>
+                <Grid item xs={6} md={5}>
                   <Link href="/cart">
                     <ButtonBlue>
                       <p
@@ -222,7 +223,7 @@ const DetailProduct = () => {
                             padding: "0.5vw",
                             borderRadius: 200,
                             border: "solid 1px white",
-                            width: "2vh",
+                            width: "3vh",
                             height: "auto",
                           }}
                           src={ArrowIcon}
@@ -232,7 +233,7 @@ const DetailProduct = () => {
                   </Link>
                 </Grid>
 
-                <Grid item xs={5} md={5}>
+                <Grid item xs={6} md={5}>
                   <ButtonWhite onClick={() => setProductsCount(amount)}>
                     <p
                       style={{
@@ -250,7 +251,7 @@ const DetailProduct = () => {
                           padding: "0.5vw",
                           borderRadius: 200,
                           border: "solid 1px white",
-                          width: "5vh",
+                          width: "4vh",
                           height: "auto",
                         }}
                         src={IconShop}
@@ -261,9 +262,11 @@ const DetailProduct = () => {
               </Grid>
             </div>
           </Grid>
-          <Grid item xs={10}>
-            <br/>
+          <Grid item xs={12}md={10}>
+            <br />
             <Card />
+            <br /> <br />
+              <br /> <br />  <br /> 
           </Grid>
         </Grid>
       </Grid>

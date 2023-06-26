@@ -235,7 +235,10 @@ const NavBarAbout = () => {
                     padding: "0.6vh",
                   }}
                 >
-                  Sig In
+                  <Link style={{color:'rgb(255,255,255)'}} href="/login">
+                                    Sig In
+                  </Link>
+
                 </ButtonLogin>
               </div>
             </Grid>

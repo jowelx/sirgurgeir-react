@@ -13,8 +13,8 @@ const MenuContainer = styled.div({
 });
 const MenuItem = styled.div({
   color: BLUECOLOR,
-  margin: "0 2vw",
-  width: "8vw",
+  margin: "0 2.5vh",
+  width: "9vh",
 });
 const Bar = styled.div({
   transition: "all 0.2s ease",
@@ -54,7 +54,8 @@ const PaymentGateWay = () => {
         <Grid container columnSpacing={0}>
           <Grid
             item
-            xs={6}
+            xs={10}
+            md={6}
             style={{
               height: "100vh",
               display: "flex",
@@ -79,7 +80,7 @@ const PaymentGateWay = () => {
               </MenuItem>
             </MenuContainer>
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={6} sx={{display:{xs:'none',md:'flex'}}}>
             <ContainerImage>
               <Image src={menu === 1 ? bg1 : bg2} />
               <ContainerText>

@@ -42,7 +42,7 @@ const Title = styled.p({
   color: BLUECOLOR,
   textAlign: "left",
   fontWeight: 700,
-  fontSize: "2vw",
+  fontSize: "4vh",
 });
 const Button = styled.div({
   backgroundColor: BLUECOLOR,
@@ -51,7 +51,7 @@ const Button = styled.div({
   fontWeight: 500,
   width: "99%",
   borderRadius: 6,
-  padding: "1.3vw ",
+  padding: "1.5vh ",
   "& p": {
     margin: 0,
   },
@@ -59,77 +59,79 @@ const Button = styled.div({
 const CardMethod = styled.img({
   height: "auto",
   width: "auto",
-  maxWidth: "4vw",
+  maxWidth: "4vh",
   maxHeight: "4.5vh",
 });
 const Payment = () => {
   const [methodSelected, setMethodSelected] = useState("master");
   return (
-      <>
-          <Grid container>
-              <Grid item xs={12}>
-                      <Grid container justifyContent={"space-around"} rowSpacing={2}>
-        <Grid item xs={11}>
-          <Title>Final Step, make the payment </Title>
-        </Grid>
-        <Grid item xs={11}>
-          <ContainerSelect>
-            <Grid container alignItems={"center"}>
-              <Grid item xs={1}>
-                <CardMethod src={methodSelected === "master" ? master : visa} />
-              </Grid>
-              <Grid item xs={10}>
-                <Select
-                  id="mySelect"
-                  onChange={(e) => setMethodSelected(e.target.value)}
-                >
-                  <option value="master">MasterCard</option>
-                  <option value="visa">Visa</option>
-                </Select>
-              </Grid>
-            </Grid>
-          </ContainerSelect>
-        </Grid>
-              <Grid item xs={11}>
-                    <Label>Card Number</Label>
-                  <ContainerSelect>
-                              
-            <Grid container alignItems={"center"}>
-              <Grid item xs={1}>
-                <CardMethod src={methodSelected === "master" ? master : visa} />
-              </Grid>
-              <Grid item xs={10}>
-                              <Input style={{border:0}} />
-              </Grid>
-            </Grid>
-          </ContainerSelect>
-
-
-        </Grid>
-        <Grid item xs={5}>
-          <Label>Expired</Label>
-          <Input />
-        </Grid>
-        <Grid item xs={5}>
-          <Label>Cvc</Label>
-          <Input />
-        </Grid>
-  
-        <Grid item xs={11}>
-          <Label>Discout code</Label>
-          <Input />
-              </Grid>
-             
+    <>
+      <Grid container>
+        <Grid item xs={12}>
+          <Grid container justifyContent={"space-around"} rowSpacing={2}>
             <Grid item xs={11}>
-              <a href="/paymentSuccess" style={{color:'white',textDecoration:'none'}}>
-                <Button>Continue to payment</Button>
-                </a>
-        </Grid>
-          </Grid>  
-              </Grid>
-          </Grid>
+              <Title>Final Step, make the payment </Title>
+            </Grid>
+            <Grid item xs={11}>
+              <ContainerSelect>
+                <Grid container alignItems={"center"}>
+                  <Grid item xs={1}>
+                    <CardMethod
+                      src={methodSelected === "master" ? master : visa}
+                    />
+                  </Grid>
+                  <Grid item xs={10}>
+                    <Select
+                      id="mySelect"
+                      onChange={(e) => setMethodSelected(e.target.value)}
+                    >
+                      <option value="master">MasterCard</option>
+                      <option value="visa">Visa</option>
+                    </Select>
+                  </Grid>
+                </Grid>
+              </ContainerSelect>
+            </Grid>
+            <Grid item xs={11}>
+              <Label>Card Number</Label>
+              <ContainerSelect>
+                <Grid container alignItems={"center"}>
+                  <Grid item xs={1}>
+                    <CardMethod
+                      src={methodSelected === "master" ? master : visa}
+                    />
+                  </Grid>
+                  <Grid item xs={10}>
+                    <Input style={{ border: 0 }} />
+                  </Grid>
+                </Grid>
+              </ContainerSelect>
+            </Grid>
+            <Grid item xs={5}>
+              <Label>Expired</Label>
+              <Input />
+            </Grid>
+            <Grid item xs={5}>
+              <Label>Cvc</Label>
+              <Input />
+            </Grid>
 
-          
+            <Grid item xs={11}>
+              <Label>Discout code</Label>
+              <Input />
+            </Grid>
+
+            <Grid item xs={11}>
+              <a
+                href="/paymentSuccess"
+                style={{ color: "white", textDecoration: "none" }}
+              >
+                <Button>Continue to payment</Button>
+              </a>
+            </Grid>
+          </Grid>
+        </Grid>
+      </Grid>
     </>
   );
 };

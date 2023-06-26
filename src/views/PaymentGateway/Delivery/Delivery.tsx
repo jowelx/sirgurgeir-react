@@ -20,7 +20,7 @@ const Title = styled.p({
   color: BLUECOLOR,
   textAlign: "left",
   fontWeight: 700,
-  fontSize: "2vw",
+  fontSize: "4vh",
 });
 const Button = styled.div({
   backgroundColor: BLUECOLOR,
@@ -29,7 +29,7 @@ const Button = styled.div({
   fontWeight: 500,
     width: "99%",
     borderRadius: 6,
-    padding: "1.3vw ",
+    padding: "1.4vh ",
     "& p": {
         margin:0
     }
@@ -42,11 +42,11 @@ const Delivery = ({setManu}:any) => {
         <Grid item xs={11}>
           <Title>How would you like to get your order?</Title>
         </Grid>
-        <Grid item xs={5}>
+        <Grid item xs={11} md={5}>
           <Label>First name</Label>
           <Input />
         </Grid>
-        <Grid item xs={5}>
+        <Grid item xs={11} md={5}>
           <Label>Last name</Label>
           <Input />
         </Grid>
@@ -54,19 +54,19 @@ const Delivery = ({setManu}:any) => {
           <Label>E-mail</Label>
           <Input />
         </Grid>
-        <Grid item xs={5}>
+        <Grid item xs={11} md={5}>
           <Label>City</Label>
           <Input />
         </Grid>
-        <Grid item xs={1}>
+        <Grid item xs={11} md={1}>
           <Label>State</Label>
           <Input />
         </Grid>
-        <Grid item xs={3}>
+        <Grid item xs={5} md={3}>
           <Label>Post code</Label>
           <Input />
         </Grid>
-        <Grid item xs={11}>
+        <Grid item xs={5} md={11}>
           <Label>Country</Label>
           <Input />
         </Grid>

@@ -66,6 +66,7 @@ const PrincipalTitle = styledE.p({
   fontWeight: 600,
   textAlign: "left",
   marginBottom: "2vw",
+  marginTop:'-1.5vh'
 });
 const Accordion = styled((props: AccordionProps) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
