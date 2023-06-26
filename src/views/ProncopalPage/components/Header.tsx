@@ -30,7 +30,7 @@ const H1 = styled.p({
   fontSize: "8vh",
   textAlign: "left",
   fontWeight: 600,
-  lineHeight: 1.2,
+  lineHeight: 1,
 });
 const H2 = styled.p({
   color: "black",
@@ -54,7 +54,7 @@ const Button = styled.div({
   width: "20vh",
   borderRadius: 6,
   backgroundColor: BLUECOLOR,
-  padding: "1vw",
+  padding: "1.6vh",
   color: "white",
   display: "flex",
   alignItems: "center",

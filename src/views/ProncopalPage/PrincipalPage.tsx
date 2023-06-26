@@ -23,15 +23,13 @@ const PrincipalPage = () => {
           </Grid>
         </Grid>
         <br />
-
       </div>
-              <Grid container justifyContent={"center"}>
-          <Grid item xs={12}>
-            <BannerOffert />
-          </Grid>
-  
+      <Grid container justifyContent={"center"}>
+        <Grid item xs={12}>
+          <BannerOffert />
         </Grid>
-      <Footer/>
+      </Grid>
+      <Footer />
     </>
   );
 };

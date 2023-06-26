@@ -41,6 +41,12 @@ const ContainerBlue = styled.div({
   padding: "1vw 2vw",
   borderRadius: "0vw 10px 10px 0vw",
 });
+const ContainerBlueRounded = styled.div({
+  width: "100%",
+  backgroundColor: BLUECOLOR,
+  padding: "1vw 2vw",
+  borderRadius: "10px",
+});
 const FormContact = () => {
   const initialValues = {
     name: "",
@@ -188,7 +194,7 @@ const FormContact = () => {
 
             </ContainerImage>
           </Grid>
-          <Grid item xs={12}md={6}>
+          <Grid item xs={12}md={6} sx={{display:{xs:'none',md:'flex'}}}>
             <ContainerBlue>
               <Formik
                 initialValues={initialValues}
@@ -247,6 +253,66 @@ const FormContact = () => {
                 )}
               </Formik>
             </ContainerBlue>
+          </Grid>
+              <Grid item xs={12}md={6} sx={{display:{xs:'flex',md:'none'}}}>
+            <ContainerBlueRounded>
+              <Formik
+                initialValues={initialValues}
+                validationSchema={validationSchema}
+                onSubmit={handleSubmit}
+              >
+                {({ errors, touched }: any) => (
+                  <Form>
+                    <Grid container justifyContent={"center"} rowSpacing={2}>
+                      <Grid item xs={8}>
+                        <Tittle>
+                          Contact us!
+                        </Tittle>
+                      </Grid>
+                      <Grid item xs={10}>
+                        <TextField
+                          name="name"
+                          placeholder="Name"
+                          error={errors.name}
+                          touched={touched.name}
+                        />
+                      </Grid>
+
+                      <Grid item xs={10}>
+                        <TextField
+                          name="lastName"
+                          placeholder="Last Name"
+                          error={errors.lastName}
+                          touched={touched.lastName}
+                        />
+                      </Grid>
+
+                      <Grid item xs={10}>
+                        <TextField
+                          name="email"
+                          placeholder="E-mail"
+                          error={errors.email}
+                          touched={touched.email}
+                        />
+                      </Grid>
+
+                      <Grid item xs={10}>
+                        <TextField
+                          name="notes"
+                          placeholder="Notes"
+                          error={errors.notes}
+                          touched={touched.notes}
+                          textarea
+                        />
+                      </Grid>
+                      <Grid item xs={4}>
+                        <Button type="submit" style={{fontSize:'2vh'}}>Send</Button>
+                      </Grid>
+                    </Grid>
+                  </Form>
+                )}
+              </Formik>
+            </ContainerBlueRounded>
           </Grid>
         </Grid>
       </Grid>
