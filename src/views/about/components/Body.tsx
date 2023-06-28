@@ -177,7 +177,7 @@ const Body = () => {
           </Grid>
         </Grid>
         <Grid item xs={12} sx={{ display: { xs: "flex", md: "none" } }}>
-          <Container style={{marginTop:'2.5vh'}}>
+          <Container style={{marginTop:'5vh'}}>
             <BlueTittle style={{ fontSize: "6vh",lineHeight:'6vh' }}>What our happy</BlueTittle>
             <br />
             <BlueTittle style={{ fontSize: "6vh",lineHeight:'6vh' }}>customers say</BlueTittle>
