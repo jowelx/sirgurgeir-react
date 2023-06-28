@@ -10,7 +10,7 @@ const PrincipalPage = () => {
   return (
     <>
       <NavBarAbout />
-      <div style={{ marginTop: "10vw", padding: "0 6vw" }}>
+      <div style={{ marginTop: "-5vh", padding: "0 6vw" }}>
         <Grid container>
           <Grid item xs={12}>
             <Header />

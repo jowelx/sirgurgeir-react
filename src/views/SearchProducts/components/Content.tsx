@@ -172,6 +172,7 @@ const Content = () => {
         <Grid item xs={12}>
           <div style={{ display: "flex", justifyContent: "center" }}>
             <Pagination
+              size="small"
               count={10}
               page={page}
               onChange={handleChangePagination}

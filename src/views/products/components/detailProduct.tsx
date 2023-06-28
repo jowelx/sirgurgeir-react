@@ -266,7 +266,7 @@ const DetailProduct = () => {
             <br />
             <Card />
             <br /> <br />
-              <br /> <br />  <br /> 
+              
           </Grid>
         </Grid>
       </Grid>

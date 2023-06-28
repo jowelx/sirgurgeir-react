@@ -125,6 +125,9 @@ const ArrowRight = styled(EastIcon)({
     backgroundColor: "white",
   },
 });
+const Link = styled.a({
+textDecoration:'none'
+})
 const Register = () => {
   const handleSubmit = (values: any) => {
     console.log(values); // Aquí puedes realizar la lógica de envío del formulario
@@ -140,18 +143,21 @@ const Register = () => {
 
   return (
     <Grid container justifyContent={"center"}>
-      <Grid item xs={11}>
-        <Grid container >
-          <Grid item xs={12}md={4}>
+      <Grid item xs={10}md={11}>
+        <Grid container justifyContent={"space-around"}>
+          <Grid item xs={11}md={4}>
             <div style={{paddingTop:'0.1vw'}}>
             <Grid container>
-              <Grid item xs={12}>
+                <Grid item xs={12}>
+                  <Link href={"/"}>
+                    
                 <Logo src={logo} />
+                  </Link>
               </Grid>
               <Grid item xs={12} style={{marginTop:'3vw'}}>
                 <Title>Welcome back</Title>
               </Grid>
-              <Grid item xs={12} style={{marginBottom:'1.5vw'}}>
+              <Grid item xs={12} style={{marginBottom:'1.5vh'}}>
                 <Text>Create an account</Text>
               </Grid>
               <Grid item xs={12}>
@@ -188,12 +194,12 @@ const Register = () => {
                           placeholder="Password"
                         />
                       </div>
-                      <Button onClick={() => handleClick()}>
+                      <Button onClick={() => handleClick()} style={{marginBottom:'1vh'}}>
                         Create account
                       </Button>
 
                 
-                        <ButtonSocial onClick={() => handleClick()}>
+                        <ButtonSocial onClick={() => handleClick()} style={{marginBottom:'1vh'}}>
                           <Grid
                             container
                             alignItems={"center"}
@@ -211,7 +217,7 @@ const Register = () => {
                         </ButtonSocial>
                 
              
-                        <ButtonSocial onClick={() => handleClick()}>
+                        <ButtonSocial onClick={() => handleClick()} >
                           <Grid
                             container
                             alignItems={"center"}
