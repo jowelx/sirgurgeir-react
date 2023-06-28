@@ -131,6 +131,7 @@ const Body = () => {
         </Grid>
         <Grid item xs={12} md={5} sx={{ display: { xs: "flex", md: "none" } }}>
           <Grid
+            style={{marginTop:'1.5vh'}}
             container
             justifyContent={"flex-start"}
             alignItems={"flex-start"}
@@ -176,7 +177,7 @@ const Body = () => {
           </Grid>
         </Grid>
         <Grid item xs={12} sx={{ display: { xs: "flex", md: "none" } }}>
-          <Container style={{marginTop:'1vh'}}>
+          <Container style={{marginTop:'2.5vh'}}>
             <BlueTittle style={{ fontSize: "6vh",lineHeight:'6vh' }}>What our happy</BlueTittle>
             <br />
             <BlueTittle style={{ fontSize: "6vh",lineHeight:'6vh' }}>customers say</BlueTittle>

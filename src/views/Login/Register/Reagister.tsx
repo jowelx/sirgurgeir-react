@@ -46,7 +46,7 @@ const Button = styled.div({
   backgroundColor: BLUECOLOR,
   color: "white",
   padding: "2vh 1vh",
-  width: "100%",
+  width: "102%",
   marginTop: "2vh",
   borderRadius: 8,
   cursor:'pointer'
