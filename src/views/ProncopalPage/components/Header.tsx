@@ -103,13 +103,14 @@ const Header = () => {
                   with our summer <br />
                   collections
                 </H1>
+                  <br />
               </Grid>
               <Grid item xs={12}>
                 <H4>
                   Porem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
                   vulputate
                   <br /> libero et velit interdum, ac aliquet odio mattis. Class
-                  aptent taciti sociosqu ad <br />
+                  aptent  taciti <br />sociosqu ad
                   litora torquent per conubia nostra, per inceptos himenaeos.
                 </H4>
               </Grid>

@@ -51,11 +51,10 @@ const Text = styled.p({
 });
 const ContainerText = styled.div({
   position: "absolute",
-  bottom: 0,
+  bottom: "-5vh",
   left: 0,
   right: 0,
   padding: "5vh",
-  top:'34vh'
 });
 
 const Header = () => {
