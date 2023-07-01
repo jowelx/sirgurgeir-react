@@ -58,6 +58,7 @@ const DataText = styledE.p({
   textAlign: "left",
   margin: "0.2vw 0",
   fontSize: "1.4vh",
+  padding:0
 });
 const PrincipalTitle = styledE.p({
   fontSize: "4vh",
@@ -66,7 +67,8 @@ const PrincipalTitle = styledE.p({
   fontWeight: 600,
   textAlign: "left",
   marginBottom: "2vw",
-  marginTop:'-1.5vh'
+  marginTop: '-1.5vh',
+  padding:0
 });
 const Accordion = styled((props: AccordionProps) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
@@ -89,12 +91,12 @@ const AccordionSummary = styled((props: AccordionSummaryProps) => (
     transform: "rotate(90deg)",
   },
   "& .MuiAccordionSummary-content": {
-    marginLeft: theme.spacing(1),
+
   },
 }));
 
 const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
-  padding: theme.spacing(2),
+
 }));
 
 export default function Description() {
@@ -113,13 +115,13 @@ export default function Description() {
         onChange={handleChange("panel1")}
       >
         <AccordionSummary
-          style={{ backgroundColor: "rgba(0,0,0,0)" }}
+          style={{ backgroundColor: "rgba(0,0,0,0)",padding:0 }}
           aria-controls="panel1d-content"
           id="panel1d-header"
         >
           <PrincipalTitle>Description</PrincipalTitle>
         </AccordionSummary>
-        <AccordionDetails>
+        <AccordionDetails style={{padding:0}}>
           <Grid style={{ marginTop: "-2vw" }} container>
             {Data.map((item, index) => (
               <Grid item xs={12}>

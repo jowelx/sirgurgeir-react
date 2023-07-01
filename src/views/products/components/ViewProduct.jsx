@@ -6,9 +6,9 @@ import {Grid} from '@mui/material'
 import styled from "@emotion/styled";
 import ArrowIcon from "../../../assets/ProductArrow.png";
 import { BLUECOLOR } from "../../../colors/Colors";
-import SA from "../../../assets/Ropa/SAzul.png";
-import SR from "../../../assets/Ropa/SRosa.png";
-import SN from "../../../assets/Ropa/SNegro.png";
+import SA from "../../../assets/Ropa/r1.webp";
+import SR from "../../../assets/Ropa/r2.webp";
+import SN from "../../../assets/Ropa/r3.webp";
 import scan from '../../../assets/scanIcon.png'
 import { PrincipalFont } from "../../../fonts/Fonts";
 import AI1 from '../../../assets/Ropa/1.webp'
@@ -83,6 +83,9 @@ const AditionalImage = styled.img({
   width: '100%',
   borderRadius:4
 })
+const ImageRounded = styled.img({
+  borderRadius:4
+})
 const ViewProducts = () => {
   const [goToSlide, setGoToSlide] = useState(0);
   const offsetRadius = 2;
@@ -91,15 +94,15 @@ const ViewProducts = () => {
   const slides = [
     {
       key: 1,
-      content: <img src={SA} alt="1" />,
+      content: <ImageRounded src={SA} alt="1" />,
     },
     {
       key: 2,
-      content: <img src={SN} alt="2" />,
+      content: <ImageRounded src={SN} alt="2" />,
     },
     {
       key: 3,
-      content: <img src={SR} alt="3" />,
+      content: <ImageRounded src={SR} alt="3" />,
     },
   ];
 
@@ -122,7 +125,7 @@ const ViewProducts = () => {
 
   return (
     <div>
-      <Container style={{ width: "90%", height: "45vh", margin: "0 auto" }}>
+      <Container style={{ width: "90%", height: "80vh", margin: "0 auto" }}>
         <Carousel
           ref={carouselRef}
           slides={slides}
