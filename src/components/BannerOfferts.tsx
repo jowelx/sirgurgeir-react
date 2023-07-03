@@ -13,11 +13,11 @@ const Container = styled.div({
 });
 const Image = styled.img({
   width: "auto",
-  height: "26vw",
+  height: "49.8vh",
 });
 const ContainerImage = styled.div({
   width: "100%",
-  height: "100%",
+  height: "50vh",
   overflow: "hidden",
 });
 const BlueContainer = styled.div({
@@ -27,6 +27,8 @@ const BlueContainer = styled.div({
   flexDirection: "column",
   justifyContent: "flex-start",
   backgroundColor: BLUECOLOR,
+  height: "33vh",
+  borderRadius:'0px 5px 5px 0px',
     marginTop:'-0.2vh'
 });
 const Button = styled.div({
@@ -64,7 +66,7 @@ const BannerOffert = () => {
           </ContainerImage>
         </Grid>
         <Grid item xs={8}>
-          <BlueContainer style={{height:'38vh'}}>
+          <BlueContainer>
             <LittleTitle>LIMITED OFFER</LittleTitle>
             <Text>35% off only this friday and get special gift</Text>
             <Button>
@@ -77,7 +79,7 @@ const BannerOffert = () => {
           <Grid container alignItems={"center"} sx={{display:{xs:'flex',md:'none'}}}>
         <Grid item xs={4}>
           <ContainerImage>
-            <Image src={Banner} style={{height:'29vw'}} />
+            <Image src={Banner} style={{height:'100%'}} />
           </ContainerImage>
         </Grid>
         <Grid item xs={8}>

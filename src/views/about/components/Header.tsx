@@ -41,7 +41,7 @@ const Title = styled.p({
   fontSize: "10vh",
   textAlign: "left",
   borderBottom: "solid 2px rgb(255,255,255)",
-
+paddingBottom:'2vh'
 });
 const Text = styled.p({
   fontFamily: PrincipalFont,

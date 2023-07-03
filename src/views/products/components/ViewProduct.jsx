@@ -2,25 +2,31 @@ import React, { useState, useRef } from "react";
 import { useSpring, animated } from "react-spring";
 import Carousel from "react-spring-3d-carousel";
 import { config } from "react-spring";
-import {Grid} from '@mui/material'
+import { Grid } from "@mui/material";
 import styled from "@emotion/styled";
 import ArrowIcon from "../../../assets/ProductArrow.png";
 import { BLUECOLOR } from "../../../colors/Colors";
 import SA from "../../../assets/Ropa/r1.webp";
 import SR from "../../../assets/Ropa/r2.webp";
 import SN from "../../../assets/Ropa/r3.webp";
-import scan from '../../../assets/scanIcon.png'
+import BA from "../../../assets/Ropa/b1.webp";
+import BR from "../../../assets/Ropa/b2.webp";
+import BN from "../../../assets/Ropa/b3.webp";
+import CA from "../../../assets/Ropa/m1.webp";
+import CR from "../../../assets/Ropa/m2.webp";
+import CN from "../../../assets/Ropa/m3.webp";
+import scan from "../../../assets/scanIcon.png";
 import { PrincipalFont } from "../../../fonts/Fonts";
-import AI1 from '../../../assets/Ropa/1.webp'
-import AI2 from '../../../assets/Ropa/2.webp'
-import AI3 from '../../../assets/Ropa/3.webp'
-import AI4 from '../../../assets/Ropa/4.webp'
+import AI1 from "../../../assets/Ropa/1.webp";
+import AI2 from "../../../assets/Ropa/2.webp";
+import AI3 from "../../../assets/Ropa/3.webp";
+import AI4 from "../../../assets/Ropa/4.webp";
 const AditionalImages = [
   { img: AI1 },
   { img: AI2 },
   { img: AI3 },
-   { img:AI4}
-]
+  { img: AI4 },
+];
 const ArrowLeft = styled.img({
   padding: "1.2vh",
   borderRadius: 200,
@@ -61,7 +67,7 @@ const Container = styled.div({
 const ContanierNavigation = styled.div({
   display: "flex",
   justifyContent: "center",
-  marginTop:'2vw'
+  marginTop: "2vw",
 });
 const Dot = styled.div({
   height: "1.5vw",
@@ -72,37 +78,38 @@ const Dot = styled.div({
 const ContainerDot = styled.div({
   display: "flex",
   justifyContent: "center",
-  alignItems:'center',
+  alignItems: "center",
   width: "1.5vw",
   borderRadius: 100,
-  padding:"0.15vw",
+  padding: "0.15vw",
   transition: "0.4s ease",
-  cursor:'pointer'
+  cursor: "pointer",
 });
 const AditionalImage = styled.img({
-  width: '100%',
-  borderRadius:4
-})
+  width: "100%",
+  borderRadius: 4,
+});
 const ImageRounded = styled.img({
-  borderRadius:4
-})
+  borderRadius: 4,
+});
 const ViewProducts = () => {
   const [goToSlide, setGoToSlide] = useState(0);
+  const [color,setColor]=useState(0)
   const offsetRadius = 2;
   const showNavigation = false;
-  const Colors = ["#92ACBE", "#222222", "#E69BB5"];
+  const Colors = [ "#222222","#92ACBE", "rgb(230,230,230)"];
   const slides = [
     {
       key: 1,
-      content: <ImageRounded src={SA} alt="1" />,
+      content: <ImageRounded src={color===0?SA:color===1?BA:color===2&&CA} alt="1" />,
     },
     {
       key: 2,
-      content: <ImageRounded src={SN} alt="2" />,
+      content: <ImageRounded src={color===0?SN:color===1?BN:color===2&&CN} alt="2" />,
     },
     {
       key: 3,
-      content: <ImageRounded src={SR} alt="3" />,
+      content: <ImageRounded src={color===0?SR:color===1?BR:color===2&&CR} alt="3" />,
     },
   ];
 
@@ -122,7 +129,9 @@ const ViewProducts = () => {
     const nextSlide = (goToSlide + 1) % slides.length;
     setGoToSlide(nextSlide);
   };
-
+  const handleChangeColor = (index) => {
+  setColor(index)
+}
   return (
     <div>
       <Container style={{ width: "90%", height: "80vh", margin: "0 auto" }}>
@@ -143,10 +152,10 @@ const ViewProducts = () => {
         {Colors.map((item, index) => {
           return (
             <ContainerDot
-            onClick={()=>handleChangeSlide(index)}
+              onClick={() =>handleChangeColor(index)}
               style={{
                 border: `solid 1px rgba(${
-                  goToSlide === index ? "49, 49, 49, 0.58" : "0,0,0,0"
+                  color === index ? "49, 49, 49, 0.58" : "0,0,0,0"
                 })`,
               }}
             >
@@ -155,28 +164,55 @@ const ViewProducts = () => {
           );
         })}
       </ContanierNavigation>
-      <div style={{margin:'2vw 0',width:'100%',display:'flex',justifyContent:'center', alignItems:'center'}}>
-      <div style={{display:'flex',flexDirection:'row',alignItems:'center'}}>
-        <div>
-          <img src={scan}/>
+      <div
+        style={{
+          margin: "2vw 0",
+          width: "100%",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+          }}
+        >
+          <div>
+            <img src={scan} />
+          </div>
+          <p
+            style={{
+              fontFamily: PrincipalFont,
+              fontSize: "2.5vh",
+              marginTop: 0,
+              marginLeft: "1vw",
+              color: "rgba(34, 34, 34, 1)",
+              marginBottom: 0,
+            }}
+          >
+            Roll over image to zoom in
+          </p>
         </div>
-        <p style={{fontFamily:PrincipalFont,fontSize:'2.5vh',marginTop:0 ,marginLeft:'1vw',color:'rgba(34, 34, 34, 1)',marginBottom:0}}>
-          Roll over image to zoom in
-        </p>
       </div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          padding: "0 5vh",
+        }}
+      >
+        <Grid container columnSpacing={1}>
+          {AditionalImages.map((item, index) => (
+            <Grid item xs={3}>
+              <AditionalImage src={item.img} />
+            </Grid>
+          ))}
+        </Grid>
       </div>
-      <div style={{display:'flex',justifyContent:'center',alignItems:'center',padding:'0 5vh'}}>
-      <Grid container columnSpacing={1}>
-       
-        {AditionalImages.map((item, index) => (
-           <Grid item xs={3}>
-          <AditionalImage src={item.img} />
-           </Grid>
-        ))}
-       
-</Grid>
-      </div>
-
     </div>
   );
 };

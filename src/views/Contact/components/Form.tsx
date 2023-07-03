@@ -13,6 +13,7 @@ import FmdGoodIcon from "@mui/icons-material/FmdGood";
 import fb from "../../../assets/fb.png";
 import ig from "../../../assets/ig.png";
 import tw from "../../../assets/tw.png";
+import tk from "../../../assets/tk.png";
 const info = [
   {
     icon: "phone",
@@ -187,7 +188,8 @@ const FormContact = () => {
                   >
                     <SocialImage src={fb} />
                     <SocialImage src={ig} />
-                    <SocialImage src={tw} />
+                      <SocialImage src={tw} />
+                      <SocialImage src={tk} />
                   </div>
                 </Grid>
               </Grid>

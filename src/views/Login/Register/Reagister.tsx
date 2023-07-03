@@ -38,7 +38,7 @@ const Input = styled(Field)({
   outline: "none",
   backgroundColor: "rgba(0,0,0,0)",
   borderBottom: "solid 1px rgb(200,200,200)",
-  width: "100%",
+  width: "99.9%",
   marginTop: "3vh",
   padding: "1.11vh",
 });
@@ -46,7 +46,7 @@ const Button = styled.div({
   backgroundColor: BLUECOLOR,
   color: "white",
   padding: "2vh 1vh",
-  width: "102%",
+  width: "100%",
   marginTop: "2vh",
   borderRadius: 8,
   cursor:'pointer'
@@ -82,7 +82,7 @@ const Icon = styled.img({
   width: "auto",
 });
 const ImageBg = styled.img({
-  height: "99vh",
+  height: "100vh",
   width: "auto",
 });
 const ContainerImageRegister = styled.div({
@@ -281,7 +281,7 @@ const Register = () => {
                   <Grid
                     item
                     xs={12}
-                    style={{ display: "flex", justifyContent: "center" }}
+                    style={{ display: "flex", justifyContent: "flex-start" }}
                   >
                     <p
                       style={{
