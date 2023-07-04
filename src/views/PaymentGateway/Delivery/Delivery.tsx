@@ -15,6 +15,7 @@ const Input = styled.input({
   border: "solid 1px rgb(232,232,232)",
   width: "100%",
   padding: "1vw",
+  paddingRight:0
 });
 const Title = styled.p({
   color: BLUECOLOR,

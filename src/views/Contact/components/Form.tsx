@@ -188,8 +188,8 @@ const FormContact = () => {
                   >
                     <SocialImage src={fb} />
                     <SocialImage src={ig} />
-                      <SocialImage src={tw} />
-                      <SocialImage src={tk} />
+                    <SocialImage src={tw} />
+                    <SocialImage src={tk} />
                   </div>
                 </Grid>
               </Grid>
