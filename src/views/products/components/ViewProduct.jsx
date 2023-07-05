@@ -206,11 +206,7 @@ const ViewProducts = () => {
         }}
       >
         <Grid container columnSpacing={1}>
-          {AditionalImages.map((item, index) => (
-            <Grid item xs={3}>
-              <AditionalImage src={item.img} />
-            </Grid>
-          ))}
+
         </Grid>
       </div>
     </div>

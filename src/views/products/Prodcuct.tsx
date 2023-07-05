@@ -13,11 +13,11 @@ const Product = () => {
       <NavBarAbout />
       <Offert />
       <div style={{ marginTop: "1vh" }}>
-        <Grid container justifyContent={"space-around"}>
+        <Grid container justifyContent={"space-between"}>
           <Grid item xs={12} md={6}>
             <ViewProducts />
           </Grid>
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={5}>
             <DetailProduct />
           </Grid>
           <Grid xs={12} md={6}>

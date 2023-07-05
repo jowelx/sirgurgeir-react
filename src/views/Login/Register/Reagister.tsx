@@ -142,7 +142,7 @@ const Register = () => {
   };
 
   return (
-    <Grid container justifyContent={"center"}>
+    <Grid container justifyContent={"flex-end"}>
       <Grid item xs={10}md={11}>
         <Grid container justifyContent={"space-around"}>
           <Grid item xs={11}md={4}>

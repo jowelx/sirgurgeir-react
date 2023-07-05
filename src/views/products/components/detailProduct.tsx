@@ -204,7 +204,7 @@ const DetailProduct = () => {
                 alignItems={"center"}
                 justifyContent={"flex-start"}
               >
-                <Grid item xs={6} md={5}>
+                <Grid item xs={6} md={6}>
                   <Link href="/cart">
                     <ButtonBlue>
                       <p
@@ -233,7 +233,7 @@ const DetailProduct = () => {
                   </Link>
                 </Grid>
 
-                <Grid item xs={6} md={5}>
+                <Grid item xs={6} md={6}>
                   <ButtonWhite onClick={() => setProductsCount(amount)}>
                     <p
                       style={{

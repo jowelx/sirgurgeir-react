@@ -51,7 +51,7 @@ const Card = () => {
               <Icon src={Check} />
             </Grid>
             <Grid item xs={10}md={11}>
-              <Title>Free shipping</Title>
+              <Title>Return policy</Title>
               <Text>
                 Borem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
                 <br /> vulputate libero et velit interdum, ac aliquet odio
