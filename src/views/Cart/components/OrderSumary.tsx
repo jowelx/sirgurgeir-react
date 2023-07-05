@@ -62,7 +62,7 @@ const amountPRice =data.reduce((acc:any, item:any) => {
   }, [data]);
   return (
     <><div style={{
-padding:'0 2vw',
+padding:'1.4vh 2vw',
       boxShadow:" 0px 4px 17px 2px rgba(0, 0, 0, 0.08)",
 borderRadius: 11
     }}>
