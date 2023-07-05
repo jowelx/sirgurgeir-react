@@ -23,7 +23,7 @@ const Product = () => {
           <Grid xs={12} md={6}>
             <Comments />
           </Grid>
-          <Grid xs={12} md={6}>
+          <Grid xs={12} md={5}>
             <Description />
           </Grid>
           <Grid md={12}>

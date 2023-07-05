@@ -69,10 +69,14 @@ const BannerOffert = () => {
           <BlueContainer>
             <LittleTitle>LIMITED OFFER</LittleTitle>
             <Text>35% off only this friday and get special gift</Text>
+            <a href="/product" style={{ textDecoration: "none",color:'rgb(20,20,25)' }}>
+
             <Button>
               Grab it now
               <Arrow />
             </Button>
+
+            </a>
           </BlueContainer>
         </Grid>
       </Grid>
@@ -87,10 +91,13 @@ const BannerOffert = () => {
       >
             <LittleTitle>LIMITED OFFER</LittleTitle>
             <Text>35% off only this friday and get special gift</Text>
-            <Button>
+            <a href="/product" style={{ textDecoration: "none",color:'rgb(20,20,25)' }}>
+                        <Button>
               Grab it now
               <Arrow />
-            </Button>
+            </Button>  
+            </a>
+
           </BlueContainer>
         </Grid>
       </Grid>
