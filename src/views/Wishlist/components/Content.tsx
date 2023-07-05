@@ -54,7 +54,7 @@ const Content = () => {
       <Grid container justifyContent={"space-between"} alignItems={"center"}>
 
         <Grid item xs={12}>
-          <div style={{ minHeight: "70vh", margin: "2vw 0" }}>
+          <div style={{ minHeight: "70vh", }}>
             <Grid container  >
               {dataWishlist.map((item, index) => (
                 <Grid item xs={6} md={3} sx={{ px: { xs: 1, md: 2 }, py: { xs: 2, md: 4 } }}>

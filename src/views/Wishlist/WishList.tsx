@@ -8,13 +8,13 @@ import BannerOffert from "../../components/BannerOfferts";
 import Footer from "../../components/footer/Footer";
 import { BLUECOLOR } from "../../colors/Colors";
 const Container = styled.div({
-  marginTop: "10vw",
 });
 const Title = styled.p({
   fontWeight: 700,
-  fontSize: '5vh',
-  color:BLUECOLOR
-})
+  fontSize: "5vh",
+  color: BLUECOLOR,
+  marginBottom:0
+});
 const WishList = () => {
   return (
     <>
@@ -22,15 +22,13 @@ const WishList = () => {
       <Container>
         <Grid container justifyContent={"center"}>
           <Grid item xs={12}>
-            <Title>
-              My wishlist
-</Title>
+            <Title>My wishlist</Title>
           </Grid>
-          <Grid item xs={11}md={8}>
+          <Grid item xs={11} md={8}>
             <Content />
           </Grid>
         </Grid>
-        <Footer/>
+        <Footer />
       </Container>
     </>
   );

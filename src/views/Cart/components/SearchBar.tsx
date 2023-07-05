@@ -9,7 +9,7 @@ const Container = styled.div({
     width: "100%",
     border: "solid 1px rgb(232,232,232)",
     padding: "1.2vw 0",
-    marginBottom:'1.5vw'
+    marginBottom:'2vh'
 });
 const YelowText = styled.p({
     margin: 0,
@@ -33,7 +33,8 @@ const BlueText = styled.p({
     color: BLUECOLOR,
     margin: 0,
     fontSize: '4vh',
-    fontWeight:700
+  fontWeight: 700,
+    textAlign:'left'
 });
 const TruckImage = styled.img({
     width: "100%",
@@ -45,7 +46,7 @@ const Cursor = styled.img({
 const InputCoupons = styled.input({
     border: 0,
     borderRadius: "1vh",
-    backgroundColor: 'rgba(217, 217, 217, 1)',
+    backgroundColor: 'rgba(250, 250, 250, 1)',
     padding: '1.2vw 1vw',
     outline: "none",
 })
@@ -74,7 +75,7 @@ const SearchBar = () => {
     
           <Grid item xs={12}>
               <ContainerYelow>
-                  <Grid container justifyContent={"space-around"} alignItems={"center"}>
+                  <Grid container justifyContent={"space-between"} alignItems={"center"}>
                       <Grid item xs={1} md={1}>
                           <TruckImage src={truck} />
                       </Grid>
@@ -83,7 +84,7 @@ const SearchBar = () => {
                               DELIVERY FREE
                           </BlueText>
                       </Grid>
-                       <Grid item xs={12}md={6}>
+                       <Grid item xs={12}md={5}>
                           <InputCoupons  placeholder="Enter your code"/>
                           
                       </Grid>
